@@ -1,0 +1,11 @@
+export { AnalyseMedicalDTO } from './models/analyse-medical-dto';
+export { BiologisteDTO } from './models/biologiste-dto';
+export { DepartementDTO } from './models/departement-dto';
+export { DetailResultatDTO } from './models/detail-resultat-dto';
+export { FactureDTO } from './models/facture-dto';
+export { PatientDTO } from './models/patient-dto';
+export { PreleveurDTO } from './models/preleveur-dto';
+export { ProfilDTO } from './models/profil-dto';
+export { ReservationDTO } from './models/reservation-dto';
+export { TypeAnalyseDTO } from './models/type-analyse-dto';
+export { UtilisateurDTO } from './models/utilisateur-dto';

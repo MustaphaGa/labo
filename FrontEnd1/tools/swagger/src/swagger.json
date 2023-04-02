@@ -1,0 +1,1574 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Swagger Api documentation for Gestion d'analyse medical  application",
+    "version" : "0.0.1-SNAPSHOT",
+    "title" : "Swagger Api Documentation for Gestion d'analyse medical application",
+    "contact" : {
+      "name" : "khalid Abba",
+      "url" : "https://www.udemy.com/user/",
+      "email" : "khalidoabba1996@gmail.com"
+    }
+  },
+  "basePath" : "http://localhost:8080",
+  "tags" : [ {
+    "name" : "analyseMedical"
+  }, {
+    "name" : "biologiste"
+  }, {
+    "name" : "departement"
+  }, {
+    "name" : "detailResultat"
+  }, {
+    "name" : "facture"
+  }, {
+    "name" : "preleveur"
+  }, {
+    "name" : "profil"
+  }, {
+    "name" : "reservation"
+  }, {
+    "name" : "testCovidv1patient"
+  }, {
+    "name" : "typeAnalyse"
+  }, {
+    "name" : "utilisateur"
+  } ],
+  "paths" : {
+    "/testCovid/v1/analyseMedical/all" : {
+      "get" : {
+        "tags" : [ "analyseMedical" ],
+        "summary" : "renvoi la liste d'analyse Medical",
+        "description" : "Cette methode permet de rechercher et renvoyer la listes d'analyse qui existent dans la BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "la liste d'analyse medical / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/AnalyseMedicalDTO"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/analyseMedical/create" : {
+      "post" : {
+        "tags" : [ "analyseMedical" ],
+        "summary" : "Enregistrer l'analyse medical",
+        "description" : "Cette methode permet d'enregistrer oumodifier un analyse medical",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/AnalyseMedicalDTO"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "l'objet analyse medical cree / modifie",
+            "schema" : {
+              "$ref" : "#/definitions/AnalyseMedicalDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/analyseMedical/delete/{idAnalyseMedical}" : {
+      "delete" : {
+        "tags" : [ "analyseMedical" ],
+        "summary" : "supprimer  l'analyse Medical ",
+        "description" : "Cette methode permet de supprimer l'analyse Medical par ID ",
+        "operationId" : "delecte",
+        "parameters" : [ {
+          "name" : "idAnalyseMedical",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "analyse Medical a ete supprimer",
+            "schema" : {
+              "$ref" : "#/definitions/AnalyseMedicalDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/analyseMedical/filter{idAnalyseMedical}" : {
+      "get" : {
+        "tags" : [ "analyseMedical" ],
+        "summary" : "rechercher un analyse medical par ID",
+        "description" : "Cette methode permet de rechercher  d'analyse medical par son ID ",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idAnalyseMedical",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "l'analyse medical a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/AnalyseMedicalDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun analyse medical  n'existe  dans la BDD avec l'ID fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/analyseMedical/{dateAnalyse}" : {
+      "get" : {
+        "tags" : [ "analyseMedical" ],
+        "summary" : "rechercher analyse medical par date ",
+        "description" : "Cette methode permet de rechercher un analyse medical par son date ",
+        "operationId" : "findByDateAnalyse",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "dateAnalyse",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "format" : "date-time"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "l'analyse medical a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/AnalyseMedicalDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun analyse medical n'existe  dans la BDD avec le CODE fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/biologiste/all" : {
+      "get" : {
+        "tags" : [ "biologiste" ],
+        "summary" : "renvoi la liste de biologiste",
+        "description" : "Cette methode permet de rechercher et renvoyer la listes des biologistes qui existent dans la BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "la liste des biologiste / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/BiologisteDTO"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/biologiste/create" : {
+      "post" : {
+        "tags" : [ "biologiste" ],
+        "summary" : "Enregistrer un biologiste",
+        "description" : "Cette methode permet d'enregistrer ou modifier un biologiste ",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/BiologisteDTO"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "l'objet biologiste cree / modifie",
+            "schema" : {
+              "$ref" : "#/definitions/BiologisteDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/biologiste/delete/{idBiologiste}" : {
+      "delete" : {
+        "tags" : [ "biologiste" ],
+        "summary" : "supprimer  un biologiste ",
+        "description" : "Cette methode permet de supprimer un biologiste par ID ",
+        "operationId" : "delecte",
+        "parameters" : [ {
+          "name" : "idBiologiste",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "biologiste a ete supprimer",
+            "schema" : {
+              "$ref" : "#/definitions/BiologisteDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/biologiste/filter{codeBiologiste}" : {
+      "get" : {
+        "tags" : [ "biologiste" ],
+        "summary" : "rechercher un biologiste par CODE",
+        "description" : "Cette methode permet de rechercher un biologiste par son CODE ",
+        "operationId" : "findByCodeBiologiste",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "codeBiologiste",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la biologiste a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/BiologisteDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun biologiste n'existe  dans la BDD avec le CODE fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/biologiste/{idBiologiste}" : {
+      "get" : {
+        "tags" : [ "biologiste" ],
+        "summary" : "rechercher un biologiste par ID",
+        "description" : "Cette methode permet de rechercher  un biologiste par son ID ",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idBiologiste",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la biologiste a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/BiologisteDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun biologiste n'existe  dans la BDD avec l'ID fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/departement/all" : {
+      "get" : {
+        "tags" : [ "departement" ],
+        "summary" : "renvoi la liste de departement",
+        "description" : "Cette methode permet de rechercher et renvoyer la listes des departement qui existent dans la BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "la liste des departement / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/DepartementDTO"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/departement/update" : {
+      "put" : {
+        "tags" : [ "departement" ],
+        "summary" : "Enregistrer un departement",
+        "description" : "Cette methode permet d'enregistrer ou modifier un departement ",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/DepartementDTO"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "l'objet departement cree / modifie",
+            "schema" : {
+              "$ref" : "#/definitions/DepartementDTO"
+            }
+          },
+          "400" : {
+            "description" : "l'objet departement n'est pas valide"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/departement/{idDepartement}" : {
+      "get" : {
+        "tags" : [ "departement" ],
+        "summary" : "rechercher un departement par ID",
+        "description" : "Cette methode permet de rechercher  un departement par son ID ",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idDepartement",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la departement a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/DepartementDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun departement n'existe  dans la BDD avec l'ID fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/departement/{nomDepartement}" : {
+      "get" : {
+        "tags" : [ "departement" ],
+        "summary" : "rechercher un departement par nom de departement",
+        "description" : "Cette methode permet de rechercher un departement par son nom de departement ",
+        "operationId" : "findByNomDeDepartement",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "nomDepartement",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la departement a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/DepartementDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun departement n'existe  dans la BDD avec le CODE fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/departements/delete/{idDepartement}" : {
+      "delete" : {
+        "tags" : [ "departement" ],
+        "summary" : "supprimer un departement ",
+        "description" : "Cette methode permet de supprimer un departement par ID ",
+        "operationId" : "delecte",
+        "parameters" : [ {
+          "name" : "idDepartement",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "departement a ete supprimer",
+            "schema" : {
+              "$ref" : "#/definitions/DepartementDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/detailResultat/all" : {
+      "get" : {
+        "tags" : [ "detailResultat" ],
+        "summary" : "renvoi la liste de detail Resultat",
+        "description" : "Cette methode permet de rechercher et renvoyer la listes des detail Resultats qui existent dans la BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "la liste des biologiste / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/DetailResultatDTO"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/detailResultat/create" : {
+      "post" : {
+        "tags" : [ "detailResultat" ],
+        "summary" : "Enregistrer un detail Resultat",
+        "description" : "Cette methode permet d'enregistrer ou  modifier un detailResultat ",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/DetailResultatDTO"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "l'objet detail Resultat cree / modifie",
+            "schema" : {
+              "$ref" : "#/definitions/DetailResultatDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/detailResultat/delete/{idDetailResultat}" : {
+      "delete" : {
+        "tags" : [ "detailResultat" ],
+        "summary" : "supprimer  un detail Resultat ",
+        "description" : "Cette methode permet de supprimer un detail Resultat par ID ",
+        "operationId" : "delecte",
+        "parameters" : [ {
+          "name" : "idDetailResultat",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "detail Resultat a ete supprimer",
+            "schema" : {
+              "$ref" : "#/definitions/DetailResultatDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/detailResultat/{idDetailResultat}" : {
+      "get" : {
+        "tags" : [ "detailResultat" ],
+        "summary" : "rechercher un detail Resultat par ID",
+        "description" : "Cette methode permet de rechercher  un detail Resultat par son ID ",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idDetailResultat",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la detail Resultat a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/DetailResultatDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun detail Resultat n'existe  dans la BDD avec l'ID fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/facture/all" : {
+      "get" : {
+        "tags" : [ "facture" ],
+        "summary" : "renvoi la liste du facture",
+        "description" : "Cette methode permet de rechercher et renvoyer la listes des facture qui existent dans la BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "la liste des factures / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/FactureDTO"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/facture/create" : {
+      "post" : {
+        "tags" : [ "facture" ],
+        "summary" : "Enregistrer une facture",
+        "description" : "Cette methode permet d'enresitrer ou  modifier une facture ",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/FactureDTO"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "l'objet facture cree / modifie",
+            "schema" : {
+              "$ref" : "#/definitions/FactureDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/facture/delete/{idFacture}" : {
+      "delete" : {
+        "tags" : [ "facture" ],
+        "summary" : "supprimer une facture ",
+        "description" : "Cette methode permet de supprimer une facture par ID ",
+        "operationId" : "delete",
+        "parameters" : [ {
+          "name" : "idFacture",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la facture a ete supprimer",
+            "schema" : {
+              "$ref" : "#/definitions/FactureDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/facture/{idFacture}" : {
+      "get" : {
+        "tags" : [ "facture" ],
+        "summary" : "rechercher d'une facture par ID",
+        "description" : "Cette methode permet de rechercher d'une facture par son ID ",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idFacture",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la facture a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/FactureDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun facture n'existe  dans la BDD avec l'ID fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/patient/all" : {
+      "get" : {
+        "tags" : [ "testCovidv1patient" ],
+        "summary" : "renvoi la liste de patient",
+        "description" : "Cette methode permet de rechercher et renvoyer la listes des patients qui existent dans la BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/PatientDTO"
+              }
+            }
+          },
+          "2000" : {
+            "description" : "la liste des patients / une liste vide"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/patient/create" : {
+      "post" : {
+        "tags" : [ "testCovidv1patient" ],
+        "summary" : "Enregistrer un patient",
+        "description" : "Cette methode permet d'enregistrer ou modifier un patient ",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/PatientDTO"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "l'objet patient cree / modifie",
+            "schema" : {
+              "$ref" : "#/definitions/PatientDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/patient/delete/{idPatient}" : {
+      "delete" : {
+        "tags" : [ "testCovidv1patient" ],
+        "summary" : "supprimer  un patient ",
+        "description" : "Cette methode permet de supprimer un patient par ID ",
+        "operationId" : "delecte",
+        "parameters" : [ {
+          "name" : "idPatient",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "patient a ete supprimer",
+            "schema" : {
+              "$ref" : "#/definitions/PatientDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/patient/filter{codePatient}" : {
+      "get" : {
+        "tags" : [ "testCovidv1patient" ],
+        "summary" : "rechercher un patient par CODE",
+        "description" : "Cette methode permet de rechercher un patient par son CODE ",
+        "operationId" : "findPatientByCodePatient",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "codePatient",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la patient a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/PatientDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun patient n'existe  dans la BDD avec le CODE fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/patient/{idPatient}" : {
+      "get" : {
+        "tags" : [ "testCovidv1patient" ],
+        "summary" : "rechercher un patient par ID",
+        "description" : "Cette methode permet de rechercher  un patient par son ID ",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idPatient",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la patient a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/PatientDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun patient n'existe  dans la BDD avec l'ID fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/preleveur/all" : {
+      "get" : {
+        "tags" : [ "preleveur" ],
+        "summary" : "renvoi la liste de preleveur",
+        "description" : "Cette methode permet de rechercher et renvoyer la listes des preleveurs qui existent dans la BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "la liste des preleveur / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/PreleveurDTO"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/preleveur/create" : {
+      "post" : {
+        "tags" : [ "preleveur" ],
+        "summary" : "Enregistrer un preleveur",
+        "description" : "Cette methode permet d'enregistrer ou modifier un preleveur ",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/PreleveurDTO"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "l'objet preleveur cree / modifie",
+            "schema" : {
+              "$ref" : "#/definitions/PreleveurDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/preleveur/delete/{idPreleveur}" : {
+      "delete" : {
+        "tags" : [ "preleveur" ],
+        "summary" : "supprimer  un preleveur ",
+        "description" : "Cette methode permet de supprimer un preleveur par ID ",
+        "operationId" : "delete",
+        "parameters" : [ {
+          "name" : "idPreleveur",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "preleveur a ete supprimer",
+            "schema" : {
+              "$ref" : "#/definitions/PreleveurDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/preleveur/filter{specialite}" : {
+      "get" : {
+        "tags" : [ "preleveur" ],
+        "summary" : "rechercher un preleveur par SPECIALITE",
+        "description" : "Cette methode permet de rechercher un preleveur par son SPECIALITE ",
+        "operationId" : "findBySpecialite",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "specialite",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la biologiste a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/PreleveurDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun biologiste n'existe  dans la BDD avec le CODE fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/preleveur/{idPreleveur}" : {
+      "get" : {
+        "tags" : [ "preleveur" ],
+        "summary" : "rechercher un preleveur par ID",
+        "description" : "Cette methode permet de rechercher  un preleveur par son ID ",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idPreleveur",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la preleveur a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/PreleveurDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun preleveur n'existe  dans la BDD avec l'ID fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/profil/all" : {
+      "get" : {
+        "tags" : [ "profil" ],
+        "summary" : "renvoi la liste de profil",
+        "description" : "Cette methode permet de rechercher et renvoyer la listes des profils qui existent dans la BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "la liste des biologiste / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/ProfilDTO"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/profil/create" : {
+      "post" : {
+        "tags" : [ "profil" ],
+        "summary" : "Enregistrer un profil",
+        "description" : "Cette methode permet d'enregistrer ou modifier un profil ",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/ProfilDTO"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "l'objet profil cree / modifie",
+            "schema" : {
+              "$ref" : "#/definitions/ProfilDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/profil/delete/{idProfil}" : {
+      "delete" : {
+        "tags" : [ "profil" ],
+        "summary" : "supprimer  un profil ",
+        "description" : "Cette methode permet de supprimer un profil par ID ",
+        "operationId" : "delete",
+        "parameters" : [ {
+          "name" : "idProfil",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "profil a ete supprimer",
+            "schema" : {
+              "$ref" : "#/definitions/ProfilDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/profil/{idProfil}" : {
+      "get" : {
+        "tags" : [ "profil" ],
+        "summary" : "rechercher un profil par ID",
+        "description" : "Cette methode permet de rechercher  un profil par son ID ",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idProfil",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la profil a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/ProfilDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun profil n'existe  dans la BDD avec l'ID fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/reservation/all" : {
+      "get" : {
+        "tags" : [ "reservation" ],
+        "summary" : "renvoi la liste de biologiste",
+        "description" : "Cette methode permet de rechercher et renvoyer la listes des reservation qui existent dans la BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "la liste des reservation / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/ReservationDTO"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/reservation/create" : {
+      "post" : {
+        "tags" : [ "reservation" ],
+        "summary" : "Enregistrer un reservation",
+        "description" : "Cette methode permet d'enregistrer ou modifier un reservation ",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/ReservationDTO"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "l'objet reservation cree / modifie",
+            "schema" : {
+              "$ref" : "#/definitions/ReservationDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/reservation/delete/{idReservation}" : {
+      "delete" : {
+        "tags" : [ "reservation" ],
+        "summary" : "supprimer  un reservation ",
+        "description" : "Cette methode permet de supprimer un reservation par ID ",
+        "operationId" : "delete",
+        "parameters" : [ {
+          "name" : "idReservation",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "reservation a ete supprimer",
+            "schema" : {
+              "$ref" : "#/definitions/ReservationDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/reservation/filter{dateReservation}" : {
+      "get" : {
+        "tags" : [ "reservation" ],
+        "summary" : "rechercher un reservation par date de Reservation",
+        "description" : "Cette methode permet de rechercher un reservation par date de Reservation  ",
+        "operationId" : "findByDateReservation",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "dateReservation",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "format" : "date-time"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la reservation a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/ReservationDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun reservation n'existe  dans la BDD avec le CODE fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/reservation/{idReservation}" : {
+      "get" : {
+        "tags" : [ "reservation" ],
+        "summary" : "rechercher un reservation par ID",
+        "description" : "Cette methode permet de rechercher  un reservation par son ID ",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idReservation",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la reservation a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/ReservationDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun reservation n'existe  dans la BDD avec l'ID fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/typeAnalyse/all" : {
+      "get" : {
+        "tags" : [ "typeAnalyse" ],
+        "summary" : "renvoi la liste de typeAnalyse",
+        "description" : "Cette methode permet de rechercher et renvoyer la listes des typeAnalyses qui existent dans la BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "la liste des typeAnalyse / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/TypeAnalyseDTO"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/typeAnalyse/create" : {
+      "post" : {
+        "tags" : [ "typeAnalyse" ],
+        "summary" : "Enregistrer un typeAnalyse",
+        "description" : "Cette methode permet d'enregistrer ou modifier un typeAnalyse ",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/TypeAnalyseDTO"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "l'objet typeAnalyse cree / modifie",
+            "schema" : {
+              "$ref" : "#/definitions/TypeAnalyseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/typeAnalyse/delete/{idTypeAnalyse}" : {
+      "delete" : {
+        "tags" : [ "typeAnalyse" ],
+        "summary" : "supprimer  un typeAnalyse ",
+        "description" : "Cette methode permet de supprimer un typeAnalyse par ID ",
+        "operationId" : "delecte",
+        "parameters" : [ {
+          "name" : "idTypeAnalyse",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "typeAnalyse a ete supprimer",
+            "schema" : {
+              "$ref" : "#/definitions/TypeAnalyseDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/typeAnalyse/filter{typeAnalyse}" : {
+      "get" : {
+        "tags" : [ "typeAnalyse" ],
+        "summary" : "rechercher un typeAnalyse par TYPEANALYSE",
+        "description" : "Cette methode permet de rechercher un typeAnalyse par son TYPEANALYSE ",
+        "operationId" : "findByTypeAnalyse",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "typeAnalyse",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la typeAnalyse a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/TypeAnalyseDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun typeAnalyse n'existe  dans la BDD avec le CODE fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/typeAnalyse/{idTypeAnalyse}" : {
+      "get" : {
+        "tags" : [ "typeAnalyse" ],
+        "summary" : "rechercher un typeAnalyse par ID",
+        "description" : "Cette methode permet de rechercher  un typeAnalyse par son ID ",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idTypeAnalyse",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la typeAnalyse a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/TypeAnalyseDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun typeAnalyse n'existe  dans la BDD avec l'ID fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/utilisateur/all" : {
+      "get" : {
+        "tags" : [ "utilisateur" ],
+        "summary" : "renvoi la liste de utilisateur",
+        "description" : "Cette methode permet de rechercher et renvoyer la listes des utilisateur qui existent dans la BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "la liste des utilisateur / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/UtilisateurDTO"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/utilisateur/create" : {
+      "post" : {
+        "tags" : [ "utilisateur" ],
+        "summary" : "Enregistrer un utilisateur",
+        "description" : "Cette methode permet d'enregistrer ou modifier un utilisateur ",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/UtilisateurDTO"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "l'objet utilisateur cree / modifie",
+            "schema" : {
+              "$ref" : "#/definitions/UtilisateurDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/utilisateur/delete/{idUtilisateur}" : {
+      "delete" : {
+        "tags" : [ "utilisateur" ],
+        "summary" : "supprimer  un utilisateur ",
+        "description" : "Cette methode permet de supprimer un biologiste par ID ",
+        "operationId" : "delete",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "utilisateur a ete supprimer",
+            "schema" : {
+              "$ref" : "#/definitions/UtilisateurDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/utilisateur/filter{idUtilisateur}" : {
+      "get" : {
+        "tags" : [ "utilisateur" ],
+        "summary" : "rechercher un utilisateur par ID",
+        "description" : "Cette methode permet de rechercher  un utilisateur par son ID ",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la utilisateur a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/UtilisateurDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun utilisateur n'existe  dans la BDD avec l'ID fourni"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "AnalyseMedicalDTO" : {
+      "type" : "object",
+      "properties" : {
+        "idAnalyse" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "dateAnalyse" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "descriprtion" : {
+          "type" : "string"
+        },
+        "prixAnalyse" : {
+          "type" : "number"
+        },
+        "resultat" : {
+          "type" : "boolean"
+        },
+        "typeAnalyse" : {
+          "$ref" : "#/definitions/TypeAnalyseDTO"
+        },
+        "reservation" : {
+          "$ref" : "#/definitions/ReservationDTO"
+        }
+      }
+    },
+    "BiologisteDTO" : {
+      "type" : "object",
+      "properties" : {
+        "idBiologiste" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "nom" : {
+          "type" : "string"
+        },
+        "prenom" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "sexe" : {
+          "type" : "string"
+        },
+        "telephone" : {
+          "type" : "string"
+        },
+        "codeBiologiste" : {
+          "type" : "string"
+        },
+        "service" : {
+          "type" : "string"
+        },
+        "departement" : {
+          "$ref" : "#/definitions/DepartementDTO"
+        }
+      }
+    },
+    "DepartementDTO" : {
+      "type" : "object",
+      "properties" : {
+        "idDepartement" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "nomDepartement" : {
+          "type" : "string"
+        }
+      }
+    },
+    "DetailResultatDTO" : {
+      "type" : "object",
+      "properties" : {
+        "idResultat" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "valeur1" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "valeur2" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "valeur3" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "valeur4" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "valeur5" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "valeur6" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "valeur7" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "valeur8" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "valeur9" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "valeur10" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "biologiste" : {
+          "$ref" : "#/definitions/BiologisteDTO"
+        },
+        "analyseMedical" : {
+          "$ref" : "#/definitions/AnalyseMedicalDTO"
+        }
+      }
+    },
+    "FactureDTO" : {
+      "type" : "object",
+      "properties" : {
+        "idFacture" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "dateFacture" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "montant" : {
+          "type" : "number"
+        },
+        "analyseMedical" : {
+          "$ref" : "#/definitions/AnalyseMedicalDTO"
+        }
+      }
+    },
+    "PatientDTO" : {
+      "type" : "object",
+      "properties" : {
+        "idPatient" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "nom" : {
+          "type" : "string"
+        },
+        "prenom" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "sexe" : {
+          "type" : "string"
+        },
+        "telephone" : {
+          "type" : "string"
+        },
+        "codePatient" : {
+          "type" : "string"
+        },
+        "cni" : {
+          "type" : "string"
+        },
+        "dateNaissance" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "adressse" : {
+          "type" : "string"
+        }
+      }
+    },
+    "PreleveurDTO" : {
+      "type" : "object",
+      "properties" : {
+        "idPreleveur" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "nom" : {
+          "type" : "string"
+        },
+        "prenom" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "sexe" : {
+          "type" : "string"
+        },
+        "telephone" : {
+          "type" : "string"
+        },
+        "specialite" : {
+          "type" : "string"
+        },
+        "analyseMedical" : {
+          "$ref" : "#/definitions/AnalyseMedicalDTO"
+        }
+      }
+    },
+    "ProfilDTO" : {
+      "type" : "object",
+      "properties" : {
+        "idProfil" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "nomProfil" : {
+          "type" : "string"
+        },
+        "droit" : {
+          "type" : "string"
+        },
+        "utilisateur" : {
+          "$ref" : "#/definitions/UtilisateurDTO"
+        }
+      }
+    },
+    "ReservationDTO" : {
+      "type" : "object",
+      "properties" : {
+        "idReservation" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "dateReservation" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "patient" : {
+          "$ref" : "#/definitions/PatientDTO"
+        }
+      }
+    },
+    "TypeAnalyseDTO" : {
+      "type" : "object",
+      "properties" : {
+        "idTypeAnalyse" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "typeAnalyse" : {
+          "type" : "string"
+        }
+      }
+    },
+    "UtilisateurDTO" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "nom" : {
+          "type" : "string"
+        },
+        "prenom" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string"
+        },
+        "confirmPassword" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
