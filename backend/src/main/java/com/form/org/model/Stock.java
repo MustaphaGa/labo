@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -19,18 +19,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="conge")
-public class Conge {
+@Table(name="Stock")
+public class Stock {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="idConge")
-	private Integer idConge;
-	private Date dateDebut;
-	private Date dateFin;
+	@Column(name="idStock")
+	private Integer idStock;
+	private String situation;
+	private Date dateVerification;
 	
-	@ManyToOne
-	@JoinColumn(name="idEmploye")
-	private Employe employe;
+	@OneToOne
+    @JoinColumn(name = "idGesStock")
+    private GestionStock gestionStock;
 
 }

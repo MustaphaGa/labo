@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -37,7 +38,13 @@ import lombok.NoArgsConstructor;
 	@JoinColumn(name="idAnalyseMedical")
 	private AnalyseMedical analyseMedical;
 	
+	@OneToOne
+    @JoinColumn(name = "idBonCommande")
+    private BonCommande bonCommande;
 	
+	@ManyToOne
+	@JoinColumn(name="idOperation")
+	private Operation operation;
 	
 	
 }
