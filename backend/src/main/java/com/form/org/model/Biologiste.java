@@ -21,10 +21,8 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name ="Biologiste")
 
-public class Biologiste {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="idBiologiste")
+public class Biologiste extends Employe{
+	
 	private Integer idBiologiste;
 	
 	@Column(name="nom")

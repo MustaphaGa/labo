@@ -19,18 +19,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="conge")
-public class Conge {
+@Table(name="Recrutement")
+public class Recrutement {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="idConge")
-	private Integer idConge;
-	private Date dateDebut;
-	private Date dateFin;
+	@Column(name="idRecrutement")
+	private Integer idRecrutement;
+	private Date dateRecrutement;
+	private String typeRecrutement;
 	
 	@ManyToOne
-	@JoinColumn(name="idEmploye")
-	private Employe employe;
+	@JoinColumn(name="idRh")
+	private RH rh;
 
 }

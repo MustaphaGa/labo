@@ -1,7 +1,5 @@
 package com.form.org.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,18 +17,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="conge")
-public class Conge {
+@Table(name="Mouvement")
+public class Mouvement {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="idConge")
-	private Integer idConge;
-	private Date dateDebut;
-	private Date dateFin;
+	@Column(name="idMouvement")
+	private Integer idMouvement;
+	private String typeMouvement;
+	private String detailMouvement;
+	private double frais;
 	
 	@ManyToOne
-	@JoinColumn(name="idEmploye")
-	private Employe employe;
+	@JoinColumn(name="idRh")
+	private RH rh;
 
 }

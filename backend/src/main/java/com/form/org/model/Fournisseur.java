@@ -1,14 +1,13 @@
 package com.form.org.model;
 
-import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -19,18 +18,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="conge")
-public class Conge {
+@Table(name="Fournisseur")
+public class Fournisseur {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="idConge")
-	private Integer idConge;
-	private Date dateDebut;
-	private Date dateFin;
+	@Column(name="idFournisseur")
+	private Integer idFournisseur;
+	private String nom;
+	private  String Adresse;
+	private String telephone;
 	
-	@ManyToOne
-	@JoinColumn(name="idEmploye")
-	private Employe employe;
+	@OneToMany(mappedBy="fournisseur")
+	private List<BonCommande> bonCommandes;
 
 }
