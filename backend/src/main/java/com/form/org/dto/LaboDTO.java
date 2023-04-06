@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.form.org.model.Labo;
+
 import lombok.Builder;
 import lombok.Data;
 
@@ -19,7 +20,7 @@ public class LaboDTO {
 	private String siteWeb;
 	
 	@JsonIgnore
-	private List<UtilisateurDTO> utilisateurs;
+	private List<EmployeDTO> employes;
 	
 	public static LaboDTO fromEntity(Labo labo) {
 		if (labo == null) {

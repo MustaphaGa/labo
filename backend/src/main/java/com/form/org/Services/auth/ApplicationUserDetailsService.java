@@ -10,27 +10,27 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.form.org.Services.UtilisateurService;
-import com.form.org.dto.UtilisateurDTO;
+import com.form.org.Services.EmployeService;
+import com.form.org.dto.EmployeDTO;
 import com.form.org.model.auth.ExtendedUser;
 
 @Service
 public class ApplicationUserDetailsService implements UserDetailsService {
 
 	@Autowired
-	private UtilisateurService service;
+	private EmployeService service;
 	
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-	UtilisateurDTO utilisateur = service.findByEmail(email);
+		EmployeDTO employe = service.findByEmail(email);
 	
 	List<SimpleGrantedAuthority> authorities= new ArrayList<>();
-	utilisateur.getProfils().forEach(profil->
+	employe.getRoles().forEach(roles->
 	authorities.add(
-		new SimpleGrantedAuthority(profil.getNomProfil()))) ;
+		new SimpleGrantedAuthority(roles.getRoleName()))) ;
 //	authorities.add(new SimpleGrantedAuthority(utilisateur.getNom()));
-	return new ExtendedUser(utilisateur.getEmail(),utilisateur.getPassword(),
-			utilisateur.getLabo().getIdLabo(),authorities);
+	return new ExtendedUser(employe.getEmail(),employe.getPassword(),
+			authorities);
 	
 
 	} 

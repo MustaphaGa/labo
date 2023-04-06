@@ -45,5 +45,8 @@ public class Employe {
 	
 	@OneToMany(mappedBy="employe")
 	private List<Absence> absences;
+	
+	@OneToMany(mappedBy="employe")
+	private List<Roles> roles;
 
 }

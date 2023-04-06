@@ -7,33 +7,33 @@ import lombok.Data;
 
 @Data
 @Builder
-public class RolesDto {
+public class RolesDTO {
 
-    private Integer id;
+    private Integer idRole;
 
     private String roleName;
 
     @JsonIgnore
-    private UtilisateurDTO utilisateur;
+    private EmployeDTO employe;
 
-    public static RolesDto fromEntity(Roles roles) {
+    public static RolesDTO fromEntity(Roles roles) {
         if (roles == null) {
             return null;
         }
-        return RolesDto.builder()
-                .id(roles.getId())
+        return RolesDTO.builder()
+                .idRole(roles.getIdRole())
                 .roleName(roles.getRoleName())
                 .build();
     }
 
-    public static Roles toEntity(RolesDto dto) {
+    public static Roles toEntity(RolesDTO dto) {
         if (dto == null) {
             return null;
         }
         Roles roles = new Roles();
-        roles.setId(dto.getId());
+        roles.setIdRole(dto.getIdRole());
         roles.setRoleName(dto.getRoleName());
-        roles.setUtilisateur(UtilisateurDTO.toEntity(dto.getUtilisateur()));
+        roles.setEmploye(EmployeDTO.toEntity(dto.getEmploye()));
         return roles;
     }
 }

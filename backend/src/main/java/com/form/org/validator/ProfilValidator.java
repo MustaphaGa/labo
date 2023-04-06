@@ -5,11 +5,11 @@ import java.util.List;
 
 import org.springframework.util.StringUtils;
 
-import com.form.org.dto.ProfilDTO;
+import com.form.org.dto.RolesDTO;
 
 public class ProfilValidator {
 	
-	public static List<String>validate(ProfilDTO dto){
+	public static List<String>validate(RolesDTO dto){
 		List<String> errors = new ArrayList<String>();	
 //        if(dto == null) {	
 //		  errors.add("veuillez renseigner le nom de profil!!");
@@ -17,14 +17,12 @@ public class ProfilValidator {
 //		  errors.add("veuillez renseigner l'utilisateur!!");
 //		  return errors;}
 			
-		  if(!StringUtils.hasLength(dto.getNomProfil())) {
+		  if(!StringUtils.hasLength(dto.getRoleName())) {
         	  errors.add("veuillez renseigner le nom de profil!!");
 		}  
-		  if(!StringUtils.hasLength(dto.getDroit())) {
-        	  errors.add("veuillez renseigner le droit de profil!");
-		}
+		 
 		  
-		  if(dto.getUtilisateur()==null) {
+		  if(dto.getEmploye()==null) {
 			 errors.add("veuillez renseigner l'utilisateur!!");
 			}
 		 return errors;

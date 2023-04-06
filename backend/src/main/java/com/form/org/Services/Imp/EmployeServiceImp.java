@@ -4,37 +4,40 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-import com.form.org.Repository.UtilisateurRepository;
-import com.form.org.Services.UtilisateurService;
+
+import com.form.org.Repository.EmployeRepository;
+import com.form.org.Services.EmployeService;
 import com.form.org.dto.ChangerMotDePasseUtilisateurDTO;
-import com.form.org.dto.UtilisateurDTO;
+import com.form.org.dto.EmployeDTO;
 import com.form.org.exception.EntityNotFoundException;
 import com.form.org.exception.ErrorCodes;
 import com.form.org.exception.InvalidEntityException;
 import com.form.org.exception.InvalidOperationException;
-import com.form.org.model.Utilisateur;
-import com.form.org.validator.UtilisateurValidator;
+import com.form.org.model.Employe;
+import com.form.org.validator.EmployeValidator;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j 
-public class UtilisateurServiceImp implements UtilisateurService {
+public class EmployeServiceImp implements EmployeService {
 
-	private UtilisateurRepository utilisateurRepository;
+	private EmployeRepository employeRepository;
 	private PasswordEncoder passwordEncoder;
 	
 	@Autowired
-	public UtilisateurServiceImp(UtilisateurRepository utilisateurRepository) {
-		this.utilisateurRepository= utilisateurRepository;
+	public EmployeServiceImp(EmployeRepository employeRepository) {
+		this.employeRepository= employeRepository;
 	}
 	
 	@Override
-	public UtilisateurDTO save(UtilisateurDTO dto) {
-		List<String> errors= UtilisateurValidator.validate(dto);
+	public EmployeDTO save(EmployeDTO dto) {
+		List<String> errors=EmployeValidator.validate(dto);
 		if(!errors.isEmpty()) {
 			log.error("l'utilisateur n'est pas valide {}",dto);
 			throw new InvalidEntityException("l'utilisateur n'est pas valide", ErrorCodes.UTILISATEUR_NOT_VALID, errors);
@@ -46,24 +49,24 @@ public class UtilisateurServiceImp implements UtilisateurService {
 		    }
 
 	    dto.setPassword(passwordEncoder.encode(dto.getPassword()));
-		return UtilisateurDTO.fromEntity(
-			utilisateurRepository.save(
-			UtilisateurDTO.toEntity(dto)));
+		return EmployeDTO.fromEntity(
+				employeRepository.save(
+						EmployeDTO.toEntity(dto)));
 	}
 	 private boolean userAlreadyExists(String email) {
-		    Optional<Utilisateur> user = utilisateurRepository.findUtilisateurByEmail(email);
+		    Optional<Employe> user = employeRepository.findUtilisateurByEmail(email);
 		    return user.isPresent();
 		  }
 
 	@Override
-	public UtilisateurDTO findById(Integer id) {
+	public EmployeDTO findById(Integer id) {
 		if(id == null) {	
 			log.error("utilisateur id is null");
 			return null;
 		}
-		Optional<Utilisateur> utilisateur=utilisateurRepository.findById(id);
+		Optional<Employe> utilisateur=employeRepository.findById(id);
 		
-		return Optional.of(UtilisateurDTO.fromEntity(utilisateur.get())).orElseThrow(() ->
+		return Optional.of(EmployeDTO.fromEntity(utilisateur.get())).orElseThrow(() ->
 		       new EntityNotFoundException(
 				"Aucun utilisateur avec l'ID ="+ id +"n'été trouve dans la BDD",
 				ErrorCodes.UTILISATEUR_NOT_FOUND)
@@ -71,9 +74,9 @@ public class UtilisateurServiceImp implements UtilisateurService {
 	}
 
 	@Override
-	public List<UtilisateurDTO> findAll() {
-		return utilisateurRepository.findAll().stream()
-				.map(UtilisateurDTO :: fromEntity)
+	public List<EmployeDTO> findAll() {
+		return employeRepository.findAll().stream()
+				.map(EmployeDTO :: fromEntity)
 				.collect(Collectors.toList());
 	}
 	@Override
@@ -82,14 +85,14 @@ public class UtilisateurServiceImp implements UtilisateurService {
 			log.error(" utilisateur id is null");
 			return ;
 		}
-		utilisateurRepository.deleteById(id);
+		employeRepository.deleteById(id);
 		
 	}
 
 	@Override
-	public UtilisateurDTO findByEmail(String email) {
-		return utilisateurRepository.findUtilisateurByEmail(email)
-				.map(UtilisateurDTO :: fromEntity)
+	public EmployeDTO findByEmail(String email) {
+		return employeRepository.findUtilisateurByEmail(email)
+				.map(EmployeDTO :: fromEntity)
 				.orElseThrow(()-> new EntityNotFoundException(
 						"Aucun utilisateur avec l'email = " + email + " n'ete trouve dans la BDD", 
 						ErrorCodes.UTILISATEUR_NOT_FOUND)
@@ -97,19 +100,19 @@ public class UtilisateurServiceImp implements UtilisateurService {
 	}
 
 	@Override
-	public UtilisateurDTO changerMotDePasse(ChangerMotDePasseUtilisateurDTO dto) {
+	public EmployeDTO changerMotDePasse(ChangerMotDePasseUtilisateurDTO dto) {
 		validate(dto);
-	    Optional<Utilisateur> utilisateurOptional = utilisateurRepository.findById(dto.getId());
+	    Optional<Employe> utilisateurOptional = employeRepository.findById(dto.getId());
 	    if (utilisateurOptional.isEmpty()) {
 	      log.warn("Aucun utilisateur n'a ete trouve avec l'ID " + dto.getId());
 	      throw new EntityNotFoundException("Aucun utilisateur n'a ete trouve avec l'ID " + dto.getId(), ErrorCodes.UTILISATEUR_NOT_FOUND);
 	    }
 
-	    Utilisateur utilisateur = utilisateurOptional.get();
+	    Employe utilisateur = utilisateurOptional.get();
 	    utilisateur.setPassword(passwordEncoder.encode(dto.getPassword()));
 
-	    return UtilisateurDTO.fromEntity(
-	        utilisateurRepository.save(utilisateur)
+	    return EmployeDTO.fromEntity(
+	    		employeRepository.save(utilisateur)
 	    );
 	  }
 
