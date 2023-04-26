@@ -11,12 +11,14 @@ public class Interceptor extends EmptyInterceptor{
 	@Override
 	  public String onPrepareStatement(String sql) {
 	    if (StringUtils.hasLength(sql) && sql.toLowerCase().startsWith("select")) {
+
 	      final String entityName = sql.substring(7, sql.indexOf("."));
 	      final String idLabo =MDC.get("idLabo");
 	      if (StringUtils.hasLength(entityName)
 	    		  && !entityName.toLowerCase().contains("labo")
-	    		  && !entityName.toLowerCase().contains("profil")
+	    		  && !entityName.toLowerCase().contains("roles")
 	    		  && StringUtils.hasLength(idLabo) ){
+
 	    	  if (sql.contains("where")) {
 	              sql = sql + " and " + entityName + ".idLabo = " + idLabo;
 	            } else {

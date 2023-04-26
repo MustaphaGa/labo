@@ -1,24 +1,29 @@
 package com.form.org.dto;
 
+import java.time.Instant;
 import java.util.Date;
 import java.util.List;
-
+import java.util.stream.Collectors;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.form.org.model.Absence;
 import com.form.org.model.Conge;
 import com.form.org.model.Employe;
-import com.form.org.model.Roles;
+
 
 import lombok.Builder;
 import lombok.Data;
+
+import javax.persistence.Column;
+
+
 
 @Data
 @Builder
 public class EmployeDTO {
 	
-	private Integer idEmploye;
+	private Integer id_employe;
 	private String nom;
 	private String prenom;
 	private String email;
@@ -26,16 +31,20 @@ public class EmployeDTO {
 	private String adresse;
 	private String telephone;
 	private double salaire;
-	private String login;
 	private String password;
-	private Date date_embauchDate;
+	private Instant date_embauchDate;
+	private String photo;
 	
 	@JsonIgnore
 	private List<Conge> conges;
 	@JsonIgnore
 	private List<Absence> absences;
-	@JsonIgnore
-	private List<Roles> roles;
+
+	private List<RolesDTO> roles;
+
+	private LaboDTO labo;
+
+
 	
 public static EmployeDTO fromEntity(Employe employe) {
 		
@@ -43,9 +52,8 @@ public static EmployeDTO fromEntity(Employe employe) {
 			return null;
 		}
 		return EmployeDTO.builder()	
-			.idEmploye(employe.getIdEmploye())
+			.id_employe(employe.getId_employe())
 			.nom(employe.getNom())
-			.login(employe.getLogin())
 			.prenom(employe.getPrenom())
 			.telephone(employe.getTelephone())
 			.email(employe.getEmail())
@@ -54,7 +62,14 @@ public static EmployeDTO fromEntity(Employe employe) {
 			.adresse(employe.getAdresse())
 			.salaire(employe.getSalaire())
 			.date_embauchDate(employe.getDate_embauchDate())
-			.build();
+				.labo(LaboDTO.fromEntity(employe.getLabo()))
+				.roles(
+						employe.getRoles() != null ?
+								employe.getRoles().stream()
+										.map(RolesDTO::fromEntity)
+										.collect(Collectors.toList()) : null
+				)
+				.build();
 	}
     
 	public static Employe toEntity(EmployeDTO employeDTO) {
@@ -62,7 +77,7 @@ public static EmployeDTO fromEntity(Employe employe) {
 			return null;
 			}
 		Employe employe = new Employe();
-		employe.setIdEmploye(employeDTO.getIdEmploye());
+		employe.setId_employe(employeDTO.getId_employe());
 		employe.setNom(employeDTO.getNom());
 		employe.setPrenom(employeDTO.getPrenom());
 		employe.setEmail(employeDTO.getEmail());
@@ -70,9 +85,9 @@ public static EmployeDTO fromEntity(Employe employe) {
 		employe.setAdresse(employeDTO.getAdresse());
 		employe.setTelephone(employeDTO.getTelephone());
 		employe.setSalaire(employeDTO.getSalaire());
-		employe.setLogin(employeDTO.getLogin());
 		employe.setPassword(employeDTO.getPassword());
 		employe.setDate_embauchDate(employeDTO.getDate_embauchDate());
+		employe.setLabo(LaboDTO.toEntity(employeDTO.getLabo()));
 		
 		return employe;	
 	}

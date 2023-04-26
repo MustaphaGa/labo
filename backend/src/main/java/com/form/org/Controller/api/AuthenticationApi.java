@@ -15,5 +15,5 @@ import io.swagger.annotations.Api;
 public interface AuthenticationApi {
 
 	 @PostMapping(AUTHENTICATION_ENDPOINT + "/authenticate")
-	  public ResponseEntity<AuthenticationReponse> authenticate(@RequestBody AuthenticationRequest request);
+	 public ResponseEntity<AuthenticationReponse> authenticate(@RequestBody AuthenticationRequest request);
 }

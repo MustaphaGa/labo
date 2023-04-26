@@ -9,7 +9,9 @@ import org.springframework.data.repository.query.Param;
 import com.form.org.model.Employe;
 
 public interface EmployeRepository extends JpaRepository<Employe, Integer> {
-	@Query("select u from Utilisateur u where u.email = :email") 
-	Optional<Employe> findUtilisateurByEmail(@Param("email") String email);
+
+	@Query(value = "select E from Employe E where E.email = :email")
+	Optional<Employe> findEmployesByEmail(@Param("email") String email);
+
 
 }

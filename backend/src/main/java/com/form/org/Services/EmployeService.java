@@ -17,6 +17,6 @@ EmployeDTO findById(Integer idEmploye);
 	 
 	 EmployeDTO findByEmail(String email);
 	 
-	 EmployeDTO changerMotDePasse(ChangerMotDePasseUtilisateurDTO dto); 
+	 EmployeDTO changerMotDePasse(ChangerMotDePasseUtilisateurDTO dto);
 
 }

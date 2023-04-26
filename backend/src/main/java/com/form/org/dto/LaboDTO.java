@@ -18,7 +18,7 @@ public class LaboDTO {
 	private String numTel;
 	private String email;
 	private String siteWeb;
-	
+
 	@JsonIgnore
 	private List<EmployeDTO> employes;
 	

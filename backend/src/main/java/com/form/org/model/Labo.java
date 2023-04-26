@@ -38,6 +38,9 @@ public class Labo {
 	
 	@Column(name="siteweb")	
 	private String siteWeb;
+
+	@OneToMany(mappedBy = "labo")
+	private List<Employe> employes;
 	
 	
 

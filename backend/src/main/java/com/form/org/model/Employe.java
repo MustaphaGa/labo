@@ -1,18 +1,12 @@
 package com.form.org.model;
 
+import java.time.Instant;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,29 +18,59 @@ import lombok.NoArgsConstructor;
 @Inheritance( strategy = InheritanceType.TABLE_PER_CLASS )
 @Table(name="Employe")
 public class Employe {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="idEmploye")
-	private Integer idEmploye;
+	private Integer id_employe;
+
+	@Column(name = "nom")
 	private String nom;
+
+	@Column(name = "prenom")
 	private String prenom;
+
+	@Column(name = "email")
 	private String email;
+
+	@Column(name = "cin")
 	private String cin;
+
+	@Column(name = "adresse")
 	private String adresse;
+
+	@Column(name = "telephone")
 	private String telephone;
+
+	@Column(name = "salaire")
 	private double salaire;
-	private String login;
+
+	@Column(name = "password")
 	private String password;
-	private Date date_embauchDate;
-	
-	@OneToMany(mappedBy="employe")
-	private List<Conge> conges;
-	
-	@OneToMany(mappedBy="employe")
-	private List<Absence> absences;
-	
-	@OneToMany(mappedBy="employe")
+
+	@Column(name = "date_embauchDate")
+	private Instant date_embauchDate;
+
+	@Column(name = "photo")
+	private String photo;
+
+	@ManyToOne
+	@JoinColumn(name = "id_labo")
+	private Labo labo;
+
+
+	@OneToMany(mappedBy = "employe")
 	private List<Roles> roles;
 
+	@OneToMany(mappedBy="employe")
+	private List<Conge> conges;
+
+	@OneToMany(mappedBy="employe")
+	private List<Absence> absences;
 }
+
+
+	
+
+
+
