@@ -1,15 +1,5 @@
 package com.form.org.Services.Imp;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
-
 import com.form.org.Repository.EmployeRepository;
 import com.form.org.Services.EmployeService;
 import com.form.org.dto.ChangerMotDePasseUtilisateurDTO;
@@ -17,11 +7,17 @@ import com.form.org.dto.EmployeDTO;
 import com.form.org.exception.EntityNotFoundException;
 import com.form.org.exception.ErrorCodes;
 import com.form.org.exception.InvalidEntityException;
-import com.form.org.exception.InvalidOperationException;
 import com.form.org.model.Employe;
 import com.form.org.validator.EmployeValidator;
-
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j 

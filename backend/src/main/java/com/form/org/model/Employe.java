@@ -59,7 +59,7 @@ public class Employe {
 	private Labo labo;
 
 
-	@OneToMany(mappedBy = "employe")
+	@OneToMany(mappedBy = "employe",fetch = FetchType.EAGER)
 	private List<Roles> roles;
 
 	@OneToMany(mappedBy="employe")
