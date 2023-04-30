@@ -3,6 +3,7 @@ package com.form.org.Controller;
 import com.form.org.Controller.api.RhApi;
 import com.form.org.Services.RhService;
 import com.form.org.dto.RhDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -12,6 +13,7 @@ public class RhController implements RhApi {
 
     private RhService rhService;
 
+    @Autowired
     public RhController(RhService rhService) {
                 this.rhService = rhService;
     }

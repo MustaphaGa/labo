@@ -12,7 +12,7 @@ import java.util.List;
 
 import static com.form.org.utils.Constants.APP_ROOT;
 
-@Api(APP_ROOT +"/patient")
+@Api(APP_ROOT +"/rh")
 public interface RhApi {
 
 
