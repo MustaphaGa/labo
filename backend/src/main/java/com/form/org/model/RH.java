@@ -23,6 +23,7 @@ public class RH extends Employe{
 	
 	
 	private Integer idRh;
+
 	
 	@OneToMany(mappedBy="rh")
 	private List<Recrutement> recrutements;
