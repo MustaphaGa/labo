@@ -2,6 +2,7 @@ package com.form.org.Controller;
 
 import com.form.org.Controller.api.EmployeApi;
 import com.form.org.Services.EmployeService;
+import com.form.org.dto.ChangerMotDePasseUtilisateurDTO;
 import com.form.org.dto.EmployeDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +24,7 @@ public class EmployeController implements EmployeApi {
         return employeService.save(dto);
     }
 
+
     @Override
     public EmployeDTO findById(Integer idEmploye) {
         return employeService.findById(idEmploye);
@@ -39,7 +41,7 @@ public class EmployeController implements EmployeApi {
     }
 
     @Override
-    public void delecte(Integer idEmploye) {
+    public void delete(Integer idEmploye) {
         employeService.delete(idEmploye);
 
     }

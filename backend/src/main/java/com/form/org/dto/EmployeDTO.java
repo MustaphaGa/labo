@@ -16,12 +16,13 @@ import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.Column;
-
+import javax.persistence.MappedSuperclass;
 
 
 @Data
 @Builder
-public class EmployeDTO {
+@MappedSuperclass
+public class EmployeDTO  {
 	
 	private Integer id_employe;
 	private String nom;
@@ -39,6 +40,7 @@ public class EmployeDTO {
 	private List<Conge> conges;
 	@JsonIgnore
 	private List<Absence> absences;
+
 
 	private List<RolesDTO> roles;
 

@@ -9,4 +9,5 @@ import java.util.Optional;
 public interface RhRepository extends JpaRepository<RH, Integer> {
     Optional<RH> findByIdRh(Integer idRh);
 
+
 }

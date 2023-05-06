@@ -12,7 +12,7 @@ import java.util.List;
 
 import static com.form.org.utils.Constants.APP_ROOT;
 
-@Api(APP_ROOT +"/Employe")
+@Api(APP_ROOT +"/employe")
 public interface EmployeApi {
     @PostMapping(value= APP_ROOT + "/employe/create", consumes = MediaType.APPLICATION_JSON_VALUE , produces = MediaType.APPLICATION_JSON_VALUE )
     @ApiOperation(value = "Enregistrer un employe",notes ="Cette methode permet "
@@ -57,5 +57,7 @@ public interface EmployeApi {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "employe a ete supprimer"),
     })
-    void delecte(@PathVariable("idEmploye") Integer idEmploye);
+    void delete(@PathVariable("idEmploye") Integer idEmploye);
 }
+
+
