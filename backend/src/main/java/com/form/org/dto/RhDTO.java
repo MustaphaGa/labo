@@ -31,6 +31,7 @@ public class RhDTO  {
         return RhDTO.builder()
                 .idRh(rh.getIdRh())
                 .nom(rh.getNom())
+
                 .build();
     }
 
