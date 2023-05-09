@@ -56,6 +56,7 @@ import { ExporteAnalyseComponent } from './composants/exportationDonner/exporte-
 import { ExporteFactureComponent } from './composants/exportationDonner/exporte-facture/exporte-facture.component';
 import { ExporteResultatComponent } from './composants/exportationDonner/exporte-resultat/exporte-resultat.component';
 import { PdfResultatComponent } from './pdf-resultat/pdf-resultat.component';
+import { PageAccueilPrincipalComponent } from './page-accueil-principal/page-accueil-principal.component';
 
 
 
@@ -112,6 +113,7 @@ import { PdfResultatComponent } from './pdf-resultat/pdf-resultat.component';
     ExporteFactureComponent,
     ExporteResultatComponent,
     PdfResultatComponent,
+    PageAccueilPrincipalComponent,
     
   
    

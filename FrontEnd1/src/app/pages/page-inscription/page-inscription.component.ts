@@ -11,5 +11,5 @@ export class PageInscriptionComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+s
 }
