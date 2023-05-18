@@ -3,17 +3,26 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiConfiguration, ApiConfigurationInterface } from './api-configuration';
 
+import { TestCovidv1absenceService } from './services/test-covidv-1absence.service';
 import { AnalyseMedicalService } from './services/analyse-medical.service';
+import { AuthenticationService } from './services/authentication.service';
+import { TestCovidv1bilanfinanceService } from './services/test-covidv-1bilanfinance.service';
 import { BiologisteService } from './services/biologiste.service';
+import { TestCovidv1congeService } from './services/test-covidv-1conge.service';
 import { DepartementService } from './services/departement.service';
 import { DetailResultatService } from './services/detail-resultat.service';
+import { TestCovidv1employeService } from './services/test-covidv-1employe.service';
 import { FactureService } from './services/facture.service';
+import { TestCovidv1laboService } from './services/test-covidv-1labo.service';
+import { TestCovidv1mouvementService } from './services/test-covidv-1mouvement.service';
+import { TestCovidv1operationService } from './services/test-covidv-1operation.service';
 import { TestCovidv1patientService } from './services/test-covidv-1patient.service';
 import { PreleveurService } from './services/preleveur.service';
-import { ProfilService } from './services/profil.service';
+import { TestCovidv1recrutementService } from './services/test-covidv-1recrutement.service';
 import { ReservationService } from './services/reservation.service';
+import { TestCovidv1rhService } from './services/test-covidv-1rh.service';
+import { TestCovidv1servicefinanceService } from './services/test-covidv-1servicefinance.service';
 import { TypeAnalyseService } from './services/type-analyse.service';
-import { UtilisateurService } from './services/utilisateur.service';
 
 /**
  * Provider for all Api services, plus ApiConfiguration
@@ -28,17 +37,26 @@ import { UtilisateurService } from './services/utilisateur.service';
   declarations: [],
   providers: [
     ApiConfiguration,
+    TestCovidv1absenceService,
     AnalyseMedicalService,
+    AuthenticationService,
+    TestCovidv1bilanfinanceService,
     BiologisteService,
+    TestCovidv1congeService,
     DepartementService,
     DetailResultatService,
+    TestCovidv1employeService,
     FactureService,
+    TestCovidv1laboService,
+    TestCovidv1mouvementService,
+    TestCovidv1operationService,
     TestCovidv1patientService,
     PreleveurService,
-    ProfilService,
+    TestCovidv1recrutementService,
     ReservationService,
-    TypeAnalyseService,
-    UtilisateurService
+    TestCovidv1rhService,
+    TestCovidv1servicefinanceService,
+    TypeAnalyseService
   ],
 })
 export class ApiModule {

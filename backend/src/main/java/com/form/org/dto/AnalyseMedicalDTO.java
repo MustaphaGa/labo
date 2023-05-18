@@ -44,8 +44,8 @@ public class AnalyseMedicalDTO {
 				.reservation(ReservationDTO.fromEntity(analyseMedical.getReservation()))
 				.build();
 	}
-	
-	
+
+
 	    public static AnalyseMedical toEntity(AnalyseMedicalDTO analyseMedicalDTO) {
 		
 		if(analyseMedicalDTO== null) {

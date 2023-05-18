@@ -8,10 +8,10 @@ import { DetailResultatService } from 'src/gs-api/src/services/detail-resultat.s
 })
 export class DetailresultatService {
 
-  constructor( private detailResultatService:DetailResultatService ) { }
-  enregistrerDetaillResultat(detailResultatDTo:DetailResultatDTO):Observable<DetailResultatDTO> {
+  constructor( private detailResultatService: DetailResultatService ) { }
+  enregistrerDetaillResultat(detailResultatDTo: DetailResultatDTO): Observable<DetailResultatDTO> {
     return this.detailResultatService.save(detailResultatDTo);
-    
+
   }
   findAllDetailResult(): Observable<DetailResultatDTO[]> {
     return this.detailResultatService.findAll();
@@ -22,7 +22,7 @@ export class DetailresultatService {
     }
     return of();
   }
-  deleteResult(idResultat?: number):Observable<any>{
+  deleteResult(idResultat?: number): Observable<any>{
     if (idResultat) {
       return this.detailResultatService.delecte(idResultat);
     }

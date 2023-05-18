@@ -3,6 +3,7 @@ import { BiologisteDTO } from './biologiste-dto';
 import { AnalyseMedicalDTO } from './analyse-medical-dto';
 export interface DetailResultatDTO {
   idResultat?: number;
+  description?: string;
   valeur1?: number;
   valeur2?: number;
   valeur3?: number;

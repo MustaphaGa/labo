@@ -13,7 +13,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "allowedCommonJsDependencies": ["xlsx" ],
+            "allowedCommonJsDependencies": [
+              "xlsx"
+            ],
             "outputPath": "dist/gestionTestCovid",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -26,8 +28,6 @@
             ],
             "styles": [
               "src/styles.css"
-              
-
             ],
             "scripts": []
           },
@@ -122,6 +122,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "gestionTestCovid"
+    }
+  },
+  "defaultProject": "gestionTestCovid",
+  "cli": {
+    "analytics": false
+  }
 }

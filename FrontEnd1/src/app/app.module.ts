@@ -12,7 +12,6 @@ import { PageAccueilComponent } from './pages/page-accueil/page-accueil.componen
 import { PageStatistiquesComponent } from './pages/page-statistiques/page-statistiques.component';
 import { MenuComponent } from './composants/menu/menu.component';
 import { HeaderComponent } from './composants/header/header.component';
-import { PageUtilisateurComponent } from './pages/page-utilisateur/page-utilisateur.component';
 import { DetailUtilisateurComponent } from './composants/detail-utilisateur/detail-utilisateur.component';
 import { PageAnalyseComponent } from './pages/analyses/page-analyse/page-analyse.component';
 import { DetailAnalyseComponent } from './composants/detail-analyse/detail-analyse.component';
@@ -49,14 +48,18 @@ import { AnalyseDetaillComponent } from './detaill/analyse-detaill/analyse-detai
 import { FactureDetaillComponent } from './detaill/facture-detaill/facture-detaill.component';
 import { ResultatDetaillComponent } from './detaill/resultat-detaill/resultat-detaill.component';
 import { ReservationDetaillComponent } from './detaill/reservation-detaill/reservation-detaill.component';
-import { NouveauUtilisateurComponent } from './composants/nouveau-utilisateur/nouveau-utilisateur.component';
 import { ExportePatientComponent } from './composants/exportationDonner/exporte-patient/exporte-patient.component';
 import { ExporteReservationComponent } from './composants/exportationDonner/exporte-reservation/exporte-reservation.component';
 import { ExporteAnalyseComponent } from './composants/exportationDonner/exporte-analyse/exporte-analyse.component';
 import { ExporteFactureComponent } from './composants/exportationDonner/exporte-facture/exporte-facture.component';
 import { ExporteResultatComponent } from './composants/exportationDonner/exporte-resultat/exporte-resultat.component';
 import { PdfResultatComponent } from './pdf-resultat/pdf-resultat.component';
-import { PageAccueilPrincipalComponent } from './page-accueil-principal/page-accueil-principal.component';
+import { PageEmployeesComponent } from './pages/employee/page-employees/page-employees.component';
+import { DetailEmployeComponent } from './composants/detail-employe/detail-employe.component';
+import { NouveauEmployeComponent } from './composants/nouveau-employe/nouveau-employe.component';
+import { PageLaboComponent } from './pages/page-labo/page-labo.component';
+import { NouveauLaboComponent } from './composants/nouveau-labo/nouveau-labo.component';
+import { PageAccueilPrincipalComponent } from './pages/page-accueil-principal/page-accueil-principal.component';
 
 
 
@@ -69,7 +72,6 @@ import { PageAccueilPrincipalComponent } from './page-accueil-principal/page-acc
     PageStatistiquesComponent,
     MenuComponent,
     HeaderComponent,
-    PageUtilisateurComponent,
     DetailUtilisateurComponent,
     PageAnalyseComponent,
     DetailAnalyseComponent,
@@ -106,18 +108,22 @@ import { PageAccueilPrincipalComponent } from './page-accueil-principal/page-acc
     FactureDetaillComponent,
     ResultatDetaillComponent,
     ReservationDetaillComponent,
-    NouveauUtilisateurComponent,
     ExportePatientComponent,
     ExporteReservationComponent,
     ExporteAnalyseComponent,
     ExporteFactureComponent,
     ExporteResultatComponent,
     PdfResultatComponent,
+    PageEmployeesComponent,
+    DetailEmployeComponent,
+    NouveauEmployeComponent,
+    PageLaboComponent,
+    NouveauLaboComponent,
     PageAccueilPrincipalComponent,
-    
-  
-   
-    
+
+
+
+
 
   ],
   imports: [
@@ -125,9 +131,9 @@ import { PageAccueilPrincipalComponent } from './page-accueil-principal/page-acc
     AppRoutingModule,
     HttpClientModule,
     FormsModule
-    
-     
-    
+
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

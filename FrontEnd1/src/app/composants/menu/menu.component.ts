@@ -8,7 +8,7 @@ import{Router}from '@angular/router';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-public menuProperties: Array<Menu> = [ 
+public menuProperties: Array<Menu> = [
   {
   id: '1',
   titre: 'Tableau de bord' ,
@@ -55,7 +55,7 @@ sousMenu :[
       icon:'fas fa-poll-h',
       url:'detailresultat'
     }
-   
+
   ]
 },
 {
@@ -114,25 +114,37 @@ sousMenu :[
   sousMenu :[
     {
       id:'15',
-      titre:'Type Analyse',
-      icon:'',
-      url:'TypeAnalyse',
+      titre:'employees',
+      icon:'fas fa-users-cog',
+      url: 'employees'
     },
     {
-      id:'15',
+      id:'16',
+      titre:'Labo',
+      icon:'',
+      url: 'labo'
+    },
+    {
+      id:'17',
+      titre:'Type Analyse',
+      icon:'',
+      url:'TypeAnalyse'
+    },
+    {
+      id:'18',
       titre:'Departement',
       icon:'',
-      url:'departement',
+      url:'departement'
     },
 
   ]
 }
-]; 
+];
   constructor(private router:Router ) { }
 
   ngOnInit(): void {
   }
-  navigate(url?: string) : void{
+  navigate(url?: string): void{
 this.router.navigate([url]);
   }
 

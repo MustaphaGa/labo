@@ -1,5 +1,8 @@
 package com.form.org.dto;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.form.org.model.Roles;
 import lombok.Builder;
@@ -8,9 +11,8 @@ import lombok.Data;
 @Data
 @Builder
 public class RolesDTO {
-
+@GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idRole;
-
     private String roleName;
 
     @JsonIgnore

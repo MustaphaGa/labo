@@ -18,7 +18,7 @@ export class PageDepartementComponent implements OnInit {
 
   ngOnInit(): void {
     this.departementService.findAllDepartement().subscribe(res => {
-      this.listeDepartement=res;
+      this.listeDepartement =res;
 
 
     })
