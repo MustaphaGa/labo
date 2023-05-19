@@ -1,7 +1,6 @@
 package com.form.org.Controller.api;
 
 import com.form.org.dto.BilanFinancierDTO;
-import com.form.org.dto.RhDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -26,7 +25,7 @@ public interface BilanFinanceApi {
 
     @GetMapping(value= APP_ROOT + "/bilanfinance/{bilanfinance}", produces = MediaType.APPLICATION_JSON_VALUE )
     @ApiOperation(value = "rechercher un bilanfinance par ID",notes = "Cette methode permet"
-            + " de rechercher  un bilanfinance par son ID ",response = RhDTO.class)
+            + " de rechercher  un bilanfinance par son ID ",response = BilanFinancierDTO.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = " bilanfinance a ete trouver dans la BDD"),
             @ApiResponse(code = 404, message = "Aucun bilanfinance n'existe  dans la BDD avec l'ID fourni")

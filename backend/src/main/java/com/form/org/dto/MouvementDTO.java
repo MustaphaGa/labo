@@ -1,8 +1,6 @@
 package com.form.org.dto;
 
-import com.form.org.model.Conge;
 import com.form.org.model.Mouvement;
-import com.form.org.model.RH;
 import lombok.Builder;
 import lombok.Data;
 
@@ -15,7 +13,7 @@ public class MouvementDTO {
     private String detailMouvement;
     private double frais;
 
-    private RhDTO rh;
+    private EmployeDTO employe;
 
     public static MouvementDTO fromEntity(Mouvement mouvement) {
 
@@ -27,7 +25,7 @@ public class MouvementDTO {
                 .typeMouvement(mouvement.getTypeMouvement())
                 .detailMouvement(mouvement.getDetailMouvement())
                 .frais(mouvement.getFrais())
-                .rh(RhDTO.fromEntity(mouvement.getRh()))
+                .employe(EmployeDTO.fromEntity(mouvement.getEmploye()))
                 .build();
     }
 
@@ -40,8 +38,8 @@ public class MouvementDTO {
             mouvement.setTypeMouvement(mouvementDTO.getTypeMouvement());
             mouvement.setDetailMouvement(mouvementDTO.getDetailMouvement());
             mouvement.setFrais(mouvementDTO.getFrais());
+            mouvement.setEmploye(EmployeDTO.toEntity(mouvementDTO.getEmploye()));
 
-            mouvement.setRh(RhDTO.toEntity(mouvementDTO.getRh()));
 
         return mouvement;
     }

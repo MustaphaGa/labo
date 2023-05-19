@@ -33,8 +33,8 @@ public class Operation {
 	
 	
 	@ManyToOne
-	@JoinColumn(name="idFinance")
-	private ServiceFinance serviceFinance;
+	@JoinColumn(name="id_employe")
+	private Employe employe;
 
 	@OneToMany(mappedBy="operation")
 	private List<Facture> factures;

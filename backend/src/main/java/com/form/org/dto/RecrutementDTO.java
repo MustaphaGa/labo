@@ -1,13 +1,9 @@
 package com.form.org.dto;
 
-import com.form.org.model.Mouvement;
-import com.form.org.model.RH;
 import com.form.org.model.Recrutement;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.util.Date;
 
 @Data
@@ -18,7 +14,7 @@ public class RecrutementDTO {
     private String typeRecrutement;
 
 
-    private RhDTO rh;
+    private EmployeDTO employe;
 
 
     public static RecrutementDTO fromEntity(Recrutement recrutement) {
@@ -30,7 +26,7 @@ public class RecrutementDTO {
                 .idRecrutement(recrutement.getIdRecrutement())
                 .dateRecrutement(recrutement.getDateRecrutement())
                 .typeRecrutement(recrutement.getTypeRecrutement())
-                .rh(RhDTO.fromEntity(recrutement.getRh()))
+                .employe(EmployeDTO.fromEntity(recrutement.getEmploye()))
                 .build();
     }
 
@@ -42,8 +38,8 @@ public class RecrutementDTO {
         recrutement.setIdRecrutement(recrutementDTO.getIdRecrutement());
         recrutement.setTypeRecrutement(recrutementDTO.getTypeRecrutement());
         recrutement.setDateRecrutement(recrutementDTO.getDateRecrutement());
+        recrutement.setEmploye(EmployeDTO.toEntity(recrutementDTO.getEmploye()));
 
-        recrutement.setRh(RhDTO.toEntity(recrutementDTO.getRh()));
 
         return recrutement;
     }

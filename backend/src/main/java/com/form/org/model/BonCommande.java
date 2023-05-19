@@ -31,8 +31,8 @@ public class BonCommande {
 	private double prix;
 	
 	@ManyToOne
-	@JoinColumn(name="idGesStock")
-	private GestionStock gestionStock;
+	@JoinColumn(name="id_employe")
+	private Employe employe;
 	
 	@ManyToOne
 	@JoinColumn(name="idFournisseur")

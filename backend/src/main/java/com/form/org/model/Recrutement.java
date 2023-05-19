@@ -30,7 +30,7 @@ public class Recrutement {
 	private String typeRecrutement;
 	
 	@ManyToOne
-	@JoinColumn(name="idRh")
-	private RH rh;
+	@JoinColumn(name="id_employe")
+	private Employe employe;
 
 }
