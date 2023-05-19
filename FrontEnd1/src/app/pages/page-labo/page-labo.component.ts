@@ -19,9 +19,9 @@ export class PageLaboComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    /*this.laboService.findAllLabo().subscribe(res => {
+    this.laboService.findAllLabo().subscribe(res => {
       this.listeLabo = res;
-    })*/
+    })
   }
 
   nouveauLabo() : void{

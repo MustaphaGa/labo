@@ -8,18 +8,18 @@ import {LaboDTO} from '../../../gs-api/src/models/labo-dto';
 export class LaboService {
 
   constructor(private laboService: LaboService) { }
-  /*enregistrerLbao(laboDto: LaboDTO): Observable<LaboDTO> {
-    return this.laboService.save(laboDto);
+ /* enregistrerLbao(laboDto: LaboDTO): Observable<LaboDTO> {
+    //return this.laboService.save(laboDto);
 
-  }
+  //}*/
   findAllLabo(): Observable<LaboDTO[]> {
-    return this.laboService.findAll();
+    return this.laboService.findAllLabo();
   }
- /* findLbaoById(idLabo?: number): Observable<LaboDTO> {
+  findLbaoById(idLabo?: number): Observable<LaboDTO> {
     if (idLabo) {
-      return this.laboService.findById(idLabo);
+      return this.laboService.findLbaoById(idLabo);
     }
     return of();
-  }*/
+  }
 
 }

@@ -44,11 +44,11 @@
   </div>
   <form action="#">
     <div class="field">
-      <input type="email" required [(ngModel)]="authenticationRequest.login">
+      <input type="email"  name="email" [(ngModel)]="authenticationRequest.login">
       <label>Email Address</label>
     </div>
     <div class="field">
-      <input type="password" required [(ngModel)]="authenticationRequest.password">
+      <input type="password" name="password" [(ngModel)]="authenticationRequest.password">
       <label>Password</label>
     </div>
     <div class="content">
