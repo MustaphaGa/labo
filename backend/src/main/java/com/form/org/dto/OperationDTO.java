@@ -18,7 +18,7 @@ public class OperationDTO {
     private String typeOperation;
 
 
-    private ServiceFinanceDTO serviceFinance;
+    private EmployeDTO employe;
     private BilanFinancierDTO bilanFinancier;
     @JsonIgnore
     private List<FactureDTO> factures;
@@ -32,7 +32,7 @@ public class OperationDTO {
                 .dateOperation(operation.getDateOperation())
                 .typeOperation(operation.getTypeOperation())
                 .bilanFinancier(BilanFinancierDTO.fromEntity(operation.getBilanFinancier()))
-                .serviceFinance(ServiceFinanceDTO.fromEntity(operation.getServiceFinance()))
+                .employe(EmployeDTO.fromEntity((operation.getEmploye())))
                 .build();
     }
 
@@ -49,8 +49,8 @@ public class OperationDTO {
         operation.setIdOperation(operationDTO.getIdOperation());
         operation.setDateOperation(operationDTO.getDateOperation());
         operation.setTypeOperation(operationDTO.getTypeOperation());
-        operation.setServiceFinance(ServiceFinanceDTO.toEntity(operationDTO.getServiceFinance()));
         operation.setBilanFinancier((BilanFinancierDTO.toEntity(operationDTO.getBilanFinancier())));
+        operation.setEmploye(EmployeDTO.toEntity((operationDTO.getEmploye())));
         return operation;
     }
 

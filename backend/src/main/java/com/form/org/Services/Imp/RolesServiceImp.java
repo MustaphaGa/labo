@@ -45,16 +45,16 @@ public class RolesServiceImp implements RolesService{
 	}
 
 	@Override
-	public RolesDTO findById(Integer idProfil) {
-		if(idProfil == null) {	
+	public RolesDTO findById(Integer idRole) {
+		if(idRole == null) {
 			log.error("profil id is null");
 			return null;
 		}
-		Optional<Roles> profil=rolesRepository.findById(idProfil);
+		Optional<Roles> profil=rolesRepository.findById(idRole);
 
 		return Optional.of(RolesDTO.fromEntity(profil.get())).orElseThrow(() ->
 		       new EntityNotFoundException(
-				"Aucun Profil avec l'ID ="+ idProfil +"n'été trouve dans la BDD",
+				"Aucun Profil avec l'ID ="+ idRole +"n'été trouve dans la BDD",
 				ErrorCodes.PROFIL_NOT_FOUND)
 		);
 	}
@@ -67,12 +67,12 @@ public class RolesServiceImp implements RolesService{
 	}
 
 	@Override
-	public void delete(Integer idProfil) {
-		if(idProfil == null) {	
+	public void delete(Integer idRole) {
+		if(idRole == null) {
 			log.error("profil id is null");
 			return ;
 		}	
-		rolesRepository.deleteById(idProfil);
+		rolesRepository.deleteById(idRole);
 		
 	}
 

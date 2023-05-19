@@ -30,7 +30,7 @@ public class Stock {
 	private Date dateVerification;
 	
 	@OneToOne
-    @JoinColumn(name = "idGesStock")
-    private GestionStock gestionStock;
+    @JoinColumn(name = "id_employe")
+    private Employe employe;
 
 }

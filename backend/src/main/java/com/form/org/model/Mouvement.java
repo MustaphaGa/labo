@@ -29,7 +29,7 @@ public class Mouvement {
 	private double frais;
 	
 	@ManyToOne
-	@JoinColumn(name="idRh")
-	private RH rh;
+	@JoinColumn(name="id_employe")
+	private Employe employe;
 
 }

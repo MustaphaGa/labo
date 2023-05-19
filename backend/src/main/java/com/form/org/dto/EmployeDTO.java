@@ -7,9 +7,7 @@ import java.util.stream.Collectors;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.form.org.model.Absence;
-import com.form.org.model.Conge;
-import com.form.org.model.Employe;
+import com.form.org.model.*;
 
 
 import lombok.Builder;
@@ -40,8 +38,14 @@ public class EmployeDTO  {
 	private List<Conge> conges;
 	@JsonIgnore
 	private List<Absence> absences;
+	@JsonIgnore
+	private List<Mouvement> mouvements;
+	@JsonIgnore
+	private List<BonCommande> bonCommandes;
+	@JsonIgnore
+	private List<Recrutement> recrutements;
 
-
+	@JsonIgnore
 	private List<RolesDTO> roles;
 
 	private LaboDTO labo;

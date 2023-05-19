@@ -17,17 +17,18 @@ import java.util.Date;
         private double prix;
 
 
-        private GestionStockDTO gestionStock;
+
 
 
         private FournisseurDTO fournisseur;
 
 
         private FactureDTO facture;
+        private EmployeDTO employe;
 
 
 
-        public static com.form.org.dto.BonCommandeDTO fromEntity(BonCommande bonCommande) {
+        public static BonCommandeDTO fromEntity(BonCommande bonCommande) {
             if(bonCommande == null) {
                 return null;
             }
@@ -35,9 +36,9 @@ import java.util.Date;
                     .idBonCommande(bonCommande.getIdBonCommande())
                     .dateCommande(bonCommande.getDateCommande())
                     .prix(bonCommande.getPrix())
-                    .gestionStock(GestionStockDTO.fromEntity(bonCommande.getGestionStock()))
                     .fournisseur(FournisseurDTO.fromEntity(bonCommande.getFournisseur()))
                     .facture(FactureDTO.fromEntity(bonCommande.getFacture()))
+                    .employe(EmployeDTO.fromEntity(bonCommande.getEmploye()))
                     .build();
         }
 
@@ -54,8 +55,8 @@ import java.util.Date;
             bonCommande.setDateCommande(bonCommandeDTO.getDateCommande());
             bonCommande.setPrix(bonCommandeDTO.getPrix());
             bonCommande.setFacture(FactureDTO.toEntity(bonCommandeDTO.getFacture()));
-            bonCommande.setGestionStock(GestionStockDTO.toEntity(bonCommandeDTO.getGestionStock()));
             bonCommande.setFournisseur(FournisseurDTO.toEntity(bonCommandeDTO.getFournisseur()));
+            bonCommande.setEmploye(EmployeDTO.toEntity(bonCommandeDTO.getEmploye()));
 
             return bonCommande;
         }
