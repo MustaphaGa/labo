@@ -28,18 +28,18 @@ public class LaboController implements LaboApi{
 	@Override
 	public LaboDTO findById(Integer idLabo) {
 		
-		return null;
+		return laboService.findById(idLabo);
 	}
 
 	@Override
 	public List<LaboDTO> findAll() {
 
-		return null;
+		return laboService.findAll();
 	}
 
 	@Override
 	public void delete(Integer idLabo) {
-		
+		laboService.delete(idLabo);
 	}
 
 }
