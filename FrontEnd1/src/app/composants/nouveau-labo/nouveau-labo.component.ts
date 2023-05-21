@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
-import {LaboService} from "../../services/labo/labo.service";
+import {TypeAnalyseDTO} from "../../../gs-api/src/models/type-analyse-dto";
+import {ActivatedRoute, Router} from "@angular/router";
+import {TypAnalyseService} from "../../typeAnalyse/typ-analyse.service";
 
 @Component({
   selector: 'app-nouveau-labo',
@@ -8,15 +9,17 @@ import {LaboService} from "../../services/labo/labo.service";
   styleUrls: ['./nouveau-labo.component.css']
 })
 export class NouveauLaboComponent implements OnInit {
-  errorMsg: '';
-
-  constructor(private  router: Router,
-              private  laboService: LaboService) { }
+  [x: string]: any;
+  typeAnalysedTo: TypeAnalyseDTO ={};
+  errorMsg: Array<string> = [];
+  constructor(private router:Router,
+              private activatedRouter:ActivatedRoute,
+              private laboService :TypAnalyseService) { }
 
   ngOnInit(): void {
   }
 
-  cancel() {
-
+  cancel(): void {
+    this.router.navigate(['labo']);
   }
 }

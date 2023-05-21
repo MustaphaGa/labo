@@ -37,7 +37,6 @@ private JwtUtil jwtUtil;
 						request.getLogin(),
 						request.getPassword()
 
-
 				)
 		);
 		final UserDetails userDetails = userDetailsService.loadUserByUsername(request.getLogin());

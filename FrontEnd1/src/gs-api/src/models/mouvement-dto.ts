@@ -1,9 +1,9 @@
 /* tslint:disable */
-import { RhDTO } from './rh-dto';
+import { EmployeDTO } from './employe-dto';
 export interface MouvementDTO {
   idMouvement?: number;
   typeMouvement?: string;
   detailMouvement?: string;
   frais?: number;
-  rh?: RhDTO;
+  employe?: EmployeDTO;
 }

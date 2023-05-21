@@ -9,9 +9,9 @@ export class LaboService {
 
   constructor(private laboService: LaboService) { }
  /* enregistrerLbao(laboDto: LaboDTO): Observable<LaboDTO> {
-    //return this.laboService.save(laboDto);
+    return this.laboService.save(laboDto);
 
-  //}*/
+  }*/
   findAllLabo(): Observable<LaboDTO[]> {
     return this.laboService.findAllLabo();
   }

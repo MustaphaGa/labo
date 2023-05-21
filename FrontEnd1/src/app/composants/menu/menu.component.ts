@@ -120,7 +120,7 @@ sousMenu :[
     },
     {
       id:'16',
-      titre:'Labo',
+      titre:'labo',
       icon:'',
       url: 'labo'
     },

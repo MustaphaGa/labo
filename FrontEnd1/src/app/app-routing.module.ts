@@ -303,7 +303,7 @@ const routes:Routes=[
       {
         path: 'employees',
         component: PageEmployeesComponent,
-       // canActivate: [ApplicationGuardService]
+        canActivate: [ApplicationGuardService]
 
       },
       {
@@ -315,13 +315,13 @@ const routes:Routes=[
       {
         path: 'labo',
         component: PageLaboComponent,
-        // canActivate: [ApplicationGuardService]
+        //canActivate: [ApplicationGuardService]
 
       },
       {
         path: 'nouveauLabo',
         component: NouveauLaboComponent,
-        // canActivate: [ApplicationGuardService]
+       //  canActivate: [ApplicationGuardService]
 
       },
     ]

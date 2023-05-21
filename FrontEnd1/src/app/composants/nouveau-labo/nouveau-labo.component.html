@@ -1,30 +1,31 @@
-<div class="col mb-3">
+<div class="col">
+  <div class="col-md-12 mb-3 mt-3">
+    <img src="assets/menu/assets/img/patients.jfif"  class="rounded-circle" width="200px" height="200px">
+  </div>
   <div class="col-md-12">
-    <div class="col-md-12 mb-3 mt-3">
-      <h2>Nouvelle Labo</h2>
+    <div class="col-md-12">
+      <h3><i class="fas fa-info-circle blue-color"></i>&nbsp;Information D'un Labo</h3>
     </div>
     <div class="col-md-12">
-      <div class="alert alert-danger" *ngIf ="errorMsg.length > 0">
-        <div *ngFor="let msg of errorMsg">
-          <span >{{msg}}</span>
-        </div>
-      </div>
       <form>
-        <div class="row mb-3">
-          <div class="col">
-            <input type="text" class="form-control" placeholder="nom labo" name="nomdelabo" >
+
+        <div class="row">
+          <div class="col mb-3">
+            <input type="text" class="form-control" placeholder="nomLabo" name="nomLab" >
+          </div>
+          <div class="col ">
+            <input type="text" class="form-control" placeholder="codeFiscal" name="codeFiscal" >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col mb-3">
+            <input type="text" class="form-control" placeholder="Telephone" name="numTel" >
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="code Fiscal" name="codeFiscal" >
+            <input type="text" class="form-control" placeholder="E-mail" name="email" >
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder=" telephone" name="tellabo" >
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" placeholder="email" name="emaillabo" >
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" placeholder="site web " name="sitelabo" >
+            <input type="email" class="form-control"  placeholder="site Web" name="siteWeb" >
           </div>
         </div>
       </form>
@@ -40,8 +41,12 @@
       Enregitrer
     </button>
   </div>
-
 </div>
+
+
+
+
+
 
 
 

@@ -1,8 +1,7 @@
 /* tslint:disable */
-import { RolesDTO } from './roles-dto';
 import { LaboDTO } from './labo-dto';
 export interface EmployeDTO {
-  idEmploye?: number;
+  id_employe?: number;
   nom?: string;
   prenom?: string;
   email?: string;
@@ -13,6 +12,5 @@ export interface EmployeDTO {
   password?: string;
   date_embauchDate?: number;
   photo?: string;
-  roles?: Array<RolesDTO>;
   labo?: LaboDTO;
 }

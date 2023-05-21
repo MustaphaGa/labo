@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { PageLoginComponent } from './pages/page-login/page-login.component';
 import { PageInscriptionComponent } from './pages/page-inscription/page-inscription.component';
 import { PageAccueilComponent } from './pages/page-accueil/page-accueil.component';
@@ -60,6 +60,8 @@ import { NouveauEmployeComponent } from './composants/nouveau-employe/nouveau-em
 import { PageLaboComponent } from './pages/page-labo/page-labo.component';
 import { NouveauLaboComponent } from './composants/nouveau-labo/nouveau-labo.component';
 import { PageAccueilPrincipalComponent } from './pages/page-accueil-principal/page-accueil-principal.component';
+import { DetailLaboComponent } from './composants/detail-labo/detail-labo.component';
+import {InterceptorService} from './services/interceptor/interceptor.service';
 
 
 
@@ -120,6 +122,7 @@ import { PageAccueilPrincipalComponent } from './pages/page-accueil-principal/pa
     PageLaboComponent,
     NouveauLaboComponent,
     PageAccueilPrincipalComponent,
+    DetailLaboComponent,
 
 
 
@@ -135,7 +138,11 @@ import { PageAccueilPrincipalComponent } from './pages/page-accueil-principal/pa
 
 
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass : InterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

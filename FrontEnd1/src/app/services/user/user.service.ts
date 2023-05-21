@@ -2,21 +2,18 @@ import { Injectable } from '@angular/core';
 import {AuthenticationService} from '../../../gs-api/src/services';
 import { Router } from '@angular/router';
 import {AuthenticationRequest} from "../../../gs-api/src/models/authentication-request";
-import {Observable} from "rxjs";
 import {AuthenticationReponse} from "../../../gs-api/src/models";
+import {Observable} from "rxjs";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
   constructor(
     private authenticationService: AuthenticationService,
-    private  router:Router
-
-
-  ) { }
+    private  router:Router) {
+  }
 
   // tslint:disable-next-line:typedef
   login(authenticationRequest: AuthenticationRequest): Observable<AuthenticationReponse> {

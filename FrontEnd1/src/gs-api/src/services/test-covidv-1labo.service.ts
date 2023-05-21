@@ -108,7 +108,7 @@ class TestCovidv1laboService extends __BaseService {
     let __body: any = null;
     let req = new HttpRequest<any>(
       'DELETE',
-      this.rootUrl + `/testCovid/v1/labo/delete/${(this.idLabo)}`,
+      this.rootUrl + `/testCovid/v1/labo/delete/${this.idLabo}`,
       __body,
       {
         headers: __headers,

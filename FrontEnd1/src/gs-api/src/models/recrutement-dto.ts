@@ -1,8 +1,8 @@
 /* tslint:disable */
-import { RhDTO } from './rh-dto';
+import { EmployeDTO } from './employe-dto';
 export interface RecrutementDTO {
   idRecrutement?: number;
   dateRecrutement?: string;
   typeRecrutement?: string;
-  rh?: RhDTO;
+  employe?: EmployeDTO;
 }

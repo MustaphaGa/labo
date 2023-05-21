@@ -8,11 +8,13 @@ import { AnalyseMedicalService } from './services/analyse-medical.service';
 import { AuthenticationService } from './services/authentication.service';
 import { TestCovidv1bilanfinanceService } from './services/test-covidv-1bilanfinance.service';
 import { BiologisteService } from './services/biologiste.service';
+import { BoncommandeService } from './services/boncommande.service';
 import { TestCovidv1congeService } from './services/test-covidv-1conge.service';
 import { DepartementService } from './services/departement.service';
 import { DetailResultatService } from './services/detail-resultat.service';
 import { TestCovidv1employeService } from './services/test-covidv-1employe.service';
 import { FactureService } from './services/facture.service';
+import { FournisseurService } from './services/fournisseur.service';
 import { TestCovidv1laboService } from './services/test-covidv-1labo.service';
 import { TestCovidv1mouvementService } from './services/test-covidv-1mouvement.service';
 import { TestCovidv1operationService } from './services/test-covidv-1operation.service';
@@ -20,8 +22,8 @@ import { TestCovidv1patientService } from './services/test-covidv-1patient.servi
 import { PreleveurService } from './services/preleveur.service';
 import { TestCovidv1recrutementService } from './services/test-covidv-1recrutement.service';
 import { ReservationService } from './services/reservation.service';
-import { TestCovidv1rhService } from './services/test-covidv-1rh.service';
-import { TestCovidv1servicefinanceService } from './services/test-covidv-1servicefinance.service';
+import { TestCovidv1rolesService } from './services/test-covidv-1roles.service';
+import { StockService } from './services/stock.service';
 import { TypeAnalyseService } from './services/type-analyse.service';
 
 /**
@@ -42,11 +44,13 @@ import { TypeAnalyseService } from './services/type-analyse.service';
     AuthenticationService,
     TestCovidv1bilanfinanceService,
     BiologisteService,
+    BoncommandeService,
     TestCovidv1congeService,
     DepartementService,
     DetailResultatService,
     TestCovidv1employeService,
     FactureService,
+    FournisseurService,
     TestCovidv1laboService,
     TestCovidv1mouvementService,
     TestCovidv1operationService,
@@ -54,8 +58,8 @@ import { TypeAnalyseService } from './services/type-analyse.service';
     PreleveurService,
     TestCovidv1recrutementService,
     ReservationService,
-    TestCovidv1rhService,
-    TestCovidv1servicefinanceService,
+    TestCovidv1rolesService,
+    StockService,
     TypeAnalyseService
   ],
 })

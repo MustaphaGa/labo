@@ -12,8 +12,8 @@ export class PageLoginComponent implements OnInit {
   authenticationRequest: AuthenticationRequest = {};
   errorMessage = ''
   constructor(
-     private  userService: UserService,
-     private  router: Router
+    private  userService: UserService,
+    private  router: Router
   ) { }
 
   ngOnInit(): void {
@@ -25,7 +25,7 @@ export class PageLoginComponent implements OnInit {
         this.userService.setConnectedUser(data);
         this.router.navigate(['']);
       }, error => {
-       // console.log(error);
+        console.log(error);
         // this.router.navigate( ['register']);
         this.errorMessage = 'Login et /ou mot de passe incorrecte';
 
