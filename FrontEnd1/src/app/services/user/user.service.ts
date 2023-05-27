@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import {AuthenticationService} from '../../../gs-api/src/services';
 import { Router } from '@angular/router';
-import {AuthenticationRequest} from "../../../gs-api/src/models/authentication-request";
-import {AuthenticationReponse} from "../../../gs-api/src/models";
-import {Observable} from "rxjs";
+import {AuthenticationRequest} from '../../../gs-api/src/models/authentication-request';
+import {AuthenticationReponse} from '../../../gs-api/src/models/authentication-reponse';
+import {Observable, of} from "rxjs";
+
 
 
 @Injectable({
@@ -17,9 +18,10 @@ export class UserService {
 
   // tslint:disable-next-line:typedef
   login(authenticationRequest: AuthenticationRequest): Observable<AuthenticationReponse> {
+
     return  this.authenticationService.authenticate(authenticationRequest);
   }
-  setConnectedUser(authenticatorResponse:AuthenticationReponse): void{
+  setConnectedUser(authenticatorResponse: AuthenticationReponse): void{
     localStorage.setItem('connectedUser' ,JSON.stringify(authenticatorResponse));
   }
   //TODO
@@ -28,8 +30,10 @@ export class UserService {
       //IL FAUT verfier si le access token est valid
       return true;
     }
-    this.router.navigate(['login']);
+    this.router.navigate(['pagAccPrincp']);
     return  false;
 
   }
+
+
 }
