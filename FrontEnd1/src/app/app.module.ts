@@ -60,6 +60,10 @@ import { PageLaboComponent } from './pages/page-labo/page-labo.component';
 import { NouveauLaboComponent } from './composants/nouveau-labo/nouveau-labo.component';
 import { PageAccueilPrincipalComponent } from './pages/page-accueil-principal/page-accueil-principal.component';
 import { DetailLaboComponent } from './composants/detail-labo/detail-labo.component';
+import { PageAbsenceComponent } from './pages/page-absence/page-absence.component';
+import { PageCongesComponent } from './pages/page-conges/page-conges.component';
+import { PageRecrutementComponent } from './pages/page-recrutement/page-recrutement.component';
+import { PageMouvementComponent } from './pages/page-mouvement/page-mouvement.component';
 
 
 
@@ -124,6 +128,10 @@ import { DetailLaboComponent } from './composants/detail-labo/detail-labo.compon
     NouveauLaboComponent,
     PageAccueilPrincipalComponent,
     DetailLaboComponent,
+    PageAbsenceComponent,
+    PageCongesComponent,
+    PageRecrutementComponent,
+    PageMouvementComponent,
 
 
 

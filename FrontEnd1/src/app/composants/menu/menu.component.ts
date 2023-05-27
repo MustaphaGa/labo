@@ -106,18 +106,52 @@ sousMenu :[
     }
   ]
 },
+  {
+    id:'26',
+    titre:'RH',
+    icon:' fas fa-users-cog',
+    url:'',
+    sousMenu :[
+      {
+        id:'20',
+        titre:'employees',
+        icon:'fas fa-users-cog',
+        url: 'employees'
+      },
+      {
+        id:'21',
+        titre:'absence',
+        icon:'',
+        url: 'absence'
+      },
+      {
+        id:'22',
+        titre:'conges',
+        icon:'',
+        url: 'conges'
+      },
+      {
+        id:'23',
+        titre:'recrutement',
+        icon:'',
+        url: 'recrutement'
+      },
+      {
+        id:'24',
+        titre:'mouvement',
+        icon:'',
+        url: 'mouvement'
+      },
+
+
+    ]
+  },
 {
   id:'20',
   titre:'Parametre',
   icon:'fas fa-cogs',
   url:'',
   sousMenu :[
-    {
-      id:'15',
-      titre:'employees',
-      icon:'fas fa-users-cog',
-      url: 'employees'
-    },
     {
       id:'16',
       titre:'labo',

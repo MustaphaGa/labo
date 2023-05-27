@@ -43,6 +43,10 @@ import { NouveauEmployeComponent } from './composants/nouveau-employe/nouveau-em
 import {PageLaboComponent} from "./pages/page-labo/page-labo.component";
 import {NouveauLaboComponent} from "./composants/nouveau-labo/nouveau-labo.component";
 import {PageAccueilPrincipalComponent} from "./pages/page-accueil-principal/page-accueil-principal.component";
+import {PageAbsenceComponent} from "./pages/page-absence/page-absence.component";
+import {PageCongesComponent} from "./pages/page-conges/page-conges.component";
+import {PageRecrutementComponent} from "./pages/page-recrutement/page-recrutement.component";
+import {PageMouvementComponent} from "./pages/page-mouvement/page-mouvement.component";
 const routes:Routes=[
   {
     path: 'pagAccPrincp',
@@ -307,6 +311,30 @@ const routes:Routes=[
 
       },
       {
+        path: 'absence',
+        component: PageAbsenceComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'conges',
+        component: PageCongesComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'recrutement',
+        component: PageRecrutementComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'mouvement',
+        component: PageMouvementComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
         path: 'nouvelEmployee',
         component: NouveauEmployeComponent,
         canActivate: [ApplicationGuardService]
@@ -315,13 +343,13 @@ const routes:Routes=[
       {
         path: 'labo',
         component: PageLaboComponent,
-        //canActivate: [ApplicationGuardService]
+        canActivate: [ApplicationGuardService]
 
       },
       {
         path: 'nouveauLabo',
         component: NouveauLaboComponent,
-       //  canActivate: [ApplicationGuardService]
+         canActivate: [ApplicationGuardService]
 
       },
     ]
