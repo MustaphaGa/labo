@@ -46,7 +46,7 @@ public static final String AUTHORIZATION_HEADER = "Authorization";
 	    return SecurityContext.builder()
 	        .securityReferences(defaultAuth())
 	        .build();
-	  } 
+	  }
  List<SecurityReference> defaultAuth() {
  AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
  AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];

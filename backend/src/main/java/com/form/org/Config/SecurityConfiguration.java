@@ -51,12 +51,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 "/swagger-ui.html",
                 "/webjars/**",
                 "/v3/api-docs/**",
-                "/swagger-ui/**").permitAll()
-                .anyRequest().authenticated()
-                .and().sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                "/swagger-ui/**")
+                .permitAll();
+                //.anyRequest().authenticated()
+                //.and().sessionManagement()
+                //.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-        http.addFilterBefore(applicationRequestFilter, UsernamePasswordAuthenticationFilter.class);
+        //http.addFilterBefore(applicationRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }
     @Bean
     public CorsFilter corsFilter() {

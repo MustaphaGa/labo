@@ -9,6 +9,8 @@ import com.form.org.model.auth.ExtendedUser;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
@@ -36,6 +38,7 @@ public String extractIdLabo(String token) {
 	        return claimsResolver.apply(claims);
 	    }
 	    //4
+
     private Claims extractAllClaims(String token) {
     return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();
 	    }
