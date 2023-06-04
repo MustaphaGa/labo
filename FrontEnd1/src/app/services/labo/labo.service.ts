@@ -1,23 +1,24 @@
 import { Injectable } from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {LaboDTO} from '../../../gs-api/src/models/labo-dto';
+import {TestCovidv1laboService} from '../../../gs-api/src/services/test-covidv-1labo.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LaboService {
 
-  constructor(private laboService: LaboService) { }
- /* enregistrerLbao(laboDto: LaboDTO): Observable<LaboDTO> {
-    return this.laboService.save(laboDto);
+  constructor(private testCovidv1laboService: TestCovidv1laboService) { }
+  enregistrerLbao(laboDto: LaboDTO): Observable<LaboDTO> {
+    return this.testCovidv1laboService.save(laboDto);
 
-  }*/
+  }
   findAllLabo(): Observable<LaboDTO[]> {
-    return this.laboService.findAllLabo();
+    return this.testCovidv1laboService.findAll();
   }
   findLbaoById(idLabo?: number): Observable<LaboDTO> {
     if (idLabo) {
-      return this.laboService.findLbaoById(idLabo);
+      return this.testCovidv1laboService.findById(idLabo);
     }
     return of();
   }

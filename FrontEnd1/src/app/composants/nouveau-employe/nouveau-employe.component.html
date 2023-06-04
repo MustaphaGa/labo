@@ -11,42 +11,49 @@
 
                 <div class="row">
                   <div class="col mb-3">
-                    <input type="text" class="form-control" placeholder="code employe" name="codeEmp" >
-                  </div>
-                  <div class="col ">
-                    <input type="text" class="form-control" placeholder="nom" name="nomEmp" >
+                    <input type="text" class="form-control" placeholder="nom" name="nomEmp"  [(ngModel)]="employeDto.nom">
                   </div>
                   </div>
                   <div class="row">
                   <div class="col mb-3">
-                    <input type="text" class="form-control" placeholder="prenom" name="prenomEmp" >
+                    <input type="text" class="form-control" placeholder="prenom" name="prenomEmp"  [(ngModel)]="employeDto.prenom">
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control" placeholder="cin" name="cinEmp" >
+                    <input type="text" class="form-control" placeholder="cin" name="cinEmp"  [(ngModel)]="employeDto.cin">
                   </div>
                   <div class="col">
-                    <input type="email" class="form-control"  placeholder="E-mail" name="email" >
+                    <input type="email" class="form-control"  placeholder="E-mail" name="email"  [(ngModel)]="employeDto.email">
                   </div>
                   </div>
                   <div class="row">
                     <div class="col mb-3">
                       <label for="date">Date embauche</label>
-                      <input class="form-control" type="date" placeholder="date d'embauche" id="example-date-input"  name="dateEmp"  >
+                      <input class="form-control" type="date" placeholder="date d'embauche" id="example-date-input"  name="dateEmp"   [(ngModel)]="employeDto.date_embauchDate">
                     </div>
                   <div class="col mb-3">
-                    <input type="text" class="form-control" placeholder="salaire" name="salairEmp" >
+                    <input type="text" class="form-control" placeholder="salaire" name="salairEmp"  [(ngModel)]="employeDto.salaire">
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control" placeholder="adresse"  name="adressEmp" >
+                    <input type="text" class="form-control" placeholder="adresse"  name="adressEmp"  [(ngModel)]="employeDto.adresse">
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control" placeholder="Telephone"  name="teleEmp" >
+                    <input type="text" class="form-control" placeholder="Telephone"  name="teleEmp"  [(ngModel)]="employeDto.telephone">
                   </div>
-                  <div class="col">
-                    <div class="col mb-3">
-                      <input type="text" class="form-control" placeholder="labo" name="laboEmp" >
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="photo"  name="photo"  [(ngModel)]="employeDto.photo">
                     </div>
-                  </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="password"  name="password"  [(ngModel)]="employeDto.password">
+                    </div>
+                    <div class="row">
+                      <div class="col mb-3">
+                        <select class="form-control" id="labo" name="pat" [(ngModel)]="labodto.idLabo">
+                          <option disabled selected value="">liste labos</option>
+                          <option *ngFor="let pat of listeLabo" [value]="pat.idLabo">{{pat.nomLabo}}  </option>
+
+                        </select>
+                      </div>
+                    </div>
                 </div>
               </form>
         </div>
@@ -56,7 +63,7 @@
           <i class="fas fa-ban"></i>&nbsp;
           Annuler
         </button>
-        <button class="btn btn-primary" >
+        <button class="btn btn-primary"  (click)="enregistrerEmploye()">
           <i class="fas fa-save"></i>&nbsp;
           Enregitrer
         </button>

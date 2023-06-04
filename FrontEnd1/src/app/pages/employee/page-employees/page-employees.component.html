@@ -6,14 +6,16 @@
       <div class="col-md-6 text-right">
           <app-boutton-action
           (clickEvent)="nouvelEmployee()"
-          
+
           ></app-boutton-action>
-          
+
       </div>
   </div>
   <div class="col m-3">
-         <app-detail-employe 
-         
+         <app-detail-employe
+
+           *ngFor="let employe of listeemploye"
+           [employeDt]="employe"
 
          ></app-detail-employe>
   </div>

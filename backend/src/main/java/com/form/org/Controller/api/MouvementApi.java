@@ -51,12 +51,12 @@ public interface MouvementApi {
     @GetMapping(value= APP_ROOT + "/mouvement/all", produces = MediaType.APPLICATION_JSON_VALUE )
     List<MouvementDTO> findAll();
 
-    @DeleteMapping(value =APP_ROOT + "/patient/delete/{idMouvement}" )
+    @DeleteMapping(value =APP_ROOT + "/mouvement/delete/{idMouvement}" )
     @ApiOperation(value = "supprimer  un mouvement ",notes = "Cette methode permet de supprimer"
             + " un mouvement par ID ",
-            response = PatientDTO.class)
+            response = MouvementDTO.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "patient a ete supprimer"),
     })
-    void delecte(@PathVariable("idMouvement") Integer idMouvement);
+    void delete(@PathVariable("idMouvement") Integer idMouvement);
 }

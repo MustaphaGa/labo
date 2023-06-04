@@ -1,15 +1,9 @@
 package com.form.org.model;
 
 import java.util.Date;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,5 +26,8 @@ public class Stock {
 	@OneToOne
     @JoinColumn(name = "id_employe")
     private Employe employe;
+
+	@OneToMany(mappedBy="stock")
+	private List<Article> articles;
 
 }

@@ -62,7 +62,7 @@ public interface PatientApi{
 		 	  @ApiResponses(value = {
 		 	  @ApiResponse(code = 200, message = "patient a ete supprimer"),	
 		 		})
-	void delecte(@PathVariable("idPatient") Integer ididPatient);
+	void delete(@PathVariable("idPatient") Integer idPatient);
 
 }
 

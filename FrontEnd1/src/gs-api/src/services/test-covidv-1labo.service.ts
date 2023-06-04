@@ -4,7 +4,7 @@ import { HttpClient, HttpRequest, HttpResponse, HttpHeaders } from '@angular/com
 import { BaseService as __BaseService } from '../base-service';
 import { ApiConfiguration as __Configuration } from '../api-configuration';
 import { StrictHttpResponse as __StrictHttpResponse } from '../strict-http-response';
-import { Observable as __Observable } from 'rxjs';
+import {Observable, Observable as __Observable} from 'rxjs';
 import { map as __map, filter as __filter } from 'rxjs/operators';
 
 import { LaboDTO } from '../models/labo-dto';
@@ -106,9 +106,10 @@ class TestCovidv1laboService extends __BaseService {
     let __params = this.newParams();
     let __headers = new HttpHeaders();
     let __body: any = null;
+    let idLabo;
     let req = new HttpRequest<any>(
       'DELETE',
-      this.rootUrl + `/testCovid/v1/labo/delete/${(this.idLabo)}`,
+      this.rootUrl + `/testCovid/v1/labo/delete/${idLabo}`,
       __body,
       {
         headers: __headers,
@@ -141,10 +142,9 @@ class TestCovidv1laboService extends __BaseService {
     let __params = this.newParams();
     let __headers = new HttpHeaders();
     let __body: any = null;
-    let idLabo;
     let req = new HttpRequest<any>(
       'GET',
-      this.rootUrl + `/testCovid/v1/labo/${this.idLabo}`,
+      this.rootUrl + `/testCovid/v1/labo/${(this.idLabo)}`,
       __body,
       {
         headers: __headers,
@@ -163,7 +163,7 @@ class TestCovidv1laboService extends __BaseService {
    * Cette methode permet de rechercher  un labo par son ID
    * @return  labo a ete trouver dans la BDD
    */
-  findById(): __Observable<LaboDTO> {
+  findById(idLabo: number): Observable<LaboDTO> {
     return this.findByIdResponse().pipe(
       __map(_r => _r.body as LaboDTO)
     );

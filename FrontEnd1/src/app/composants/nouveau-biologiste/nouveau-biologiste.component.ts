@@ -14,7 +14,7 @@ export class NouveauBiologisteComponent implements OnInit {
   departementDT: DepartementDTO={};
   listeDepartement :Array<DepartementDTO>  = [];
   errorMsg: Array<string> = [];
-  constructor( 
+  constructor(
     private router:Router,
     private activatedRouter:ActivatedRoute,
     private BiologisteeService :BiologisteeService,
@@ -37,7 +37,7 @@ export class NouveauBiologisteComponent implements OnInit {
     this.router.navigate(['biologiste']);
   }
   enregistrerBiologistee(): void {
-    this.biologisteDto.departement=this.departementDT
+    this.biologisteDto.departement =this.departementDT
     this.BiologisteeService.enregistrerBiologiste(this.biologisteDto).subscribe(res => {
       this.router.navigate(['biologiste']);
     }, error => {

@@ -13,7 +13,7 @@ public class AbsenceDTO {
     private Integer idAbsence;
     private Date dateDebut;
     private Date dateFin;
-    private boolean justifie;
+    private String justifie;
     private String motif;
     private String pieceJustificatifString;
 
@@ -29,6 +29,7 @@ public class AbsenceDTO {
                 .dateDebut(absence.getDateDebut())
                 .dateFin(absence.getDateFin())
                 .motif(absence.getMotif())
+                .justifie(absence.getJustifie())
                 .pieceJustificatifString(absence.getPieceJustificatifString())
                 .employe(EmployeDTO.fromEntity(absence.getEmploye()))
                         .build();
@@ -43,6 +44,7 @@ public class AbsenceDTO {
         absence.setDateDebut(absenceDTO.getDateDebut());
         absence.setDateFin(absenceDTO.getDateFin());
         absence.setMotif(absenceDTO.getMotif());
+        absence.setJustifie((absenceDTO.getJustifie()));
         absence.setPieceJustificatifString(absenceDTO.getPieceJustificatifString());
 
         absence.setEmploye(EmployeDTO.toEntity(absenceDTO.getEmploye()));

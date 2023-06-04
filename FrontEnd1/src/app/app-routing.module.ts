@@ -47,6 +47,8 @@ import {PageAbsenceComponent} from "./pages/page-absence/page-absence.component"
 import {PageCongesComponent} from "./pages/page-conges/page-conges.component";
 import {PageRecrutementComponent} from "./pages/page-recrutement/page-recrutement.component";
 import {PageMouvementComponent} from "./pages/page-mouvement/page-mouvement.component";
+import {NouveauRecrutementComponent} from './composants/nouveau-recrutement/nouveau-recrutement.component';
+import {NouveauMouvementComponent} from './composants/nouveau-mouvement/nouveau-mouvement.component';
 const routes:Routes=[
   {
     path: 'pagAccPrincp',
@@ -335,7 +337,25 @@ const routes:Routes=[
 
       },
       {
+        path: 'nouveauMouvement',
+        component: NouveauMouvementComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveauMouvement/:idMouvement',
+        component: NouveauMouvementComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
         path: 'nouvelEmployee',
+        component: NouveauEmployeComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouvelEmployee/:idEmploye',
         component: NouveauEmployeComponent,
         canActivate: [ApplicationGuardService]
 
@@ -352,9 +372,20 @@ const routes:Routes=[
          canActivate: [ApplicationGuardService]
 
       },
+      {
+        path: 'nouveauRecrutement',
+        component: NouveauRecrutementComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveauRecrutement/:idRecrutement',
+        component: NouveauRecrutementComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
     ]
   }
-
 ];
 
 @NgModule({

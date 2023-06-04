@@ -41,12 +41,13 @@ public class PatientController implements PatientApi {
 	}
 
 	@Override
-	public void delecte(Integer idPatient) {
+	public void delete(Integer idPatient) {
 	patientService.delete(idPatient);
 	}
 
 	
 
 	
+
 
 }

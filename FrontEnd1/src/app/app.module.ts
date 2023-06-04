@@ -64,6 +64,12 @@ import { PageAbsenceComponent } from './pages/page-absence/page-absence.componen
 import { PageCongesComponent } from './pages/page-conges/page-conges.component';
 import { PageRecrutementComponent } from './pages/page-recrutement/page-recrutement.component';
 import { PageMouvementComponent } from './pages/page-mouvement/page-mouvement.component';
+import { DetailAbsenceComponent } from './composants/detail-absence/detail-absence.component';
+import { NouveauAbsenceComponent } from './composants/nouveau-absence/nouveau-absence.component';
+import { DetailRecrutemntComponent } from './composants/detail-recrutemnt/detail-recrutemnt.component';
+import { NouveauRecrutementComponent } from './composants/nouveau-recrutement/nouveau-recrutement.component';
+import { DetailMouvementComponent } from './composants/detail-mouvement/detail-mouvement.component';
+import { NouveauMouvementComponent } from './composants/nouveau-mouvement/nouveau-mouvement.component';
 
 
 
@@ -132,6 +138,12 @@ import { PageMouvementComponent } from './pages/page-mouvement/page-mouvement.co
     PageCongesComponent,
     PageRecrutementComponent,
     PageMouvementComponent,
+    DetailAbsenceComponent,
+    NouveauAbsenceComponent,
+    DetailRecrutemntComponent,
+    NouveauRecrutementComponent,
+    DetailMouvementComponent,
+    NouveauMouvementComponent,
 
 
 

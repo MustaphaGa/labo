@@ -2742,8 +2742,8 @@
           "type" : "string"
         },
         "date_embauchDate" : {
-          "type" : "integer",
-          "format" : "int64"
+          "type" : "string",
+          "format" : "date-time"
         },
         "photo" : {
           "type" : "string"

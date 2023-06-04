@@ -19,7 +19,7 @@ public class AbsenceValidator {
         }
 
         if(!StringUtils.hasLength(absenceDTO.getMotif())) {
-            errors.add("veuillez renseigner la description de reservation!!");
+            errors.add("veuillez renseigner le motif!!");
         }
         if(absenceDTO.getPieceJustificatifString()==null) {
             errors.add("veuillez inserer les pieces!!");

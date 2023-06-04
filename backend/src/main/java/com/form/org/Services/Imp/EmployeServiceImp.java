@@ -27,10 +27,10 @@ public class EmployeServiceImp implements EmployeService {
 	private PasswordEncoder passwordEncoder;
 
 	@Autowired
-	public EmployeServiceImp(EmployeRepository employeRepository,
-								  PasswordEncoder passwordEncoder) {
+	public EmployeServiceImp(EmployeRepository employeRepository
+								  ) {
 		this.employeRepository = employeRepository;
-		this.passwordEncoder = passwordEncoder;
+
 	}
 
 	@Override
@@ -38,7 +38,8 @@ public class EmployeServiceImp implements EmployeService {
 		List<String> errors = EmployeValidator.validate(dto);
 		if (!errors.isEmpty()) {
 			log.error("employe is not valid {}", dto);
-			throw new InvalidEntityException("L'employe n'est pas valide", ErrorCodes.UTILISATEUR_NOT_VALID, errors);
+			throw new InvalidEntityException("L'employe n'est pas valide",
+					ErrorCodes.UTILISATEUR_NOT_VALID, errors);
 		}
 
 		if(userAlreadyExists(dto.getEmail())) {
@@ -47,7 +48,7 @@ public class EmployeServiceImp implements EmployeService {
 		}
 
 
-		dto.setPassword(passwordEncoder.encode(dto.getPassword()));
+		//dto.setPassword(passwordEncoder.encode(dto.getPassword()));
 
 		return EmployeDTO.fromEntity(
 				employeRepository.save(

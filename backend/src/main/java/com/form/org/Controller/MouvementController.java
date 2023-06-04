@@ -38,7 +38,7 @@ public class MouvementController implements MouvementApi {
     }
 
     @Override
-    public void delecte(Integer idMouvement) {
+    public void delete(Integer idMouvement) {
         mouvementService.delete(idMouvement);
 
     }

@@ -19,7 +19,7 @@ import javax.persistence.MappedSuperclass;
 
 @Data
 @Builder
-@MappedSuperclass
+//@MappedSuperclass
 public class EmployeDTO  {
 	
 	private Integer id_employe;
@@ -31,7 +31,7 @@ public class EmployeDTO  {
 	private String telephone;
 	private double salaire;
 	private String password;
-	private Instant date_embauchDate;
+	private Date date_embauchDate;
 	private String photo;
 	
 	@JsonIgnore
@@ -83,6 +83,7 @@ public static EmployeDTO fromEntity(Employe employe) {
 			return null;
 			}
 		Employe employe = new Employe();
+
 		employe.setId_employe(employeDTO.getId_employe());
 		employe.setNom(employeDTO.getNom());
 		employe.setPrenom(employeDTO.getPrenom());
@@ -98,9 +99,9 @@ public static EmployeDTO fromEntity(Employe employe) {
 		return employe;	
 	}
 
-	
 
-	
+
+
 }
 
 

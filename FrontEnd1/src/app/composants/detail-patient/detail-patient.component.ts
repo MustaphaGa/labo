@@ -20,19 +20,16 @@ export class DetailPatientComponent implements OnInit {
   ) { };
 
   ngOnInit(): void {
-   
-  
-  
     }
     modifierPatient():void{
       this.router.navigate(['nouveauPatient',this.patientdto.idPatient])
     }
-    
+
     detaillresultat(): void{
       this.router.navigate(['detailPatient',this.patientdto.idPatient]);
-      
+
     }
-   
+
     confirmerEtSupprimerPatient(): void{
       if(this.patientdto.idPatient){
        this.patientService.deletePatient(this.patientdto.idPatient)
@@ -43,6 +40,6 @@ export class DetailPatientComponent implements OnInit {
         });
    }
    }
-  
+
   }
 

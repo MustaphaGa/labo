@@ -28,14 +28,14 @@ import java.util.stream.Collectors;
 public class LaboServiceImpl implements LaboService {
 
     private LaboRepository laboRepository;
-    //private EmployeService employeService;
-  // private RolesRepository rolesRepository;
+    private EmployeService employeService;
+   private RolesRepository rolesRepository;
     @Autowired
     public LaboServiceImpl(LaboRepository laboRepository, EmployeService employeService,
                                  RolesRepository rolesRepository) {
         this.laboRepository = laboRepository;
-        //this.employeService = employeService;
-       // this.rolesRepository = rolesRepository;
+        this.employeService = employeService;
+        this.rolesRepository = rolesRepository;
     }
 
     @Override
@@ -51,14 +51,14 @@ public class LaboServiceImpl implements LaboService {
 
         EmployeDTO employe = fromLabo(savedLabo);
 
-       // EmployeDTO savedUser = employeService.save(employe);
+       EmployeDTO savedUser = employeService.save(employe);
 
         RolesDTO rolesDto = RolesDTO.builder()
                 .roleName("ADMIN")
               //  .employe(savedUser)
                 .build();
 
-        //rolesRepository.save(RolesDTO.toEntity(rolesDto));
+        rolesRepository.save(RolesDTO.toEntity(rolesDto));
 
         return  savedLabo;
     }
@@ -69,7 +69,7 @@ public class LaboServiceImpl implements LaboService {
                 .email(dto.getEmail())
                 .password(generateRandomPassword())
                 .labo(dto)
-                .date_embauchDate(Instant.now())
+               // .date_embauchDate()
                 .photo(dto.getSiteWeb())
                 .build();
     }

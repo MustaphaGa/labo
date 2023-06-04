@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageAbsenceComponent } from './page-absence.component';
+import { DetailMouvementComponent } from './detail-mouvement.component';
 
-describe('PageAbsenceComponent', () => {
-  let component: PageAbsenceComponent;
-  let fixture: ComponentFixture<PageAbsenceComponent>;
+describe('DetailMouvementComponent', () => {
+  let component: DetailMouvementComponent;
+  let fixture: ComponentFixture<DetailMouvementComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageAbsenceComponent ]
+      declarations: [ DetailMouvementComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PageAbsenceComponent);
+    fixture = TestBed.createComponent(DetailMouvementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

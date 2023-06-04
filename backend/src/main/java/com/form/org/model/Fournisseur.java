@@ -32,4 +32,6 @@ public class Fournisseur {
 	@OneToMany(mappedBy="fournisseur")
 	private List<BonCommande> bonCommandes;
 
+
+
 }

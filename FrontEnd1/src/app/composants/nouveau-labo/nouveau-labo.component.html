@@ -1,31 +1,36 @@
 <div class="col">
   <div class="col-md-12 mb-3 mt-3">
-    <img src="assets/menu/assets/img/patients.jfif"  class="rounded-circle" width="200px" height="200px">
+    <img src="assets/menu/assets/img/labo.jpg"  class="rounded-circle" width="200px" height="200px">
   </div>
   <div class="col-md-12">
     <div class="col-md-12">
       <h3><i class="fas fa-info-circle blue-color"></i>&nbsp;Information D'un Labo</h3>
     </div>
     <div class="col-md-12">
+      <div class="alert alert-danger" *ngIf="errorMsg.length > 0">
+        <div *ngFor="let msg of errorMsg">
+          <span >{{msg}}</span>
+        </div>
+      </div>
       <form>
 
         <div class="row">
           <div class="col mb-3">
-            <input type="text" class="form-control" placeholder="nomLabo" name="nomLab" >
+            <input type="text" class="form-control" placeholder="nomLabo" name="nomLab" [(ngModel)]="laboDto.nomLabo" >
           </div>
           <div class="col ">
-            <input type="text" class="form-control" placeholder="codeFiscal" name="codeFiscal" >
+            <input type="text" class="form-control" placeholder="codeFiscal" name="codeFiscal" [(ngModel)]="laboDto.codeFiscal" >
           </div>
         </div>
         <div class="row">
           <div class="col mb-3">
-            <input type="text" class="form-control" placeholder="Telephone" name="numTel" >
+            <input type="text" class="form-control" placeholder="Telephone" name="numTel" [(ngModel)]="laboDto.numTel" >
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="E-mail" name="email" >
+            <input type="text" class="form-control" placeholder="E-mail" name="email"  [(ngModel)]="laboDto.email">
           </div>
           <div class="col">
-            <input type="email" class="form-control"  placeholder="site Web" name="siteWeb" >
+            <input type="email" class="form-control"  placeholder="site Web" name="siteWeb" [(ngModel)]="laboDto.siteWeb" >
           </div>
         </div>
       </form>
@@ -36,7 +41,7 @@
       <i class="fas fa-ban"></i>&nbsp;
       Annuler
     </button>
-    <button class="btn btn-primary" >
+    <button class="btn btn-primary"  (click)="enregistrerLabo()">
       <i class="fas fa-save"></i>&nbsp;
       Enregitrer
     </button>
