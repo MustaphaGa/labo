@@ -60,16 +60,21 @@ import { PageLaboComponent } from './pages/page-labo/page-labo.component';
 import { NouveauLaboComponent } from './composants/nouveau-labo/nouveau-labo.component';
 import { PageAccueilPrincipalComponent } from './pages/page-accueil-principal/page-accueil-principal.component';
 import { DetailLaboComponent } from './composants/detail-labo/detail-labo.component';
-import { PageAbsenceComponent } from './pages/page-absence/page-absence.component';
 import { PageCongesComponent } from './pages/page-conges/page-conges.component';
 import { PageRecrutementComponent } from './pages/page-recrutement/page-recrutement.component';
 import { PageMouvementComponent } from './pages/page-mouvement/page-mouvement.component';
-import { DetailAbsenceComponent } from './composants/detail-absence/detail-absence.component';
-import { NouveauAbsenceComponent } from './composants/nouveau-absence/nouveau-absence.component';
 import { DetailRecrutemntComponent } from './composants/detail-recrutemnt/detail-recrutemnt.component';
 import { NouveauRecrutementComponent } from './composants/nouveau-recrutement/nouveau-recrutement.component';
 import { DetailMouvementComponent } from './composants/detail-mouvement/detail-mouvement.component';
 import { NouveauMouvementComponent } from './composants/nouveau-mouvement/nouveau-mouvement.component';
+import { PageAbsenceComponent } from './pages/page-absence/page-absence.component';
+import { PageArticleComponent } from './pages/page-article/page-article.component';
+import { PageBonCommandeComponent } from './pages/page-bon-commande/page-bon-commande.component';
+import { PageStockComponent } from './pages/page-stock/page-stock.component';
+import { PageFournisseurComponent } from './pages/page-fournisseur/page-fournisseur.component';
+import { PageOperationComponent } from './pages/page-operation/page-operation.component';
+import { PageBilanFinancierComponent } from './pages/page-bilan-financier/page-bilan-financier.component';
+import { PageServiceFinanceComponent } from './pages/page-service-finance/page-service-finance.component';
 
 
 
@@ -134,16 +139,21 @@ import { NouveauMouvementComponent } from './composants/nouveau-mouvement/nouvea
     NouveauLaboComponent,
     PageAccueilPrincipalComponent,
     DetailLaboComponent,
-    PageAbsenceComponent,
     PageCongesComponent,
     PageRecrutementComponent,
     PageMouvementComponent,
-    DetailAbsenceComponent,
-    NouveauAbsenceComponent,
     DetailRecrutemntComponent,
     NouveauRecrutementComponent,
     DetailMouvementComponent,
     NouveauMouvementComponent,
+    PageAbsenceComponent,
+    PageArticleComponent,
+    PageBonCommandeComponent,
+    PageStockComponent,
+    PageFournisseurComponent,
+    PageOperationComponent,
+    PageBilanFinancierComponent,
+    PageServiceFinanceComponent,
 
 
 

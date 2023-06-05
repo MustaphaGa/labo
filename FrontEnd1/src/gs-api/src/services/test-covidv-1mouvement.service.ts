@@ -8,15 +8,14 @@ import { Observable as __Observable } from 'rxjs';
 import { map as __map, filter as __filter } from 'rxjs/operators';
 
 import { MouvementDTO } from '../models/mouvement-dto';
-import { PatientDTO } from '../models/patient-dto';
 @Injectable({
   providedIn: 'root',
 })
 class TestCovidv1mouvementService extends __BaseService {
   static readonly findAllPath = '/testCovid/v1/mouvement/all';
   static readonly savePath = '/testCovid/v1/mouvement/create';
+  static readonly deletePath = '/testCovid/v1/mouvement/delete/{idMouvement}';
   static readonly findByIdPath = '/testCovid/v1/mouvement/{idMouvement}';
-  static readonly delectePath = '/testCovid/v1/patient/delete/{idMouvement}';
   static readonly findPatientByCodePatientPath = '/testCovid/v1/patient/filter{typeMouvement}';
 
   constructor(
@@ -100,6 +99,44 @@ class TestCovidv1mouvementService extends __BaseService {
   }
 
   /**
+   * Cette methode permet de supprimer un mouvement par ID
+   * @param idMouvement undefined
+   * @return patient a ete supprimer
+   */
+  deleteResponse(idMouvement: number): __Observable<__StrictHttpResponse<MouvementDTO>> {
+    let __params = this.newParams();
+    let __headers = new HttpHeaders();
+    let __body: any = null;
+
+    let req = new HttpRequest<any>(
+      'DELETE',
+      this.rootUrl + `/testCovid/v1/mouvement/delete/${idMouvement}`,
+      __body,
+      {
+        headers: __headers,
+        params: __params,
+        responseType: 'json'
+      });
+
+    return this.http.request<any>(req).pipe(
+      __filter(_r => _r instanceof HttpResponse),
+      __map((_r) => {
+        return _r as __StrictHttpResponse<MouvementDTO>;
+      })
+    );
+  }
+  /**
+   * Cette methode permet de supprimer un mouvement par ID
+   * @param idMouvement undefined
+   * @return patient a ete supprimer
+   */
+  delete(idMouvement: number): __Observable<MouvementDTO> {
+    return this.deleteResponse(idMouvement).pipe(
+      __map(_r => _r.body as MouvementDTO)
+    );
+  }
+
+  /**
    * Cette methode permet de rechercher  un mouvement par son ID
    * @param idMouvement undefined
    * @return la patient a ete trouver dans la BDD
@@ -134,44 +171,6 @@ class TestCovidv1mouvementService extends __BaseService {
   findById(idMouvement: number): __Observable<MouvementDTO> {
     return this.findByIdResponse(idMouvement).pipe(
       __map(_r => _r.body as MouvementDTO)
-    );
-  }
-
-  /**
-   * Cette methode permet de supprimer un mouvement par ID
-   * @param idMouvement undefined
-   * @return patient a ete supprimer
-   */
-  delecteResponse(idMouvement: number): __Observable<__StrictHttpResponse<PatientDTO>> {
-    let __params = this.newParams();
-    let __headers = new HttpHeaders();
-    let __body: any = null;
-
-    let req = new HttpRequest<any>(
-      'DELETE',
-      this.rootUrl + `/testCovid/v1/patient/delete/${idMouvement}`,
-      __body,
-      {
-        headers: __headers,
-        params: __params,
-        responseType: 'json'
-      });
-
-    return this.http.request<any>(req).pipe(
-      __filter(_r => _r instanceof HttpResponse),
-      __map((_r) => {
-        return _r as __StrictHttpResponse<PatientDTO>;
-      })
-    );
-  }
-  /**
-   * Cette methode permet de supprimer un mouvement par ID
-   * @param idMouvement undefined
-   * @return patient a ete supprimer
-   */
-  delecte(idMouvement: number): __Observable<PatientDTO> {
-    return this.delecteResponse(idMouvement).pipe(
-      __map(_r => _r.body as PatientDTO)
     );
   }
 

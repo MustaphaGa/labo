@@ -146,6 +146,65 @@ sousMenu :[
 
     ]
   },
+  {
+    id:'40',
+    titre:'Gestion Stock',
+    icon: '',
+    url:'',
+    sousMenu :[
+      {
+        id:'41',
+        titre:'article',
+        icon:'',
+        url: 'article'
+      },
+      {
+        id:'41',
+        titre:'fournisseur',
+        icon:'',
+        url: 'fournisseur'
+      },
+      {
+        id:'42',
+        titre:'bonCommande',
+        icon:'',
+        url: 'bonCmd'
+      },
+      {
+        id:'43',
+        titre:'stock',
+        icon:'',
+        url: 'stock'
+      },
+
+    ]
+  },
+  {
+    id:'50',
+    titre:'Finance',
+    icon: 'fa-solid fa-coins',
+    url:'',
+    sousMenu :[
+      {
+        id:'51',
+        titre:'operation',
+        icon:'',
+        url: 'operation'
+      },
+      {
+        id:'52',
+        titre:'bilan financier',
+        icon:'',
+        url: 'bilanFinance'
+      },
+      {
+        id:'53',
+        titre:'service finance',
+        icon:'',
+        url: 'serviceFinance'
+      },
+    ]
+  },
 {
   id:'20',
   titre:'Parametre',

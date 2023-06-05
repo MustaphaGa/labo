@@ -13,7 +13,7 @@ export class PatientService {
   constructor(
     private testcovidv1patientService : TestCovidv1patientService
     ) { };
-   
+
    enregistrerpatient(patientDt:PatientDTO):Observable<PatientDTO> {
      return this.testcovidv1patientService.save(patientDt);
    }
@@ -27,14 +27,14 @@ export class PatientService {
     }
     return of();
   }
-  deletePatient(idPatient?: number):Observable<any>{
+  deletePatient(idPatient?: number): Observable<any>{
     if (idPatient) {
-      return this.testcovidv1patientService.delecte(idPatient);
+      return this.testcovidv1patientService.delete(idPatient);
     }
     return of();
   }
   findPatientByCode(codePatient: string): Observable<PatientDTO>{
     return this.testcovidv1patientService.findPatientByCodePatient(codePatient);
   }
- 
+
 }

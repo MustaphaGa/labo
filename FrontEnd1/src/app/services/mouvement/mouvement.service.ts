@@ -27,7 +27,7 @@ export class MouvementService {
   }
   deleteMouvement(idMouvement?: number): Observable<any>{
     if (idMouvement) {
-      return this.testCovidv1Mouvement.delecte(idMouvement);
+      return this.testCovidv1Mouvement.delete(idMouvement);
     }
     return of();
   }

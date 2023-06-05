@@ -1,5 +1,6 @@
 export { AbsenceDTO } from './models/absence-dto';
 export { AnalyseMedicalDTO } from './models/analyse-medical-dto';
+export { ArticleDTO } from './models/article-dto';
 export { AuthenticationReponse } from './models/authentication-reponse';
 export { AuthenticationRequest } from './models/authentication-request';
 export { BilanFinancierDTO } from './models/bilan-financier-dto';

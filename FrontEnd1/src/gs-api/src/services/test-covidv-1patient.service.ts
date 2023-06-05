@@ -14,7 +14,7 @@ import { PatientDTO } from '../models/patient-dto';
 class TestCovidv1patientService extends __BaseService {
   static readonly findAllPath = '/testCovid/v1/patient/all';
   static readonly savePath = '/testCovid/v1/patient/create';
-  static readonly delectePath = '/testCovid/v1/patient/delete/{idPatient}';
+  static readonly deletePath = '/testCovid/v1/patient/delete/{idPatient}';
   static readonly findPatientByCodePatientPath = '/testCovid/v1/patient/filter{codePatient}';
   static readonly findByIdPath = '/testCovid/v1/patient/{idPatient}';
 
@@ -103,7 +103,7 @@ class TestCovidv1patientService extends __BaseService {
    * @param idPatient undefined
    * @return patient a ete supprimer
    */
-  delecteResponse(idPatient: number): __Observable<__StrictHttpResponse<PatientDTO>> {
+  deleteResponse(idPatient: number): __Observable<__StrictHttpResponse<PatientDTO>> {
     let __params = this.newParams();
     let __headers = new HttpHeaders();
     let __body: any = null;
@@ -130,8 +130,8 @@ class TestCovidv1patientService extends __BaseService {
    * @param idPatient undefined
    * @return patient a ete supprimer
    */
-  delecte(idPatient: number): __Observable<PatientDTO> {
-    return this.delecteResponse(idPatient).pipe(
+  delete(idPatient: number): __Observable<PatientDTO> {
+    return this.deleteResponse(idPatient).pipe(
       __map(_r => _r.body as PatientDTO)
     );
   }

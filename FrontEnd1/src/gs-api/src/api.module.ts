@@ -5,6 +5,7 @@ import { ApiConfiguration, ApiConfigurationInterface } from './api-configuration
 
 import { TestCovidv1absenceService } from './services/test-covidv-1absence.service';
 import { AnalyseMedicalService } from './services/analyse-medical.service';
+import { ArticleService } from './services/article.service';
 import { AuthenticationService } from './services/authentication.service';
 import { TestCovidv1bilanfinanceService } from './services/test-covidv-1bilanfinance.service';
 import { BiologisteService } from './services/biologiste.service';
@@ -41,6 +42,7 @@ import { TypeAnalyseService } from './services/type-analyse.service';
     ApiConfiguration,
     TestCovidv1absenceService,
     AnalyseMedicalService,
+    ArticleService,
     AuthenticationService,
     TestCovidv1bilanfinanceService,
     BiologisteService,

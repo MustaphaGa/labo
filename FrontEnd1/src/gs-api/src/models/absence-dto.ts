@@ -4,7 +4,7 @@ export interface AbsenceDTO {
   idAbsence?: number;
   dateDebut?: string;
   dateFin?: string;
-  justifie?: boolean;
+  justifie?: string;
   motif?: string;
   pieceJustificatifString?: string;
   employe?: EmployeDTO;

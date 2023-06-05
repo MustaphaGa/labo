@@ -1,5 +1,6 @@
 export { TestCovidv1absenceService } from './services/test-covidv-1absence.service';
 export { AnalyseMedicalService } from './services/analyse-medical.service';
+export { ArticleService } from './services/article.service';
 export { AuthenticationService } from './services/authentication.service';
 export { TestCovidv1bilanfinanceService } from './services/test-covidv-1bilanfinance.service';
 export { BiologisteService } from './services/biologiste.service';

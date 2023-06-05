@@ -14,6 +14,8 @@
   "tags" : [ {
     "name" : "analyseMedical"
   }, {
+    "name" : "article"
+  }, {
     "name" : "authentication"
   }, {
     "name" : "biologiste"
@@ -298,6 +300,102 @@
           },
           "404" : {
             "description" : "Aucun analyse medical n'existe  dans la BDD avec le CODE fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/article/all" : {
+      "get" : {
+        "tags" : [ "article" ],
+        "summary" : "renvoi la liste article",
+        "description" : "Cette methode permet de rechercher et renvoyer la listes des articles qui existent dans la BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "la liste des articles / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/ArticleDTO"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/article/create" : {
+      "post" : {
+        "tags" : [ "article" ],
+        "summary" : "Enregistrer un article",
+        "description" : "Cette methode permet d'enregistrer ou modifier un article ",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/ArticleDTO"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "l'objet article cree / modifie",
+            "schema" : {
+              "$ref" : "#/definitions/ArticleDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/article/delete/{idArticle}" : {
+      "delete" : {
+        "tags" : [ "article" ],
+        "summary" : "supprimer  un article ",
+        "description" : "Cette methode permet de supprimer un article par ID ",
+        "operationId" : "delecte",
+        "parameters" : [ {
+          "name" : "idArticle",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "article a ete supprimer",
+            "schema" : {
+              "$ref" : "#/definitions/ArticleDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/article/{idArticle}" : {
+      "get" : {
+        "tags" : [ "article" ],
+        "summary" : "rechercher un article par ID",
+        "description" : "Cette methode permet de rechercher  un article par son ID ",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idArticle",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "article a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/ArticleDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun article n'existe  dans la BDD avec l'ID fourni"
           }
         }
       }
@@ -1465,6 +1563,29 @@
         }
       }
     },
+    "/testCovid/v1/mouvement/delete/{idMouvement}" : {
+      "delete" : {
+        "tags" : [ "testCovidv1mouvement" ],
+        "summary" : "supprimer  un mouvement ",
+        "description" : "Cette methode permet de supprimer un mouvement par ID ",
+        "operationId" : "delete",
+        "parameters" : [ {
+          "name" : "idMouvement",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "patient a ete supprimer",
+            "schema" : {
+              "$ref" : "#/definitions/MouvementDTO"
+            }
+          }
+        }
+      }
+    },
     "/testCovid/v1/mouvement/{idMouvement}" : {
       "get" : {
         "tags" : [ "testCovidv1mouvement" ],
@@ -1667,35 +1788,12 @@
         }
       }
     },
-    "/testCovid/v1/patient/delete/{idMouvement}" : {
-      "delete" : {
-        "tags" : [ "testCovidv1mouvement" ],
-        "summary" : "supprimer  un mouvement ",
-        "description" : "Cette methode permet de supprimer un mouvement par ID ",
-        "operationId" : "delecte",
-        "parameters" : [ {
-          "name" : "idMouvement",
-          "in" : "path",
-          "required" : true,
-          "type" : "integer",
-          "format" : "int32"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "patient a ete supprimer",
-            "schema" : {
-              "$ref" : "#/definitions/PatientDTO"
-            }
-          }
-        }
-      }
-    },
     "/testCovid/v1/patient/delete/{idPatient}" : {
       "delete" : {
         "tags" : [ "testCovidv1patient" ],
         "summary" : "supprimer  un patient ",
         "description" : "Cette methode permet de supprimer un patient par ID ",
-        "operationId" : "delecte",
+        "operationId" : "delete",
         "parameters" : [ {
           "name" : "idPatient",
           "in" : "path",
@@ -2525,7 +2623,7 @@
           "format" : "date-time"
         },
         "justifie" : {
-          "type" : "boolean"
+          "type" : "string"
         },
         "motif" : {
           "type" : "string"
@@ -2563,6 +2661,27 @@
         },
         "reservation" : {
           "$ref" : "#/definitions/ReservationDTO"
+        }
+      }
+    },
+    "ArticleDTO" : {
+      "type" : "object",
+      "properties" : {
+        "idArticle" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "articleName" : {
+          "type" : "string"
+        },
+        "quantite" : {
+          "type" : "string"
+        },
+        "bonCommande" : {
+          "$ref" : "#/definitions/BonCommandeDTO"
+        },
+        "stock" : {
+          "$ref" : "#/definitions/StockDTO"
         }
       }
     },

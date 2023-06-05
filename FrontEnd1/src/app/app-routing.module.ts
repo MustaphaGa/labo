@@ -25,7 +25,6 @@ import { NouveauFactureComponent } from './composants/nouveau-facture/nouveau-fa
 import { NouveauResultatComponent } from './composants/nouveau-resultat/nouveau-resultat.component';
 import { PageResultatComponent } from './pages/page-resultat/page-resultat.component';
 import { PatientDetaillComponent } from './detaill/patient-detaill/patient-detaill.component';
-import { DetaillComponent } from './detaill/detaill.component';
 import { BiologisteDetaillComponent } from './detaill/biologiste-detaill/biologiste-detaill.component';
 import { PreleveurDetaillComponent } from './detaill/preleveur-detaill/preleveur-detaill.component';
 import { AnalyseDetaillComponent } from './detaill/analyse-detaill/analyse-detaill.component';
@@ -43,12 +42,19 @@ import { NouveauEmployeComponent } from './composants/nouveau-employe/nouveau-em
 import {PageLaboComponent} from "./pages/page-labo/page-labo.component";
 import {NouveauLaboComponent} from "./composants/nouveau-labo/nouveau-labo.component";
 import {PageAccueilPrincipalComponent} from "./pages/page-accueil-principal/page-accueil-principal.component";
-import {PageAbsenceComponent} from "./pages/page-absence/page-absence.component";
 import {PageCongesComponent} from "./pages/page-conges/page-conges.component";
 import {PageRecrutementComponent} from "./pages/page-recrutement/page-recrutement.component";
 import {PageMouvementComponent} from "./pages/page-mouvement/page-mouvement.component";
 import {NouveauRecrutementComponent} from './composants/nouveau-recrutement/nouveau-recrutement.component';
 import {NouveauMouvementComponent} from './composants/nouveau-mouvement/nouveau-mouvement.component';
+import {PageAbsenceComponent} from './pages/page-absence/page-absence.component';
+import {PageArticleComponent} from './pages/page-article/page-article.component';
+import {PageBonCommandeComponent} from './pages/page-bon-commande/page-bon-commande.component';
+import {PageStockComponent} from './pages/page-stock/page-stock.component';
+import {PageFournisseurComponent} from './pages/page-fournisseur/page-fournisseur.component';
+import {PageOperationComponent} from './pages/page-operation/page-operation.component';
+import {PageBilanFinancierComponent} from './pages/page-bilan-financier/page-bilan-financier.component';
+import {PageServiceFinanceComponent} from './pages/page-service-finance/page-service-finance.component';
 const routes:Routes=[
   {
     path: 'pagAccPrincp',
@@ -313,12 +319,6 @@ const routes:Routes=[
 
       },
       {
-        path: 'absence',
-        component: PageAbsenceComponent,
-        canActivate: [ApplicationGuardService]
-
-      },
-      {
         path: 'conges',
         component: PageCongesComponent,
         canActivate: [ApplicationGuardService]
@@ -345,6 +345,12 @@ const routes:Routes=[
       {
         path: 'nouveauMouvement/:idMouvement',
         component: NouveauMouvementComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'absence',
+        component: PageAbsenceComponent,
         canActivate: [ApplicationGuardService]
 
       },
@@ -381,6 +387,48 @@ const routes:Routes=[
       {
         path: 'nouveauRecrutement/:idRecrutement',
         component: NouveauRecrutementComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'article',
+        component: PageArticleComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'bonCmd',
+        component: PageBonCommandeComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'stock',
+        component: PageStockComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'fournisseur',
+        component: PageFournisseurComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'operation',
+        component: PageOperationComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'bilanFinance',
+        component: PageBilanFinancierComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'serviceFinance',
+        component: PageServiceFinanceComponent,
         canActivate: [ApplicationGuardService]
 
       },
