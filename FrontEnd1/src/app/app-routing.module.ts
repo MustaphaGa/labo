@@ -48,6 +48,8 @@ import {PageMouvementComponent} from "./pages/page-mouvement/page-mouvement.comp
 import {NouveauRecrutementComponent} from './composants/nouveau-recrutement/nouveau-recrutement.component';
 import {NouveauMouvementComponent} from './composants/nouveau-mouvement/nouveau-mouvement.component';
 import {PageAbsenceComponent} from './pages/page-absence/page-absence.component';
+import { NouveauAbsenceComponent } from './composants/nouveau-absence/nouveau-absence/nouveau-absence.component';
+import {AbsenceDetaillComponent} from "./detaill/absence-detaill/absence-detaill/absence-detaill.component";
 import {PageArticleComponent} from './pages/page-article/page-article.component';
 import {PageBonCommandeComponent} from './pages/page-bon-commande/page-bon-commande.component';
 import {PageStockComponent} from './pages/page-stock/page-stock.component';
@@ -55,6 +57,8 @@ import {PageFournisseurComponent} from './pages/page-fournisseur/page-fournisseu
 import {PageOperationComponent} from './pages/page-operation/page-operation.component';
 import {PageBilanFinancierComponent} from './pages/page-bilan-financier/page-bilan-financier.component';
 import {PageServiceFinanceComponent} from './pages/page-service-finance/page-service-finance.component';
+import { NouveauArticleComponent } from './composants/nouveau-article/nouveau-article.component';
+import { ArticleDetaillComponent } from './detaill/article-detaill/article-detaill/article-detaill.component';
 const routes:Routes=[
   {
     path: 'pagAccPrincp',
@@ -201,7 +205,7 @@ const routes:Routes=[
       },
       {
         path: 'detailPatient/:idPatient',
-        component: PatientDetaillComponent,
+        component: AbsenceDetaillComponent,
         canActivate: [ApplicationGuardService]
 
       },
@@ -355,6 +359,24 @@ const routes:Routes=[
 
       },
       {
+        path: 'nouveauAbsence',
+        component: NouveauAbsenceComponent,
+         canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveauAbsence/:idAbsence',
+        component: NouveauAbsenceComponent,
+         canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'detailAbsence/:idAbsence',
+        component: AbsenceDetaillComponent,
+        canActivate: [ApplicationGuardService]
+        
+      },
+      {
         path: 'nouvelEmployee',
         component: NouveauEmployeComponent,
         canActivate: [ApplicationGuardService]
@@ -407,6 +429,30 @@ const routes:Routes=[
         component: PageStockComponent,
         canActivate: [ApplicationGuardService]
 
+      },
+      {
+        path: 'article',
+        component: PageArticleComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveauArticle',
+        component: NouveauArticleComponent,
+         canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveauArticle/:idArticle',
+        component: NouveauArticleComponent,
+         canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'detailArticle/:idArticle',
+        component: ArticleDetaillComponent,
+        canActivate: [ApplicationGuardService]
+        
       },
       {
         path: 'fournisseur',

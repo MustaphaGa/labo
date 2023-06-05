@@ -75,6 +75,12 @@ import { PageFournisseurComponent } from './pages/page-fournisseur/page-fourniss
 import { PageOperationComponent } from './pages/page-operation/page-operation.component';
 import { PageBilanFinancierComponent } from './pages/page-bilan-financier/page-bilan-financier.component';
 import { PageServiceFinanceComponent } from './pages/page-service-finance/page-service-finance.component';
+import { AbsenceDetaillComponent } from './detaill/absence-detaill/absence-detaill/absence-detaill.component';
+import { DetailAbsenceComponent } from './composants/detail-absence/detail-absence/detail-absence.component';
+import { NouveauAbsenceComponent } from './composants/nouveau-absence/nouveau-absence/nouveau-absence.component';
+import { DetailArticleComponent } from './composants/detail-article/detail-article/detail-article.component';
+import { ArticleDetaillComponent } from './detaill/article-detaill/article-detaill/article-detaill.component';
+import { NouveauArticleComponent } from './composants/nouveau-article/nouveau-article.component';
 
 
 
@@ -154,6 +160,12 @@ import { PageServiceFinanceComponent } from './pages/page-service-finance/page-s
     PageOperationComponent,
     PageBilanFinancierComponent,
     PageServiceFinanceComponent,
+    AbsenceDetaillComponent,
+    DetailAbsenceComponent,
+    NouveauAbsenceComponent,
+    DetailArticleComponent,
+    ArticleDetaillComponent,
+    NouveauArticleComponent,
 
 
 
