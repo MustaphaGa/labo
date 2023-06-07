@@ -81,6 +81,9 @@ import { NouveauAbsenceComponent } from './composants/nouveau-absence/nouveau-ab
 import { DetailArticleComponent } from './composants/detail-article/detail-article/detail-article.component';
 import { ArticleDetaillComponent } from './detaill/article-detaill/article-detaill/article-detaill.component';
 import { NouveauArticleComponent } from './composants/nouveau-article/nouveau-article.component';
+import { FournisseurDetaillComponent } from './detaill/fournisseur-detaill/fournisseur-detaill.component';
+import { DetailFournisseurComponent } from './composants/detail-fournisseur/detail-fournisseur.component';
+import { NouveauFournisseurComponent } from './composants/nouveau-fournisseur/nouveau-fournissseur.component';
 
 
 
@@ -166,6 +169,10 @@ import { NouveauArticleComponent } from './composants/nouveau-article/nouveau-ar
     DetailArticleComponent,
     ArticleDetaillComponent,
     NouveauArticleComponent,
+    FournisseurDetaillComponent,
+    DetailFournisseurComponent,
+    NouveauFournisseurComponent,
+    
 
 
 

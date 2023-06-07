@@ -59,6 +59,8 @@ import {PageBilanFinancierComponent} from './pages/page-bilan-financier/page-bil
 import {PageServiceFinanceComponent} from './pages/page-service-finance/page-service-finance.component';
 import { NouveauArticleComponent } from './composants/nouveau-article/nouveau-article.component';
 import { ArticleDetaillComponent } from './detaill/article-detaill/article-detaill/article-detaill.component';
+import { NouveauFournisseurComponent } from './composants/nouveau-fournisseur/nouveau-fournissseur.component';
+import { FournisseurDetaillComponent } from './detaill/fournisseur-detaill/fournisseur-detaill.component';
 const routes:Routes=[
   {
     path: 'pagAccPrincp',
@@ -459,6 +461,24 @@ const routes:Routes=[
         component: PageFournisseurComponent,
         canActivate: [ApplicationGuardService]
 
+      },
+      {
+        path: 'nouveauFournisseur',
+        component: NouveauFournisseurComponent,
+         canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveauFournisseur/:idFournisseur',
+        component: NouveauFournisseurComponent,
+         canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'detailFournisseur/:idFournisseur',
+        component: FournisseurDetaillComponent,
+        canActivate: [ApplicationGuardService]
+        
       },
       {
         path: 'operation',

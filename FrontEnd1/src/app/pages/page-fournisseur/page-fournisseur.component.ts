@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FournisseurDTO } from 'src/gs-api/src/models/fournisseur-dto';
+import {FournisseurServices} from '../../services/fournisseur/fournisseur.service';
 
 @Component({
   selector: 'app-page-fournisseur',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageFournisseurComponent implements OnInit {
 
-  constructor() { }
+  listeFournisseur : Array<FournisseurDTO>  = [];
+ errorMsgs = '';
+  constructor(
+    private router: Router,
+    private fournisseurServices: FournisseurServices,
+  ) { }
 
   ngOnInit(): void {
+   this.findListFournisseur();
   }
+
+  nouveauFournisseur() : void{
+    this.router.navigate(['nouveauFournisseur']);
+  }
+  findListFournisseur(): void {
+    this.fournisseurServices.findAllffournisseur().subscribe(res => {
+      this.listeFournisseur = res;
+    })
+  }
+
 
 }
