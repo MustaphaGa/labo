@@ -149,7 +149,7 @@ sousMenu :[
   {
     id:'40',
     titre:'Gestion Stock',
-    icon: '',
+    icon: 'fa fa-cubes',
     url:'',
     sousMenu :[
       {
@@ -182,7 +182,7 @@ sousMenu :[
   {
     id:'50',
     titre:'Finance',
-    icon: 'fa-solid fa-coins',
+    icon: 'fa fa-coins',
     url:'',
     sousMenu :[
       {
