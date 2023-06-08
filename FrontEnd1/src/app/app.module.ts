@@ -81,6 +81,9 @@ import { NouveauAbsenceComponent } from './composants/nouveau-absence/nouveau-ab
 import { DetailArticleComponent } from './composants/detail-article/detail-article/detail-article.component';
 import { ArticleDetaillComponent } from './detaill/article-detaill/article-detaill/article-detaill.component';
 import { NouveauArticleComponent } from './composants/nouveau-article/nouveau-article.component';
+import { DetailCongerComponent } from './composants/detail-conger/detail-conger.component';
+import { NouveauCongerComponent } from './composants/nouveau-conger/nouveau-conger.component';
+import { CongerDetailComponent } from './detaill/conger-detail/conger-detail.component';
 
 
 
@@ -166,6 +169,9 @@ import { NouveauArticleComponent } from './composants/nouveau-article/nouveau-ar
     DetailArticleComponent,
     ArticleDetaillComponent,
     NouveauArticleComponent,
+    DetailCongerComponent,
+    NouveauCongerComponent,
+    CongerDetailComponent,
 
 
 

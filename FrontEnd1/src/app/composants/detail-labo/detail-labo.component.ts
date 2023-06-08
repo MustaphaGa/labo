@@ -11,6 +11,8 @@ import {LaboDTO} from '../../../gs-api/src/models/labo-dto';
 export class DetailLaboComponent implements OnInit {
   @Input()
   laboDt: LaboDTO = {};
+  @Output()
+  suppressionLabo = new EventEmitter();
   constructor(
     private router:Router,
     private  laboService:LaboService,
@@ -18,9 +20,19 @@ export class DetailLaboComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  modifierLabo(): void{
+    this.router.navigate(['nouveauLabo',this.laboDt.idLabo]);
+  }
 
 
   confirmerEtSupprimerLabo() {
-
+    if(this.laboDt.idLabo){
+      this.laboService.deletelabo(this.laboDt.idLabo)
+        .subscribe(res => {
+          this.suppressionLabo.emit('success');
+        }, error => {
+          this.suppressionLabo.emit(error.error.error);
+        });
+    }
   }
 }
