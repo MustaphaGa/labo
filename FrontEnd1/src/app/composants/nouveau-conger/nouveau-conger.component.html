@@ -30,7 +30,6 @@
             <label for="Employers">Employers</label>
             <select class="form-control" id="Employers" name="pat" [(ngModel)]="employeDt.id_employe">
               <option *ngFor="let pat of listeemploye" [value]="pat.id_employe">{{pat.nom}} - {{pat.prenom}} </option>
-
             </select>
           </div>
         </div>

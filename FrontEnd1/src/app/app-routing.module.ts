@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes,RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { PageLoginComponent } from './pages/page-login/page-login.component';
 import { PageInscriptionComponent } from './pages/page-inscription/page-inscription.component';
 import { PageAccueilComponent } from './pages/page-accueil/page-accueil.component';
@@ -59,28 +59,29 @@ import {PageBilanFinancierComponent} from './pages/page-bilan-financier/page-bil
 import {PageServiceFinanceComponent} from './pages/page-service-finance/page-service-finance.component';
 import { NouveauArticleComponent } from './composants/nouveau-article/nouveau-article.component';
 import { ArticleDetaillComponent } from './detaill/article-detaill/article-detaill/article-detaill.component';
-const routes:Routes=[
+import {NouveauCongerComponent} from './composants/nouveau-conger/nouveau-conger.component';
+const routes: Routes= [
   {
     path: 'pagAccPrincp',
-    component:PageAccueilPrincipalComponent
+    component: PageAccueilPrincipalComponent
   },
   {
-    path:'login',
-    component:PageLoginComponent
+    path: 'login',
+    component: PageLoginComponent
   },
   {
-    path:'register',
-    component:PageInscriptionComponent
+    path: 'register',
+    component: PageInscriptionComponent
 
   },
   {
     path: '',
-    component:PageAccueilComponent,
+    component: PageAccueilComponent,
     canActivate: [ApplicationGuardService],
     children :[
       {
-        path:'statistiques',
-        component:PageStatistiquesComponent,
+        path: 'statistiques',
+        component: PageStatistiquesComponent,
         canActivate: [ApplicationGuardService]
       },
       {
@@ -326,6 +327,19 @@ const routes:Routes=[
         path: 'conges',
         component: PageCongesComponent,
         canActivate: [ApplicationGuardService]
+      },
+
+      {
+        path: 'nouveauconger',
+        component: NouveauCongerComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+
+      {
+        path: 'detailconger/:idConge',
+        component: PreleveurDetaillComponent,
+        canActivate: [ApplicationGuardService]
 
       },
       {
@@ -374,7 +388,7 @@ const routes:Routes=[
         path: 'detailAbsence/:idAbsence',
         component: AbsenceDetaillComponent,
         canActivate: [ApplicationGuardService]
-        
+
       },
       {
         path: 'nouvelEmployee',
@@ -452,7 +466,7 @@ const routes:Routes=[
         path: 'detailArticle/:idArticle',
         component: ArticleDetaillComponent,
         canActivate: [ApplicationGuardService]
-        
+
       },
       {
         path: 'fournisseur',
@@ -487,6 +501,6 @@ const routes:Routes=[
   imports: [RouterModule.forRoot(routes),
     CommonModule
   ],
-  exports:[RouterModule]
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

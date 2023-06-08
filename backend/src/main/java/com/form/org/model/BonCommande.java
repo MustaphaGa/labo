@@ -22,10 +22,12 @@ public class BonCommande {
 	private Integer idBonCommande;
 	private Date dateCommande;
 	private double prix;
-	
+
+	/*
 	@ManyToOne
 	@JoinColumn(name="id_employe")
 	private Employe employe;
+	 */
 	
 	@ManyToOne
 	@JoinColumn(name="idFournisseur")

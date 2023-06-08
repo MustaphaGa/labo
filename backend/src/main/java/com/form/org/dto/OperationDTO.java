@@ -32,7 +32,7 @@ public class OperationDTO {
                 .dateOperation(operation.getDateOperation())
                 .typeOperation(operation.getTypeOperation())
                 .bilanFinancier(BilanFinancierDTO.fromEntity(operation.getBilanFinancier()))
-                .employe(EmployeDTO.fromEntity((operation.getEmploye())))
+                //.employe(EmployeDTO.fromEntity((operation.getEmploye())))
                 .build();
     }
 
@@ -50,7 +50,7 @@ public class OperationDTO {
         operation.setDateOperation(operationDTO.getDateOperation());
         operation.setTypeOperation(operationDTO.getTypeOperation());
         operation.setBilanFinancier((BilanFinancierDTO.toEntity(operationDTO.getBilanFinancier())));
-        operation.setEmploye(EmployeDTO.toEntity((operationDTO.getEmploye())));
+        //operation.setEmploye(EmployeDTO.toEntity((operationDTO.getEmploye())));
         return operation;
     }
 

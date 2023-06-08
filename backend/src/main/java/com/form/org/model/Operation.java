@@ -31,10 +31,11 @@ public class Operation {
 	private Date dateOperation;
 	private String typeOperation;
 	
-	
+	/*
 	@ManyToOne
 	@JoinColumn(name="id_employe")
 	private Employe employe;
+	 */
 
 	@OneToMany(mappedBy="operation")
 	private List<Facture> factures;

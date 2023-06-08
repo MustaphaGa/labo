@@ -21,7 +21,7 @@ export class PageCongesComponent implements OnInit
   {
     this.findListconger();
   }
-  ouveauconger(): void{
+  nouveauconger(): void{
     this.router.navigate(['nouveauconger']);
   }
 

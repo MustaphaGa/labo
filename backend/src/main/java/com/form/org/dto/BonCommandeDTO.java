@@ -38,7 +38,7 @@ import java.util.Date;
                     .prix(bonCommande.getPrix())
                     .fournisseur(FournisseurDTO.fromEntity(bonCommande.getFournisseur()))
                     .facture(FactureDTO.fromEntity(bonCommande.getFacture()))
-                    .employe(EmployeDTO.fromEntity(bonCommande.getEmploye()))
+                    //.employe(EmployeDTO.fromEntity(bonCommande.getEmploye()))
                     .build();
         }
 
@@ -56,7 +56,7 @@ import java.util.Date;
             bonCommande.setPrix(bonCommandeDTO.getPrix());
             bonCommande.setFacture(FactureDTO.toEntity(bonCommandeDTO.getFacture()));
             bonCommande.setFournisseur(FournisseurDTO.toEntity(bonCommandeDTO.getFournisseur()));
-            bonCommande.setEmploye(EmployeDTO.toEntity(bonCommandeDTO.getEmploye()));
+          //  bonCommande.setEmploye(EmployeDTO.toEntity(bonCommandeDTO.getEmploye()));
 
             return bonCommande;
         }

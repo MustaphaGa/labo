@@ -43,7 +43,7 @@ export class NouveauCongerComponent implements OnInit
                    }
   }
       cancel(): void {
-        this.router.navigate(['conge']);
+        this.router.navigate(['conges']);
     }
 
       enregistrerconge(): void {

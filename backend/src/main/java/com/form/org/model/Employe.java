@@ -73,7 +73,7 @@ public class Employe {
 
 	@OneToMany(mappedBy="employe")
 	private List<Mouvement> mouvements;
-
+/*
 	@OneToMany(mappedBy="employe")
 	private List<BonCommande> bonCommandes;
 
@@ -82,6 +82,8 @@ public class Employe {
 
 	@OneToMany(mappedBy="employe")
 	private List<Operation> operations;
+
+ */
 }
 
 
