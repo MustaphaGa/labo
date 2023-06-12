@@ -61,6 +61,10 @@ import { NouveauArticleComponent } from './composants/nouveau-article/nouveau-ar
 import { ArticleDetaillComponent } from './detaill/article-detaill/article-detaill/article-detaill.component';
 import { NouveauFournisseurComponent } from './composants/nouveau-fournisseur/nouveau-fournissseur.component';
 import { FournisseurDetaillComponent } from './detaill/fournisseur-detaill/fournisseur-detaill.component';
+import { BonCommandeDetaillComponent } from './detaill/bon-commande-detaill/bon-commande-detaill.component';
+import { NouveauBonCommandeComponent } from './composants/nouveau-bon-commande/nouveau-bon-commande.component';
+import { NouveauStockComponent } from './composants/nouveau-stock/nouveau-stock.component';
+import { StockDetaillComponent } from './detaill/stock-detaill/stock-detaill.component';
 const routes:Routes=[
   {
     path: 'pagAccPrincp',
@@ -427,10 +431,46 @@ const routes:Routes=[
 
       },
       {
+        path: 'nouveauBonCommande',
+        component: NouveauBonCommandeComponent,
+         canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveauBonCommande/:idBonCommande',
+        component: NouveauBonCommandeComponent,
+         canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'detailBonCommande/:idBonCommande',
+        component: BonCommandeDetaillComponent,
+        canActivate: [ApplicationGuardService]
+        
+      },
+      {
         path: 'stock',
         component: PageStockComponent,
         canActivate: [ApplicationGuardService]
 
+      },
+      {
+        path: 'nouveauStock',
+        component: NouveauStockComponent,
+         canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveauStock/:idStock',
+        component: NouveauStockComponent,
+         canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'detailStock/:idStock',
+        component: StockDetaillComponent,
+        canActivate: [ApplicationGuardService]
+        
       },
       {
         path: 'article',

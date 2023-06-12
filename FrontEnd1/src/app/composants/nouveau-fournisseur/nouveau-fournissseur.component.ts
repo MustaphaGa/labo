@@ -32,7 +32,7 @@ export class NouveauFournisseurComponent implements OnInit {
         this.fournisseurDt = fournisseur;
       });
     }
-    this.findAllPatient();
+   
   
   }
   
@@ -41,19 +41,16 @@ export class NouveauFournisseurComponent implements OnInit {
     this.router.navigate(['fournisseur']);
   }
   enregistrerFournisseur(): void {
-    this.fournisseurServices.enregistrerfournisseur(this.idFournisseur).subscribe(res => {
-    this.router.navigate(['patients']);
+    this.fournisseurServices.enregistrerfournisseur(this.fournisseurDt).subscribe(res => {
+    this.router.navigate(['fournisseur']);
    // console.log(">>>>>>"+this.patientDt);
     }, error => {
       this.errorMsg = error.error.errors;
     });
   }
-  findAllFournisseur(): void{
-    this.fournisseurServices.findAllffournisseur().subscribe(fournisseur=>{
-      this.listFournisseurs=fournisseur;
-    });
+  
 
-  }
+  
  
     
 

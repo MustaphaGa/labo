@@ -77,8 +77,8 @@ public class Employe {
 	@OneToMany(mappedBy="employe")
 	private List<BonCommande> bonCommandes;
 
-	@OneToOne(mappedBy = "employe")
-	private Stock stock;
+	/*@OneToOne(mappedBy = "employe")
+	private Stock stock;*/
 
 	@OneToMany(mappedBy="employe")
 	private List<Operation> operations;

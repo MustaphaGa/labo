@@ -84,6 +84,12 @@ import { NouveauArticleComponent } from './composants/nouveau-article/nouveau-ar
 import { FournisseurDetaillComponent } from './detaill/fournisseur-detaill/fournisseur-detaill.component';
 import { DetailFournisseurComponent } from './composants/detail-fournisseur/detail-fournisseur.component';
 import { NouveauFournisseurComponent } from './composants/nouveau-fournisseur/nouveau-fournissseur.component';
+import { DetailBonCommandeComponent } from './composants/detail-bon-commande/detail-bon-commande.component';
+import { BonCommandeDetaillComponent } from './detaill/bon-commande-detaill/bon-commande-detaill.component';
+import { NouveauBonCommandeComponent } from './composants/nouveau-bon-commande/nouveau-bon-commande.component';
+import { DetailStockComponent } from './composants/detail-stock/detail-stock.component';
+import { StockDetaillComponent } from './detaill/stock-detaill/stock-detaill.component';
+import { NouveauStockComponent } from './composants/nouveau-stock/nouveau-stock.component';
 
 
 
@@ -172,6 +178,12 @@ import { NouveauFournisseurComponent } from './composants/nouveau-fournisseur/no
     FournisseurDetaillComponent,
     DetailFournisseurComponent,
     NouveauFournisseurComponent,
+    DetailBonCommandeComponent,
+    BonCommandeDetaillComponent,
+    NouveauBonCommandeComponent,
+    DetailStockComponent,
+    StockDetaillComponent,
+    NouveauStockComponent,
     
 
 

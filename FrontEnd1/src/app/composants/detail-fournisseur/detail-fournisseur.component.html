@@ -1,17 +1,21 @@
 <div class="row mb-1 mr-0 custom-border">
     <div class="col-md-1 custom-border-right p-1 text-center ">
-        <img src="assets/menu/assets/img/images.jfif" width="75px" height="75px">
+        <img src="assets/imgs/fournisseur.png" width="75px" height="75px">
     </div>
 <!--detail analyse-->
 <div class="col-md-5 custom-border-right mb-1 mt-1 ">
     <div class="col">
         <div class="row">
                <div class="col-md-1"><i class="far fa-info-circle blue-color" ></i></div>
-               <div class="col-md-11">{{fournisseurDt.nom}}</div>
+               <div class="col-md-11">{{fournisseurDto.nom}}</div>
            </div>
            <div class="row">
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-            <div class="col-md-11">{{fournisseurDt.telephone}}</div>
+            <div class="col-md-11">{{fournisseurDto.telephone}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
+            <div class="col-md-11">{{fournisseurDto.adresse}}</div>
         </div>
         
         
@@ -20,15 +24,15 @@
 
     <div class="col-md-3 mb-1 mt-1">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-6 col-md-4">
                 <button type="button" class="btn btn btn-link" (click)=" modifierFournisseur()">
                     <i class="fas fa-pencil-alt"></i>&nbsp;modifier</button>
             </div>
-            <div class="col-md-4">
-                <button type="button" class="btn btn btn-link text-danger" data-toggle="modal" [attr.data-target]="'#modalDeleteFournisseur' + fournisseurDt.idFournisseur">
+            <div class="col-6 col-md-4">
+                <button type="button" class="btn btn btn-link text-danger" data-toggle="modal" [attr.data-target]="'#modalDeleteFournisseur' + fournisseurDto.idFournisseur">
                     <i class="fas fa-trash-alt"></i>&nbsp;supprimer</button>
             </div>
-            <div class="col-md-4">
+            <div class="col-6 col-md-4">
                 <button type="button" class="btn btn btn-link"  (click)=" DetailFournisseur()">
                     <i class="fas fa-list-alt"></i>&nbsp;Details</button>
             </div>
@@ -38,7 +42,7 @@
     
 </div>
 <!-- Modal -->
-<div class="modal fade" id="modalDeleteFournisseur{{fournisseurDt.idFournisseur}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="modalDeleteFournisseur{{fournisseurDto.idFournisseur}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">

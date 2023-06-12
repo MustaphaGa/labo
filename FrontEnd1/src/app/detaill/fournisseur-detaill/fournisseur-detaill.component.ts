@@ -16,7 +16,7 @@ export class FournisseurDetaillComponent implements OnInit {
     private activatedRouter:ActivatedRoute) { }
 
   ngOnInit(): void {
-    const idFournisseur = this.activatedRouter.snapshot.params.idBiologiste
+    const idFournisseur = this.activatedRouter.snapshot.params.idFournisseur
     if (idFournisseur) {
       this.fournisseurServices.findFournisseurById(idFournisseur)
       .subscribe(fourniss => {

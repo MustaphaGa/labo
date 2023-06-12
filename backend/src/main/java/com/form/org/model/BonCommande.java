@@ -31,7 +31,8 @@ public class BonCommande {
 	@JoinColumn(name="idFournisseur")
 	private Fournisseur fournisseur;
 	
-	@OneToOne(mappedBy = "bonCommande")
+	@OneToOne
+	@JoinColumn(name = "idFacture")
     private Facture facture;
 
 	@OneToMany(mappedBy="bonCommande")

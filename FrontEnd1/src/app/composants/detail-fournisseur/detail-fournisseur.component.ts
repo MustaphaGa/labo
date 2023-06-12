@@ -11,7 +11,7 @@ import { FournisseurDTO } from 'src/gs-api/src/models/fournisseur-dto';
 export class DetailFournisseurComponent implements OnInit {
  
   @Input()
-  fournisseurDt: FournisseurDTO ={};
+  fournisseurDto: FournisseurDTO ={};
   @Output()
   suppressionFournisseur = new EventEmitter();
   constructor( private router:Router,
@@ -22,14 +22,14 @@ export class DetailFournisseurComponent implements OnInit {
   ngOnInit(): void {
   }
   modifierFournisseur():void{
-    this.router.navigate(['nouveauFournisseur',this.fournisseurDt.idFournisseur])
+    this.router.navigate(['nouveauFournisseur',this.fournisseurDto.idFournisseur])
   }
   DetailFournisseur():void{
-    this.router.navigate(['detailFournisseur',this.fournisseurDt.idFournisseur])
+    this.router.navigate(['detailFournisseur',this.fournisseurDto.idFournisseur])
   }
   confirmerEtSupprimerFournisseur(): void{
-    if(this.fournisseurDt.idFournisseur){
-      this.fournisseurServices.deleteFournisseur(this.fournisseurDt.idFournisseur)
+    if(this.fournisseurDto.idFournisseur){
+      this.fournisseurServices.deleteFournisseur(this.fournisseurDto.idFournisseur)
        .subscribe(res => {
         this.suppressionFournisseur.emit('success');
        }, error => {

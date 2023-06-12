@@ -10,7 +10,7 @@ import {FournisseurServices} from '../../services/fournisseur/fournisseur.servic
 })
 export class PageFournisseurComponent implements OnInit {
 
-  listeFournisseur : Array<FournisseurDTO>  = [];
+  listeFournisseurs : Array<FournisseurDTO>  = [];
  errorMsgs = '';
   constructor(
     private router: Router,
@@ -26,7 +26,7 @@ export class PageFournisseurComponent implements OnInit {
   }
   findListFournisseur(): void {
     this.fournisseurServices.findAllffournisseur().subscribe(res => {
-      this.listeFournisseur = res;
+      this.listeFournisseurs = res;
     })
   }
 

@@ -23,9 +23,7 @@ public class Stock {
 	private String situation;
 	private Date dateVerification;
 	
-	@OneToOne
-    @JoinColumn(name = "id_employe")
-    private Employe employe;
+
 
 	@OneToMany(mappedBy="stock")
 	private List<Article> articles;

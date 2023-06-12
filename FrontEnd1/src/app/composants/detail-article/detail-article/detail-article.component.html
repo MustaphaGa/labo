@@ -1,18 +1,11 @@
 <div class="row mb-1 mr-0 custom-border">
     <div class="col-md-1 custom-border-right p-1 text-center ">
-        <img src="assets/menu/assets/img/reservation.svg" width="75px" height="75px">
+        <img src="assets/imgs/articles.jpg" width="75px" height="75px">
     </div>
 <!--detail reservation-->
 <div class="col-md-4 custom-border-right mb-1 mt-1 ">
     <div class="col">
-         <!--  <div class="row">
-            <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-            <div class="col-md-10">{{articleDt.stock?.nom}}</div>
-        </div>
-      <div class="row">
-            <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-            <div class="col-md-10">{{articleDt.boncommand?.nom}}</div>
-        </div> -->
+      
         <div class="row">
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
             <div class="col-md-10">{{articleDt.articleName}}</div>
@@ -21,12 +14,20 @@
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
             <div class="col-md-10">{{articleDt.quantite}}</div>
         </div>
+            <div class="row">
+            <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
+            <div class="col-md-10">{{articleDt.stock?.situation}}</div>
+        </div>
+      <div class="row">
+            <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
+            <div class="col-md-10">{{articleDt.bonCommande?.prix}}</div>
+        </div> 
         
        
         
         
-        </div>
-    </div>
+     </div>
+</div>
 <!--detail type--->
 
 

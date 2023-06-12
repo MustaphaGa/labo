@@ -39,7 +39,7 @@ import lombok.NoArgsConstructor;
 	private AnalyseMedical analyseMedical;
 	
 	@OneToOne
-    @JoinColumn(name = "idBonCommande")
+
     private BonCommande bonCommande;
 	
 	@ManyToOne
