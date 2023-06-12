@@ -14,7 +14,7 @@ export class PatientService {
     private testcovidv1patientService : TestCovidv1patientService
     ) { };
 
-   enregistrerpatient(patientDt:PatientDTO):Observable<PatientDTO> {
+   enregistrerpatient(patientDt: PatientDTO): Observable<PatientDTO> {
      return this.testcovidv1patientService.save(patientDt);
    }
    findAllPatient(): Observable<PatientDTO[]> {
@@ -33,6 +33,7 @@ export class PatientService {
     }
     return of();
   }
+
   findPatientByCode(codePatient: string): Observable<PatientDTO>{
     return this.testcovidv1patientService.findPatientByCodePatient(codePatient);
   }

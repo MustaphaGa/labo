@@ -15,23 +15,23 @@ export class DetailPatientComponent implements OnInit {
   @Output()
   suppressionPatient = new EventEmitter();
   constructor(
-    private router:Router,
-    private patientService:PatientService
+    private router: Router,
+    private patientService: PatientService
   ) { };
 
   ngOnInit(): void {
     }
-    modifierPatient():void{
-      this.router.navigate(['nouveauPatient',this.patientdto.idPatient])
+    modifierPatient(): void{
+      this.router.navigate (['nouveauPatient', this.patientdto.idPatient])
     }
 
     detaillresultat(): void{
-      this.router.navigate(['detailPatient',this.patientdto.idPatient]);
+      this.router.navigate(['detailPatient', this.patientdto.idPatient]);
 
     }
 
     confirmerEtSupprimerPatient(): void{
-      if(this.patientdto.idPatient){
+      if (this.patientdto.idPatient){
        this.patientService.deletePatient(this.patientdto.idPatient)
         .subscribe(res => {
          this.suppressionPatient.emit('success');

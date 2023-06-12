@@ -11,19 +11,19 @@ import { ReservationDTO } from 'src/gs-api/src/models/reservation-dto';
 })
 export class NouveauReservationComponent implements OnInit {
   reservationDTo: ReservationDTO ={};
-  patientDt: PatientDTO={};
-  listepatient :Array<PatientDTO>  = [];
+  patientDt: PatientDTO = {};
+  listepatient: Array<PatientDTO>  = [];
   errorMsg: Array<string> = [];
-  constructor( 
-    private router:Router,
-    private activatedRouter:ActivatedRoute,
-    private reservationnService :ReservationnService,
-    private patientService:PatientService) { }
+  constructor(
+    private router: Router,
+    private activatedRouter: ActivatedRoute,
+    private reservationnService: ReservationnService,
+    private patientService: PatientService) { }
 
 
   ngOnInit(): void {
     this.patientService.findAllPatient().subscribe(patient => {
-      this.listepatient=patient;
+      this.listepatient = patient;
     });
     const idreservation = this.activatedRouter.snapshot.params.idReservation;
     if (idreservation) {
@@ -33,7 +33,7 @@ export class NouveauReservationComponent implements OnInit {
         this.patientDt = this.reservationDTo.patient ? this.reservationDTo.patient: {};
       });
     }
-  
+
   }
   cancel(): void {
     this.router.navigate(['reservation']);

@@ -28,10 +28,12 @@ public class FournisseurController implements FournisseurApi {
         return fournisseurService.findById(idFournisseur);
     }
 
+   /*
     @Override
     public FournisseurDTO findByNom(String nom) {
         return fournisseurService.findByNom(nom);
     }
+    */
 
     @Override
     public List<FournisseurDTO> findAll() {

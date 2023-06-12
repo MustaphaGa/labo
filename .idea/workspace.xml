@@ -1,13 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e596020e-b0e0-4867-b715-b66d5eac7d86" name="Default Changelist" comment="" />
+    <list default="true" id="e596020e-b0e0-4867-b715-b66d5eac7d86" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd1/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd1/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd1/src/app/composants/detail-conger/detail-conger.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd1/src/app/composants/detail-conger/detail-conger.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd1/src/app/composants/detail-conger/detail-conger.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd1/src/app/composants/detail-conger/detail-conger.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd1/src/app/composants/detail-patient/detail-patient.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd1/src/app/composants/detail-patient/detail-patient.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd1/src/app/composants/detail-patient/detail-patient.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd1/src/app/composants/detail-patient/detail-patient.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd1/src/app/composants/detail-reservation/detail-reservation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd1/src/app/composants/detail-reservation/detail-reservation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd1/src/app/composants/nouveau-conger/nouveau-conger.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd1/src/app/composants/nouveau-conger/nouveau-conger.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd1/src/app/composants/nouveau-conger/nouveau-conger.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd1/src/app/composants/nouveau-conger/nouveau-conger.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd1/src/app/composants/nouveau-patient/nouveau-patient.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd1/src/app/composants/nouveau-patient/nouveau-patient.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd1/src/app/composants/nouveau-reservation/nouveau-reservation.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd1/src/app/composants/nouveau-reservation/nouveau-reservation.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd1/src/app/pages/page-conges/page-conges.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd1/src/app/pages/page-conges/page-conges.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd1/src/app/pages/page-conges/page-conges.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd1/src/app/pages/page-conges/page-conges.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd1/src/app/pages/patient/page-patient/page-patient.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd1/src/app/pages/patient/page-patient/page-patient.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEnd1/src/app/services/patient/patient.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd1/src/app/services/patient/patient.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Controller/AbsenceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Controller/AbsenceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Controller/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Controller/StockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Controller/api/ArticleApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Controller/api/ArticleApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Controller/api/FournisseurApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Controller/api/FournisseurApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Controller/api/OperationApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Controller/api/OperationApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Controller/api/RoleApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Controller/api/RoleApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Controller/api/StockApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Controller/api/StockApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Repository/FournisseurRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Repository/FournisseurRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Repository/OperationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Repository/OperationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Repository/StockRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Repository/StockRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Services/Imp/EmployeServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Services/Imp/EmployeServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Services/Imp/FournisseurServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Services/Imp/FournisseurServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Services/Imp/OperationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Services/Imp/OperationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Services/Imp/PreleveurServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Services/Imp/PreleveurServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Services/Imp/StockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Services/Imp/StockServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Services/OperationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Services/OperationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Services/StockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Services/StockService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/dto/ArticleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/dto/ArticleDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/dto/BonCommandeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/dto/BonCommandeDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/dto/FournisseurDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/dto/FournisseurDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/dto/OperationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/dto/OperationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/dto/ReservationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/dto/ReservationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/dto/StockDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/dto/StockDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/exception/ErrorCodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/exception/ErrorCodes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/BilanFinancier.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/BilanFinancier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/BonCommande.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/BonCommande.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/Facture.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/Facture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/Fournisseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/Fournisseur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/Operation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/Stock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/validator/ArticleValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/validator/ArticleValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/validator/BonCommandeValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/validator/BonCommandeValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/validator/OperationValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/validator/OperationValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="2QsScUH88HD9B486ILFJ5m6Yixy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -26,7 +85,23 @@
       <option name="presentableId" value="Default" />
       <updated>1686140874428</updated>
       <workItem from="1686140882836" duration="3000" />
+      <workItem from="1686300125171" duration="13000" />
+      <workItem from="1686300168308" duration="35000" />
+      <workItem from="1686576065451" duration="16000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1946" y="192" key="FileChooserDialogImpl" timestamp="1686300202326">
+      <screen x="1366" y="0" width="1600" height="870" />
+    </state>
+    <state x="1946" y="192" key="FileChooserDialogImpl/0.0.1366.738/1366.0.1600.870@1366.0.1600.870" timestamp="1686300202326" />
+    <state x="1851" y="262" key="com.intellij.ide.util.TipDialog" timestamp="1686300167185">
+      <screen x="1366" y="0" width="1600" height="870" />
+    </state>
+    <state x="1851" y="262" key="com.intellij.ide.util.TipDialog/0.0.1366.738/1366.0.1600.870@1366.0.1600.870" timestamp="1686300167184" />
   </component>
 </project>

@@ -26,8 +26,10 @@ public class BilanFinancier {
 	@Column(name="idBilan")
 	private Integer idBilan;
 	private String description;
-	
+
+	/*
 	@OneToMany(mappedBy="bilanFinancier")
 	private List<Operation> operations;
+	*/
 
 }

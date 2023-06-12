@@ -26,6 +26,7 @@ public interface ArticleApi {
     })
     ArticleDTO save(@RequestBody ArticleDTO dto);
 
+
     @GetMapping(value= APP_ROOT +"/article/{idArticle}", produces = MediaType.APPLICATION_JSON_VALUE )
 
     @ApiOperation(value = "rechercher un article par ID",notes = "Cette methode permet"

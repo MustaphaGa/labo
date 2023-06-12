@@ -24,18 +24,26 @@ export class DetailCongerComponent implements OnInit
   {
   }
 
-  modifierConger(): void{
-    this.router.navigate(['nouveauconger', this.congerDT.idConge])
+  modifierConger(): void
+  {
+    this.router.navigate(['nouveauconger', this.congerDT.idConge]);
   }
-  detailReservation(): void{
-    this.router.navigate(['detailconger', this.congerDT.idConge])
+
+  detailConger(): void
+  {
+    this.router.navigate(['detailconger', this.congerDT.idConge]);
   }
-  confirmerEtSupprimerReservation(): void{
-    if (this.congerDT.idConge){
+
+  confirmerEtSupprimerConger(): void
+  {
+    if (this.congerDT.idConge)
+    {
       this.congerService.deleteConger(this.congerDT.idConge)
-        .subscribe(res => {
+        .subscribe(res =>
+        {
           this.suppressionConger.emit('success');
-        }, error => {
+        }, error =>
+        {
           this.suppressionConger.emit(error.error.error);
         });
     }

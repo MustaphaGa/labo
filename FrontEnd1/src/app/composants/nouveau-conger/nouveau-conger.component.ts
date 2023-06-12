@@ -15,6 +15,7 @@ export class NouveauCongerComponent implements OnInit
   congeDTo: CongeDTO = {};
   employeDt: EmployeDTO = {};
   listeemploye: Array<EmployeDTO>  = [];
+  listConger: Array<CongeDTO> = [];
   errorMsg: Array<string> = [];
 
   constructor(
@@ -30,7 +31,7 @@ export class NouveauCongerComponent implements OnInit
       this.listeemploye = employe;
     });
 
-    const idconge = this.activatedRouter.snapshot.params.idconge;
+    const idconge = this.activatedRouter.snapshot.params.idConge;
     if (idconge)
       {
         this.congeService.findCongerById(idconge)
@@ -38,13 +39,24 @@ export class NouveauCongerComponent implements OnInit
           {
             this.congeDTo = conge;
             this.employeDt = this.congeDTo.employe ? this.congeDTo.employe : {};
-
              });
                    }
+    this.findAllConger();
   }
+
+  // methode pour annuler l'operation
       cancel(): void {
         this.router.navigate(['conges']);
     }
+
+  findAllConger(): void
+  {
+    this.congeService.findAllconger().subscribe(conger =>
+    {
+      this.listConger = conger;
+    });
+
+  }
 
       enregistrerconge(): void {
         this.congeDTo.employe = this.employeDt

@@ -39,17 +39,17 @@ import { ExporteResultatComponent } from './composants/exportationDonner/exporte
 import { PdfResultatComponent } from './pdf-resultat/pdf-resultat.component';
 import { PageEmployeesComponent } from './pages/employee/page-employees/page-employees.component';
 import { NouveauEmployeComponent } from './composants/nouveau-employe/nouveau-employe.component';
-import {PageLaboComponent} from "./pages/page-labo/page-labo.component";
-import {NouveauLaboComponent} from "./composants/nouveau-labo/nouveau-labo.component";
-import {PageAccueilPrincipalComponent} from "./pages/page-accueil-principal/page-accueil-principal.component";
-import {PageCongesComponent} from "./pages/page-conges/page-conges.component";
-import {PageRecrutementComponent} from "./pages/page-recrutement/page-recrutement.component";
-import {PageMouvementComponent} from "./pages/page-mouvement/page-mouvement.component";
+import {PageLaboComponent} from './pages/page-labo/page-labo.component';
+import {NouveauLaboComponent} from './composants/nouveau-labo/nouveau-labo.component';
+import {PageAccueilPrincipalComponent} from './pages/page-accueil-principal/page-accueil-principal.component';
+import {PageCongesComponent} from './pages/page-conges/page-conges.component';
+import {PageRecrutementComponent} from './pages/page-recrutement/page-recrutement.component';
+import {PageMouvementComponent} from './pages/page-mouvement/page-mouvement.component';
 import {NouveauRecrutementComponent} from './composants/nouveau-recrutement/nouveau-recrutement.component';
 import {NouveauMouvementComponent} from './composants/nouveau-mouvement/nouveau-mouvement.component';
 import {PageAbsenceComponent} from './pages/page-absence/page-absence.component';
 import { NouveauAbsenceComponent } from './composants/nouveau-absence/nouveau-absence/nouveau-absence.component';
-import {AbsenceDetaillComponent} from "./detaill/absence-detaill/absence-detaill/absence-detaill.component";
+import {AbsenceDetaillComponent} from './detaill/absence-detaill/absence-detaill/absence-detaill.component';
 import {PageArticleComponent} from './pages/page-article/page-article.component';
 import {PageBonCommandeComponent} from './pages/page-bon-commande/page-bon-commande.component';
 import {PageStockComponent} from './pages/page-stock/page-stock.component';
@@ -60,7 +60,7 @@ import {PageServiceFinanceComponent} from './pages/page-service-finance/page-ser
 import { NouveauArticleComponent } from './composants/nouveau-article/nouveau-article.component';
 import { ArticleDetaillComponent } from './detaill/article-detaill/article-detaill/article-detaill.component';
 import {NouveauCongerComponent} from './composants/nouveau-conger/nouveau-conger.component';
-const routes: Routes= [
+const routes: Routes = [
   {
     path: 'pagAccPrincp',
     component: PageAccueilPrincipalComponent
@@ -78,7 +78,7 @@ const routes: Routes= [
     path: '',
     component: PageAccueilComponent,
     canActivate: [ApplicationGuardService],
-    children :[
+    children : [
       {
         path: 'statistiques',
         component: PageStatistiquesComponent,
@@ -323,6 +323,7 @@ const routes: Routes= [
         canActivate: [ApplicationGuardService]
 
       },
+      // '''''''' ''''''''conger'''''''''''''''
       {
         path: 'conges',
         component: PageCongesComponent,
@@ -335,13 +336,20 @@ const routes: Routes= [
         canActivate: [ApplicationGuardService]
 
       },
+      {
+        path: 'nouveauconger/:idConge',
+        component: NouveauCongerComponent,
+        canActivate: [ApplicationGuardService]
+      },
 
       {
         path: 'detailconger/:idConge',
         component: PreleveurDetaillComponent,
         canActivate: [ApplicationGuardService]
-
       },
+
+      // '''''''' '''''''''''''''''''''''
+
       {
         path: 'recrutement',
         component: PageRecrutementComponent,

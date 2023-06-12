@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 @Table(name="Facture")
 
   public class Facture  {
-	
+
 	@Id
     @GeneratedValue
 	@Column(name="idFacture")
@@ -37,14 +37,10 @@ import lombok.NoArgsConstructor;
 	@ManyToOne
 	@JoinColumn(name="idAnalyseMedical")
 	private AnalyseMedical analyseMedical;
-	
-	@OneToOne
-    @JoinColumn(name = "idBonCommande")
-    private BonCommande bonCommande;
-	
+
+	/*
 	@ManyToOne
 	@JoinColumn(name="idOperation")
 	private Operation operation;
-	
-	
+	 */
 }

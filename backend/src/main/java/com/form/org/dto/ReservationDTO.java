@@ -35,6 +35,7 @@ public class ReservationDTO {
 			.idReservation(reservation.getIdReservation())
 			.dateReservation(reservation.getDateReservation())
 			.description(reservation.getDescription())
+
 			.patient(PatientDTO.fromEntity(reservation.getPatient()))
 			.build();
 	}

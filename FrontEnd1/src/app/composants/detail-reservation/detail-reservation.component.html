@@ -8,26 +8,23 @@
            <div class="row">
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
             <div class="col-md-10">{{reservationDT.patient?.nom}} {{reservationDT.patient?.prenom}}</div>
-        </div>
+           </div>
+
         <div class="row">
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
             <div class="col-md-10">{{reservationDT.description}}</div>
         </div>
-        
-       
-        
-        
         </div>
     </div>
 <!--detail type--->
 <div class="col-md-4 custom-border-right mb-1 mt-1 ">
-    <div class="row">     
+    <div class="row">
                 <div class="col-md-2"><i class="fas fa-calendar-check blue-color"></i></div>
                 <div class="col-md-1O">{{reservationDT.dateReservation | date: 'dd/MM/yyyy'}}</div>
 </div>
     </div>
 
-   
+
     <div class="col-md-3 mb-1 mt-1">
         <div class="row">
             <div class="col-md-4">
@@ -45,8 +42,8 @@
 
         </div>
     </div>
-    
-    
+
+
 </div>
 <!-- Modal -->
 <div class="modal fade" id="modalDeleteReservation{{reservationDT.idReservation}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

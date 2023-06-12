@@ -11,7 +11,8 @@ public class AbsenceController implements AbsenceApi {
 
     private AbsenceService absenceService;
 
-    public AbsenceController(AbsenceService absenceService) {
+    public AbsenceController(AbsenceService absenceService)
+    {
         this.absenceService = absenceService;
     }
 

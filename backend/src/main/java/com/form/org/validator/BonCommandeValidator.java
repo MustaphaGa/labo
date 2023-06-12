@@ -13,7 +13,8 @@ public class BonCommandeValidator {
 
         if(bonCommandeDTO == null) {
             errors.add("veuillez renseigner le dateCommande de commande!!");
-            errors.add("veuillez renseigner le prix de commande !!");
+            errors.add("veuillez renseigner la quantité de commande!!");
+
 
 
             return errors;
@@ -22,8 +23,9 @@ public class BonCommandeValidator {
         if(bonCommandeDTO.getDateCommande()==null) {
             errors.add("veuillez renseigner lDateCommande!!");
         }
-        if(bonCommandeDTO.getPrix()==0) {
-            errors.add("veuillez renseigner Prix!!");
+
+        if(bonCommandeDTO.getQuantiteCommande()==null) {
+            errors.add("veuillez renseigner la quantité de commande!!");
         }
 
 

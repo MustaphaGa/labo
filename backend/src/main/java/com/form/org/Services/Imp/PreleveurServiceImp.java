@@ -31,9 +31,9 @@ public class PreleveurServiceImp implements PreleveurService{
 }
 	@Override
 	public PreleveurDTO save(PreleveurDTO dto) {
-	
 		List<String> errors= PreleveurValidator.validate(dto);
-		if(!errors.isEmpty()) {
+		if(!errors.isEmpty())
+		{
 			log.error(" preleveur n'est pas valide {}",dto);
 			throw new InvalidEntityException(" preleveur n'est pas valide", ErrorCodes.PRELEVEUR_NOT_VALID, errors);
 		}
@@ -84,7 +84,8 @@ public class PreleveurServiceImp implements PreleveurService{
 
 	@Override
 	public void delete(Integer idPreleveur) {
-		if(idPreleveur == null) {	
+		if(idPreleveur == null)
+		{
 			log.error("preleveur id is null");
 			return ;
 		}

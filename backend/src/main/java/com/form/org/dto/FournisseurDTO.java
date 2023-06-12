@@ -14,6 +14,7 @@ public class FournisseurDTO {
 
     private Integer idFournisseur;
     private String nom;
+    private String prenom;
     private  String Adresse;
     private String telephone;
 
@@ -28,9 +29,11 @@ public class FournisseurDTO {
         }
         return   FournisseurDTO.builder()
                 .idFournisseur(fournisseur.getIdFournisseur())
-                .Adresse(fournisseur.getAdresse())
                 .nom(fournisseur.getNom())
+                .Adresse(fournisseur.getAdresse())
+                .prenom(fournisseur.getPrenom())
                 .telephone(fournisseur.getTelephone())
+
                 .build();
     }
 
@@ -45,6 +48,7 @@ public class FournisseurDTO {
 
         fournisseur.setIdFournisseur(fournisseurDTO.getIdFournisseur());
         fournisseur.setNom(fournisseurDTO.getNom());
+        fournisseur.setPrenom(fournisseurDTO.getPrenom());
         fournisseur.setAdresse(fournisseurDTO.getAdresse());
         fournisseur.setTelephone(fournisseurDTO.getTelephone());
 
