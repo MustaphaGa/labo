@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes,RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { PageLoginComponent } from './pages/page-login/page-login.component';
 import { PageInscriptionComponent } from './pages/page-inscription/page-inscription.component';
 import { PageAccueilComponent } from './pages/page-accueil/page-accueil.component';
@@ -39,17 +39,16 @@ import { ExporteResultatComponent } from './composants/exportationDonner/exporte
 import { PdfResultatComponent } from './pdf-resultat/pdf-resultat.component';
 import { PageEmployeesComponent } from './pages/employee/page-employees/page-employees.component';
 import { NouveauEmployeComponent } from './composants/nouveau-employe/nouveau-employe.component';
-import {PageLaboComponent} from "./pages/page-labo/page-labo.component";
-import {NouveauLaboComponent} from "./composants/nouveau-labo/nouveau-labo.component";
-import {PageAccueilPrincipalComponent} from "./pages/page-accueil-principal/page-accueil-principal.component";
-import {PageCongesComponent} from "./pages/page-conges/page-conges.component";
-import {PageRecrutementComponent} from "./pages/page-recrutement/page-recrutement.component";
-import {PageMouvementComponent} from "./pages/page-mouvement/page-mouvement.component";
+import {PageLaboComponent} from './pages/page-labo/page-labo.component';
+import {NouveauLaboComponent} from './composants/nouveau-labo/nouveau-labo.component';
+import {PageAccueilPrincipalComponent} from './pages/page-accueil-principal/page-accueil-principal.component';
+import {PageRecrutementComponent} from './pages/page-recrutement/page-recrutement.component';
+import {PageMouvementComponent} from './pages/page-mouvement/page-mouvement.component';
 import {NouveauRecrutementComponent} from './composants/nouveau-recrutement/nouveau-recrutement.component';
 import {NouveauMouvementComponent} from './composants/nouveau-mouvement/nouveau-mouvement.component';
 import {PageAbsenceComponent} from './pages/page-absence/page-absence.component';
 import { NouveauAbsenceComponent } from './composants/nouveau-absence/nouveau-absence/nouveau-absence.component';
-import {AbsenceDetaillComponent} from "./detaill/absence-detaill/absence-detaill/absence-detaill.component";
+import {AbsenceDetaillComponent} from './detaill/absence-detaill/absence-detaill/absence-detaill.component';
 import {PageArticleComponent} from './pages/page-article/page-article.component';
 import {PageBonCommandeComponent} from './pages/page-bon-commande/page-bon-commande.component';
 import {PageStockComponent} from './pages/page-stock/page-stock.component';
@@ -59,34 +58,37 @@ import {PageBilanFinancierComponent} from './pages/page-bilan-financier/page-bil
 import {PageServiceFinanceComponent} from './pages/page-service-finance/page-service-finance.component';
 import { NouveauArticleComponent } from './composants/nouveau-article/nouveau-article.component';
 import { ArticleDetaillComponent } from './detaill/article-detaill/article-detaill/article-detaill.component';
-import { NouveauFournisseurComponent } from './composants/nouveau-fournisseur/nouveau-fournissseur.component';
-import { FournisseurDetaillComponent } from './detaill/fournisseur-detaill/fournisseur-detaill.component';
-import { BonCommandeDetaillComponent } from './detaill/bon-commande-detaill/bon-commande-detaill.component';
 import { NouveauBonCommandeComponent } from './composants/nouveau-bon-commande/nouveau-bon-commande.component';
+import { BonCommandeDetaillComponent } from './detaill/bon-commande-detaill/bon-commande-detaill.component';
 import { NouveauStockComponent } from './composants/nouveau-stock/nouveau-stock.component';
 import { StockDetaillComponent } from './detaill/stock-detaill/stock-detaill.component';
-const routes:Routes=[
+import { NouveauFournisseurComponent } from './composants/nouveau-fournisseur/nouveau-fournissseur.component';
+import { FournisseurDetaillComponent } from './detaill/fournisseur-detaill/fournisseur-detaill.component';
+import { PageCongesComponent } from './pages/page-conges/page-conges.component';
+import { NouveauCongerComponent } from './composants/nouveau-conger/nouveau-conger.component';
+import { DetailCongerComponent } from './composants/detail-conger/detail-conger.component';
+const routes: Routes = [
   {
     path: 'pagAccPrincp',
-    component:PageAccueilPrincipalComponent
+    component: PageAccueilPrincipalComponent
   },
   {
-    path:'login',
-    component:PageLoginComponent
+    path: 'login',
+    component: PageLoginComponent
   },
   {
-    path:'register',
-    component:PageInscriptionComponent
+    path: 'register',
+    component: PageInscriptionComponent
 
   },
   {
     path: '',
-    component:PageAccueilComponent,
+    component: PageAccueilComponent,
     canActivate: [ApplicationGuardService],
-    children :[
+    children : [
       {
-        path:'statistiques',
-        component:PageStatistiquesComponent,
+        path: 'statistiques',
+        component: PageStatistiquesComponent,
         canActivate: [ApplicationGuardService]
       },
       {
@@ -328,12 +330,32 @@ const routes:Routes=[
         canActivate: [ApplicationGuardService]
 
       },
+      
       {
         path: 'conges',
         component: PageCongesComponent,
         canActivate: [ApplicationGuardService]
+      },
+
+      {
+        path: 'nouveauconger',
+        component: NouveauCongerComponent,
+        canActivate: [ApplicationGuardService]
 
       },
+      {
+        path: 'nouveauconger/:idConge',
+        component: NouveauCongerComponent,
+        canActivate: [ApplicationGuardService]
+      },
+
+      {
+        path: 'detailconger/:idConge',
+        component: DetailCongerComponent,
+        canActivate: [ApplicationGuardService]
+      },
+
+
       {
         path: 'recrutement',
         component: PageRecrutementComponent,
@@ -380,7 +402,7 @@ const routes:Routes=[
         path: 'detailAbsence/:idAbsence',
         component: AbsenceDetaillComponent,
         canActivate: [ApplicationGuardService]
-        
+
       },
       {
         path: 'nouvelEmployee',
@@ -494,7 +516,7 @@ const routes:Routes=[
         path: 'detailArticle/:idArticle',
         component: ArticleDetaillComponent,
         canActivate: [ApplicationGuardService]
-        
+
       },
       {
         path: 'fournisseur',
@@ -547,6 +569,6 @@ const routes:Routes=[
   imports: [RouterModule.forRoot(routes),
     CommonModule
   ],
-  exports:[RouterModule]
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

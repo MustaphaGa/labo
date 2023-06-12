@@ -3,7 +3,6 @@ package com.form.org.Services.Imp;
 import com.form.org.Repository.OperationRepository;
 import com.form.org.Services.OperationService;
 import com.form.org.dto.OperationDTO;
-import com.form.org.dto.PatientDTO;
 import com.form.org.exception.EntityNotFoundException;
 import com.form.org.exception.ErrorCodes;
 import com.form.org.exception.InvalidEntityException;
@@ -34,7 +33,7 @@ public class OperationServiceImpl implements OperationService {
         List<String> errors= OperationValidator.validate(dto);
         if(!errors.isEmpty()) {
             log.error("l'operation n'est pas valide {}",dto);
-            throw new InvalidEntityException("l'absence n'est pas valide",
+            throw new InvalidEntityException("l'operatione n'est pas valide",
                     ErrorCodes.OPERATION_NOT_VALID, errors);
         }
         return OperationDTO.fromEntity(

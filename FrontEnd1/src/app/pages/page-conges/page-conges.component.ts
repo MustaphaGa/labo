@@ -1,15 +1,48 @@
 import { Component, OnInit } from '@angular/core';
+import {CongeDTO} from '../../../gs-api/src/models/conge-dto';
+import {Router} from '@angular/router';
+import {CongerService} from '../../services/conger/conger.service';
 
-@Component({
+@Component
+({
   selector: 'app-page-conges',
   templateUrl: './page-conges.component.html',
   styleUrls: ['./page-conges.component.css']
 })
-export class PageCongesComponent implements OnInit {
+export class PageCongesComponent implements OnInit
+{
+  listeconger: Array<CongeDTO>  = [];
+  errorMsgs = '';
 
-  constructor() { }
+  constructor(private router: Router,
+              private congerService: CongerService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
+    this.findListconger();
+  }
+  nouveauconger(): void
+  {
+    this.router.navigate(['nouveauconger']);
   }
 
+  findListconger(): void
+  {
+    this.congerService.findAllconger().subscribe(res =>
+    {
+      this.listeconger = res;
+    })
+  }
+
+  handleSuppression(event: any): void
+  {
+    if (event === 'success')
+    {
+      this.findListconger();
+    } else
+    {
+      this.errorMsgs = event;
+    }
+
+  }
 }

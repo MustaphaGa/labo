@@ -49,20 +49,20 @@ public class LaboServiceImpl implements LaboService {
                 laboRepository.save(LaboDTO.toEntity(dto))
         );
 
-        EmployeDTO employe = fromLabo(savedLabo);
+      //  EmployeDTO employe = fromLabo(savedLabo);
 
-       EmployeDTO savedUser = employeService.save(employe);
+     //  EmployeDTO savedUser = employeService.save(employe);
 
-        RolesDTO rolesDto = RolesDTO.builder()
-                .roleName("ADMIN")
+      //  RolesDTO rolesDto = RolesDTO.builder()
+              //  .roleName("ADMIN")
               //  .employe(savedUser)
-                .build();
+              //  .build();
 
-        rolesRepository.save(RolesDTO.toEntity(rolesDto));
+       // rolesRepository.save(RolesDTO.toEntity(rolesDto));
 
         return  savedLabo;
     }
-  private EmployeDTO fromLabo(LaboDTO dto) {
+ /* private EmployeDTO fromLabo(LaboDTO dto) {
         return EmployeDTO.builder()
                 .nom(dto.getNomLabo())
                 .prenom(dto.getCodeFiscal())
@@ -75,7 +75,7 @@ public class LaboServiceImpl implements LaboService {
     }
     private String generateRandomPassword() {
         return "som3R@nd0mP@$$word";
-    }
+    }*/
 
     @Override
     public LaboDTO findById(Integer idLabo) {

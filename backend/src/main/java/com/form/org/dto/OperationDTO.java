@@ -1,11 +1,9 @@
 package com.form.org.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.form.org.model.AnalyseMedical;
 import com.form.org.model.Operation;
 import lombok.Builder;
 import lombok.Data;
-
 import java.util.Date;
 import java.util.List;
 
@@ -16,10 +14,15 @@ public class OperationDTO {
     private Integer idOperation;
     private Date dateOperation;
     private String typeOperation;
+    private Integer Annee;
+    private String description;
+    private Float Montant;
 
 
-    private EmployeDTO employe;
-    private BilanFinancierDTO bilanFinancier;
+
+    private CompteDTO compte;
+   // private EmployeDTO employe;
+    //private BilanFinancierDTO bilanFinancier;
     @JsonIgnore
     private List<FactureDTO> factures;
 
@@ -31,8 +34,13 @@ public class OperationDTO {
                 .idOperation(operation.getIdOperation())
                 .dateOperation(operation.getDateOperation())
                 .typeOperation(operation.getTypeOperation())
-                .bilanFinancier(BilanFinancierDTO.fromEntity(operation.getBilanFinancier()))
-                .employe(EmployeDTO.fromEntity((operation.getEmploye())))
+                .Annee(operation.getAnnee())
+                .description(operation.getDescription())
+                .Montant(operation.getMontant())
+                .compte(CompteDTO.fromEntity(operation.getCompte()))
+
+               // .bilanFinancier(BilanFinancierDTO.fromEntity(operation.getBilanFinancier()))
+                //.employe(EmployeDTO.fromEntity((operation.getEmploye())))
                 .build();
     }
 
@@ -49,8 +57,12 @@ public class OperationDTO {
         operation.setIdOperation(operationDTO.getIdOperation());
         operation.setDateOperation(operationDTO.getDateOperation());
         operation.setTypeOperation(operationDTO.getTypeOperation());
-        operation.setBilanFinancier((BilanFinancierDTO.toEntity(operationDTO.getBilanFinancier())));
-        operation.setEmploye(EmployeDTO.toEntity((operationDTO.getEmploye())));
+        operation.setAnnee(operationDTO.getAnnee());
+        operation.setDescription(operationDTO.getDescription());
+        operation.setMontant(operationDTO.getMontant());
+        operation.setCompte(CompteDTO.toEntity(operationDTO.getCompte()));
+        //operation.setBilanFinancier((BilanFinancierDTO.toEntity(operationDTO.getBilanFinancier())));
+        //operation.setEmploye(EmployeDTO.toEntity((operationDTO.getEmploye())));
         return operation;
     }
 

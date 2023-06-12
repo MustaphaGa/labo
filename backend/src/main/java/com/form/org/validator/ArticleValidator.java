@@ -12,29 +12,30 @@ public class ArticleValidator {
         List<String> errors = new ArrayList<String>();
 
         if(articleDTO == null) {
-            errors.add("veuillez renseigner le nom de article!!");
-            errors.add("veuillez renseigner quantite article !!");
-            errors.add("veuillez renseigner le stock !!");
-            errors.add("veuillez renseigner le boncommand !!");
+            errors.add("veuillez renseigner le nom d'article!!");
+            errors.add("veuillez renseigner le prix d'article!!");
+            errors.add("veuillez renseigner le type d'article!!");
+            errors.add("veuillez renseigner le code barre  d'article!!");
+
+
 
             return errors;
         }
 
-        if(!StringUtils.hasLength(articleDTO.getArticleName())) {
-            errors.add("veuillez renseigner le nom de biologiste!!");
+        if(!StringUtils.hasLength(articleDTO.getNomArticle())) {
+            errors.add("veuillez renseigner le nom d'article!!");
         }
-        if(!StringUtils.hasLength(articleDTO.getQuantite())) {
-            errors.add("veuillez renseigner le prénom de biologiste !!");
+        if(!StringUtils.hasLength(articleDTO.getPrixArticle())) {
+            errors.add("veuillez renseigner le prix d'article!!");
+        }
+        if(!StringUtils.hasLength(articleDTO.getTypeArticle())) {
+            errors.add("veuillez renseigner le prix d'article!!");
+        }
+        if(!StringUtils.hasLength(articleDTO.getCodeBarre())) {
+            errors.add("veuillez renseigner le prix d'article!!");
         }
 
-        if(articleDTO.getBonCommande()==null) {
-            errors.add("veuillez renseigner le boncommande !!");
-        }
 
-
-        if(articleDTO.getStock()==null) {
-            errors.add("veuillez renseigner le stock !!");
-        }
 
         return errors;
     }

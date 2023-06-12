@@ -10,21 +10,21 @@ import { BiologisteDTO } from 'src/gs-api/src/models/biologiste-dto';
 })
 export class DetailBiologisteComponent implements OnInit {
   @Input()
-  biologisteDt: BiologisteDTO ={};
+  biologisteDt: BiologisteDTO = {};
   @Output()
   suppressionBiologist = new EventEmitter();
-  constructor( private router:Router,
-    private BiologisteeService :BiologisteeService
-  
+  constructor( private router: Router,
+               private BiologisteeService: BiologisteeService
+
     ) { }
 
   ngOnInit(): void {
   }
-  modifierBiologist():void{
-    this.router.navigate(['nouveauBiologist',this.biologisteDt.idBiologiste])
+  modifierBiologist(): void{
+    this.router.navigate(['nouveauBiologist', this.biologisteDt.idBiologiste])
   }
-  DetailBiologist():void{
-    this.router.navigate(['detailBiologist',this.biologisteDt.idBiologiste])
+  DetailBiologist(): void{
+    this.router.navigate(['detailBiologist', this.biologisteDt.idBiologiste])
   }
   confirmerEtSupprimerBiologiste(): void{
     if(this.biologisteDt.idBiologiste){
@@ -35,7 +35,7 @@ export class DetailBiologisteComponent implements OnInit {
          this.suppressionBiologist.emit(error.error.error);
        });
   }
-  
+
   }
 
 }

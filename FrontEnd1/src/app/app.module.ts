@@ -81,6 +81,7 @@ import { NouveauAbsenceComponent } from './composants/nouveau-absence/nouveau-ab
 import { DetailArticleComponent } from './composants/detail-article/detail-article/detail-article.component';
 import { ArticleDetaillComponent } from './detaill/article-detaill/article-detaill/article-detaill.component';
 import { NouveauArticleComponent } from './composants/nouveau-article/nouveau-article.component';
+
 import { FournisseurDetaillComponent } from './detaill/fournisseur-detaill/fournisseur-detaill.component';
 import { DetailFournisseurComponent } from './composants/detail-fournisseur/detail-fournisseur.component';
 import { NouveauFournisseurComponent } from './composants/nouveau-fournisseur/nouveau-fournissseur.component';
@@ -90,6 +91,11 @@ import { NouveauBonCommandeComponent } from './composants/nouveau-bon-commande/n
 import { DetailStockComponent } from './composants/detail-stock/detail-stock.component';
 import { StockDetaillComponent } from './detaill/stock-detaill/stock-detaill.component';
 import { NouveauStockComponent } from './composants/nouveau-stock/nouveau-stock.component';
+
+import { DetailCongerComponent } from './composants/detail-conger/detail-conger.component';
+import { NouveauCongerComponent } from './composants/nouveau-conger/nouveau-conger.component';
+import { CongerDetailComponent } from './detaill/conger-detail/conger-detail.component';
+
 
 
 
@@ -185,6 +191,9 @@ import { NouveauStockComponent } from './composants/nouveau-stock/nouveau-stock.
     StockDetaillComponent,
     NouveauStockComponent,
     
+    DetailCongerComponent,
+    NouveauCongerComponent,
+    CongerDetailComponent,
 
 
 

@@ -27,8 +27,8 @@ public class EmployeServiceImp implements EmployeService {
 	private PasswordEncoder passwordEncoder;
 
 	@Autowired
-	public EmployeServiceImp(EmployeRepository employeRepository
-								  ) {
+	public EmployeServiceImp(EmployeRepository employeRepository)
+	{
 		this.employeRepository = employeRepository;
 
 	}

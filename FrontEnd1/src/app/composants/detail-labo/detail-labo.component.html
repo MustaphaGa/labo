@@ -25,11 +25,11 @@
   <div class="col-md-3 mb-1 mt-1">
     <div class="row">
       <div class="col-md-4">
-        <button type="button" class="btn btn btn-link" >
+        <button type="button" class="btn btn btn-link"  (click)=" modifierLabo()">
           <i class="fas fa-pencil-alt"></i>&nbsp;modifier</button>
       </div>
       <div class="col-md-4">
-        <button type="button" class="btn btn btn-link text-danger" data-toggle="modal" >
+        <button type="button" class="btn btn btn-link text-danger" data-toggle="modal" [attr.data-target]="'#modalDeleteLabo' + laboDt.idLabo">
           <i class="fas fa-trash-alt"></i>&nbsp;supprimer</button>
       </div>
       <div class="col-md-4">
@@ -42,7 +42,7 @@
 
 </div>
 <!-- Modal -->
-<div class="modal fade" id="modalDeleteFacture" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="modalDeleteLabo{{laboDt.idLabo}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -52,7 +52,7 @@
         </button>
       </div>
       <div class="modal-body">
-        Etes vous-sur de vouloir supprimer cette facture?
+        Etes vous-sur de vouloir supprimer cette labo?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" >

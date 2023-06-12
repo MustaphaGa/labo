@@ -28,6 +28,14 @@ export class PageLaboComponent implements OnInit {
       this.listeLabo = res;
     })
   }
+  handleSuppression(event: any): void{
+    if (event === 'success') {
+      this.findListlabo();
+    } else {
+      this.errorMsgs = event;
+    }
+
+  }
 
 
 }

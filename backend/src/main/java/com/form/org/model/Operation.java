@@ -12,35 +12,45 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name="Operation")
+
 public class Operation {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="idOperation")
 	private Integer idOperation;
-	private Date dateOperation;
-	private String typeOperation;
-	
-	
-	@ManyToOne
-	@JoinColumn(name="id_employe")
-	private Employe employe;
 
-	@OneToMany(mappedBy="operation")
-	private List<Facture> factures;
+	@Column(name="dateOperation")
+	private Date dateOperation;
+
+	@Column(name="typeOperation")
+	private String typeOperation;
+
+	@Column(name="Annee")
+	private Integer Annee;
+
+	@Column(name="description")
+	private String description;
+
+	@Column(name="Montant")
+	private Float Montant;
+
 	
+
 	@ManyToOne
-	@JoinColumn(name="idBilan")
-	private BilanFinancier bilanFinancier;
-	
+	@JoinColumn(name="idCompte")
+	private Compte compte;
+
+
 }

@@ -15,8 +15,6 @@ import static com.form.org.utils.Constants.APP_ROOT;
 @Api(APP_ROOT +"/roles")
 public interface RoleApi {
 
-
-
     @PostMapping(value= APP_ROOT + "/role/create", consumes = MediaType.APPLICATION_JSON_VALUE , produces = MediaType.APPLICATION_JSON_VALUE )
     @ApiOperation(value = "Enregistrer un role",notes ="Cette methode permet "
             + "d'enregistrer ou modifier un role ", response = RolesDTO.class)

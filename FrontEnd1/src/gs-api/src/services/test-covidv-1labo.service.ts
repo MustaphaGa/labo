@@ -128,7 +128,7 @@ class TestCovidv1laboService extends __BaseService {
    * Cette methode permet de supprimer un labo par ID
    * @return labo  a ete supprimer
    */
-  delete(): __Observable<LaboDTO> {
+  delete(idlabo: number): Observable<LaboDTO> {
     return this.deleteResponse().pipe(
       __map(_r => _r.body as LaboDTO)
     );

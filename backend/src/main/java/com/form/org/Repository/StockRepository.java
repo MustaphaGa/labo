@@ -7,6 +7,6 @@ import java.util.Date;
 import java.util.Optional;
 
 public interface StockRepository extends JpaRepository<Stock, Integer> {
-    Optional<Stock> findByIdStock(Integer idStock);
-    Optional<Stock> findBydateVerification(Date dateVerification);
+    //Optional<Stock> findByIdStock(Integer idStock);
+    Optional<Stock> findBydateStock(Date dateStock);
 }

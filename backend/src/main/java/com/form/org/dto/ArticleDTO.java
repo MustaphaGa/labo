@@ -4,16 +4,18 @@ import com.form.org.model.Article;
 import lombok.Builder;
 import lombok.Data;
 
+import javax.persistence.Column;
+
 @Data
 @Builder
 public class ArticleDTO{
 
 
     private Integer idArticle;
-    private String articleName;
-    private String quantite;
-    private BonCommandeDTO bonCommande;
-    private StockDTO stock;
+    private String NomArticle;
+    private String prixArticle;
+    private String typeArticle;
+    private String codeBarre;
 
 
     public static ArticleDTO fromEntity(Article article) {
@@ -23,10 +25,12 @@ public class ArticleDTO{
         return
                 ArticleDTO.builder()
                         .idArticle(article.getIdArticle())
-                        .articleName(article.getArticleName())
-                        .quantite(article.getQuantite())
-                        .bonCommande(BonCommandeDTO.fromEntity(article.getBonCommande()))
-                        .stock(StockDTO.fromEntity(article.getStock()))
+                        .NomArticle(article.getNomArticle())
+                        .prixArticle(article.getPrixArticle())
+                        .typeArticle(article.getTypeArticle())
+                        .codeBarre(article.getCodeBarre())
+                       // .bonCommande(BonCommandeDTO.fromEntity(article.getBonCommande()))
+                       // .stock(StockDTO.fromEntity(article.getStock()))
                         .build();
     }
 
@@ -38,10 +42,12 @@ public class ArticleDTO{
         Article article = new Article();
 
         article.setIdArticle(articleDTO.getIdArticle());
-        article.setArticleName(articleDTO.getArticleName());
-        article.setQuantite(articleDTO.getQuantite());
-        article.setBonCommande(BonCommandeDTO.toEntity(articleDTO.getBonCommande()));
-        article.setStock(StockDTO.toEntity(articleDTO.getStock()));
+        article.setNomArticle(articleDTO.getNomArticle());
+        article.setPrixArticle(articleDTO.getPrixArticle());
+        article.setTypeArticle(articleDTO.getTypeArticle());
+        article.setCodeBarre(articleDTO.getCodeBarre());
+       // article.setBonCommande(BonCommandeDTO.toEntity(articleDTO.getBonCommande()));
+       // article.setStock(StockDTO.toEntity(articleDTO.getStock()));
         return article;
     }
 

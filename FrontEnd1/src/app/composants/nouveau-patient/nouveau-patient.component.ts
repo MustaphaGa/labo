@@ -11,16 +11,16 @@ import {PatientService } from 'src/app/services/patient/patient.service';
 })
 export class NouveauPatientComponent implements OnInit {
   [x: string]: any;
-  patientDt: PatientDTO={};
-  listPatients: Array<PatientDTO> =[];
+  patientDt: PatientDTO = {};
+  listPatients: Array<PatientDTO> = [];
   searchedPatien: PatientDTO = {};
   errorMsg: Array<string> = [];
-  patientErrorMsg='';
-  codePatient ='';
-  constructor( 
-    private router:Router,
-    private activatedRouter:ActivatedRoute,
-    private  patientService:PatientService
+  patientErrorMsg = '';
+  codePatient = '';
+  constructor(
+    private router: Router,
+    private activatedRouter: ActivatedRoute,
+    private  patientService: PatientService
     ) { }
 
   ngOnInit(): void {
@@ -33,9 +33,7 @@ export class NouveauPatientComponent implements OnInit {
       });
     }
     this.findAllPatient();
-  
   }
-  
 
   cancel(): void {
     this.router.navigate(['patients']);
@@ -48,20 +46,18 @@ export class NouveauPatientComponent implements OnInit {
       this.errorMsg = error.error.errors;
     });
   }
-  findAllPatient(): void{
-    this.patientService.findAllPatient().subscribe(patrient=>{
-      this.listPatients=patrient;
-    });
+    findAllPatient(): void{
+      this.patientService.findAllPatient().subscribe(patrient =>{
+        this.listPatients = patrient;
+      });
 
   }
   findPatientByCode(codePatient: string): void{
     if(codePatient){
-      this.patientService.findPatientByCode(codePatient).subscribe(patient=>{
-        this.searchedPatien=patient;
-      },error=>{
+      this.patientService.findPatientByCode(codePatient).subscribe(patient =>{
+        this.searchedPatien = patient;
+      },error =>{
         this.errorMsg = error,error.message;
-        
-      
       });
     }
 

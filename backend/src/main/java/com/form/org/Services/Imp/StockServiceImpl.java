@@ -49,18 +49,18 @@ public class StockServiceImpl implements StockService {
     }
 
     @Override
-    public StockDTO findBydateVerification(Date dateVerification) {
+    public StockDTO findBydateStock(Date dateStock) {
 
-        if(dateVerification == null){
+        if(dateStock == null){
             log.error(" date de reservation null");
             return null;
         }
 
-        Optional<Stock> stock=stockRepository.findBydateVerification(dateVerification);
+        Optional<Stock> stock=stockRepository.findBydateStock(dateStock);
 
         return Optional.of(StockDTO.fromEntity(stock.get())).orElseThrow(() ->
                 new EntityNotFoundException(
-                        "Aucun reservation avec cette date ="+ dateVerification +"n'été trouve dans la BDD",
+                        "Aucun reservation avec cette date ="+ dateStock +"n'été trouve dans la BDD",
                         ErrorCodes.RESERVATION_NOT_FOUND)
         );
     }

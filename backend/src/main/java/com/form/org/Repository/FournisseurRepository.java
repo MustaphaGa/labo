@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface FournisseurRepository extends JpaRepository<Fournisseur,Integer> {
-    Optional<Fournisseur> findByidFournisseur(Integer idFournisseur);
-    Optional<Fournisseur> findByNom(String nom);
+  //  Optional<Fournisseur> findByidFournisseur(Integer idFournisseur);
+    //Optional<Fournisseur> findByNom(String nom);
 }

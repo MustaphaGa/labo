@@ -20,23 +20,29 @@ public class BonCommande {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="idBonCommande")
 	private Integer idBonCommande;
+	@Column(name="dateCommande")
 	private Date dateCommande;
-	private double prix;
-	
+	@Column(name="QuantiteCommande")
+	private Integer QuantiteCommande;
+
+	/*
 	@ManyToOne
 	@JoinColumn(name="id_employe")
 	private Employe employe;
+	 */
 	
 	@ManyToOne
 	@JoinColumn(name="idFournisseur")
 	private Fournisseur fournisseur;
+
 	
 	@OneToOne
 	@JoinColumn(name = "idFacture")
     private Facture facture;
 
-	@OneToMany(mappedBy="bonCommande")
-	private List<Article> articles;
-	
+
+	@ManyToOne
+	@JoinColumn(name="idArticle")
+	private Article article;
 
 }

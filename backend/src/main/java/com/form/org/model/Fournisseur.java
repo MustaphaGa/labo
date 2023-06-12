@@ -25,8 +25,13 @@ public class Fournisseur {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="idFournisseur")
 	private Integer idFournisseur;
+	@Column(name="nom")
 	private String nom;
+	@Column(name="prenom")
+	private String prenom;
+	@Column(name="Adresse")
 	private  String Adresse;
+	@Column(name="telephone")
 	private String telephone;
 	
 	@OneToMany(mappedBy="fournisseur")

@@ -49,16 +49,6 @@ public class FournisseurServiceImpl implements FournisseurService {
 
 
 
-    @Override
-    public FournisseurDTO findByNom(String nom) {
-        Optional<Fournisseur> fournisseur=fournisseurRepository.findByNom(nom);
-
-        return Optional.of(FournisseurDTO.fromEntity(fournisseur.get())).orElseThrow(() ->
-                new EntityNotFoundException(
-                        "Aucun fournisseur avec cette date ="+ nom +"n'été trouve dans la BDD",
-                        ErrorCodes.FOURNISSEUR_NOT_FOUND)
-        );
-    }
 
     @Override
     public List<FournisseurDTO> findAll() {
