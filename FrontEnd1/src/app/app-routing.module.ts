@@ -60,6 +60,8 @@ import {PageServiceFinanceComponent} from './pages/page-service-finance/page-ser
 import { NouveauArticleComponent } from './composants/nouveau-article/nouveau-article.component';
 import { ArticleDetaillComponent } from './detaill/article-detaill/article-detaill/article-detaill.component';
 import {NouveauCongerComponent} from './composants/nouveau-conger/nouveau-conger.component';
+import {NouveauBilanFinanceComponent} from "./composants/nouveau-bilan-finance/nouveau-bilan-finance.component";
+import {NouveauOperationComponent} from "./composants/nouveau-operation/nouveau-operation.component";
 const routes: Routes= [
   {
     path: 'pagAccPrincp',
@@ -415,6 +417,12 @@ const routes: Routes= [
 
       },
       {
+        path: 'nouveauLabo/:idLabo',
+        component: NouveauLaboComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
         path: 'nouveauRecrutement',
         component: NouveauRecrutementComponent,
         canActivate: [ApplicationGuardService]
@@ -481,8 +489,32 @@ const routes: Routes= [
 
       },
       {
+        path: 'nouveloperation',
+        component: NouveauOperationComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveloperation/:idOperation',
+        component: NouveauOperationComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
         path: 'bilanFinance',
         component: PageBilanFinancierComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveauBilanFinance',
+        component: NouveauBilanFinanceComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveauBilanFinance/:idBilan',
+        component: NouveauBilanFinanceComponent,
         canActivate: [ApplicationGuardService]
 
       },

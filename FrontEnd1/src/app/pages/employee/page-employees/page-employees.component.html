@@ -16,6 +16,7 @@
 
            *ngFor="let employe of listeemploye"
            [employeDt]="employe"
+           (suppressionEmploye)="handleSuppression($event)"
 
          ></app-detail-employe>
   </div>

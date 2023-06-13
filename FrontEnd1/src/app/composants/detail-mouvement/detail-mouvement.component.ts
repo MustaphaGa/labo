@@ -1,7 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {RecrutementDTO} from '../../../gs-api/src/models/recrutement-dto';
 import {Router} from '@angular/router';
-import {RecrutementService} from '../../services/recrutement/recrutement.service';
 import {MouvementDTO} from '../../../gs-api/src/models/mouvement-dto';
 import {MouvementService} from '../../services/mouvement/mouvement.service';
 

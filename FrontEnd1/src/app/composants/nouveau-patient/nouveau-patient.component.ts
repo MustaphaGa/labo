@@ -11,13 +11,13 @@ import {PatientService } from 'src/app/services/patient/patient.service';
 })
 export class NouveauPatientComponent implements OnInit {
   [x: string]: any;
-  patientDt: PatientDTO={};
+  patientDt: PatientDTO ={};
   listPatients: Array<PatientDTO> =[];
   searchedPatien: PatientDTO = {};
   errorMsg: Array<string> = [];
   patientErrorMsg='';
   codePatient ='';
-  constructor( 
+  constructor(
     private router:Router,
     private activatedRouter:ActivatedRoute,
     private  patientService:PatientService
@@ -33,9 +33,9 @@ export class NouveauPatientComponent implements OnInit {
       });
     }
     this.findAllPatient();
-  
+
   }
-  
+
 
   cancel(): void {
     this.router.navigate(['patients']);
@@ -60,8 +60,8 @@ export class NouveauPatientComponent implements OnInit {
         this.searchedPatien=patient;
       },error=>{
         this.errorMsg = error,error.message;
-        
-      
+
+
       });
     }
 

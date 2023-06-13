@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {TypAnalyseService} from "../../typeAnalyse/typ-analyse.service";
 import {LaboDTO} from '../../../gs-api/src/models/labo-dto';
 import {LaboService} from '../../services/labo/labo.service';
+import {PatientDTO} from "../../../gs-api/src/models/patient-dto";
 
 @Component({
   selector: 'app-nouveau-labo',
@@ -11,6 +12,7 @@ import {LaboService} from '../../services/labo/labo.service';
 })
 export class NouveauLaboComponent implements OnInit {
   [x: string]: any;
+  listlabo: Array<LaboDTO> =[];
   laboDto: LaboDTO ={};
   errorMsg: Array<string> = [];
   constructor(private router:Router,
@@ -18,6 +20,14 @@ export class NouveauLaboComponent implements OnInit {
               private laboService :LaboService) { }
 
   ngOnInit(): void {
+    const idLabo = this.activatedRouter.snapshot.params.idLabo;
+    if (idLabo) {
+      this.laboService.findLbaoById(idLabo)
+        .subscribe(labo => {
+          this.laboDto = labo;
+        });
+    }
+    this.findAllLabo();
   }
 
   cancel(): void {
@@ -30,5 +40,11 @@ export class NouveauLaboComponent implements OnInit {
     }, error => {
       this.errorMsg = error.error.errors;
     });
+  }
+  findAllLabo(): void{
+    this.laboService.findAllLabo().subscribe(labo=>{
+      this.listlabo=labo;
+    });
+
   }
 }

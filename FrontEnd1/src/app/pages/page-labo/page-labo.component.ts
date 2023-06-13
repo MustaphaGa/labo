@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 import {LaboService} from '../../services/labo/labo.service';
 import {LaboDTO} from '../../../gs-api/src/models/labo-dto';
 

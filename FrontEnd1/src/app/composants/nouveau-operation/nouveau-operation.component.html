@@ -1,0 +1,60 @@
+<div class="col">
+  <div class="col-md-12 mb-3 mt-3">
+    <img src="assets\menu\assets\img\operation.jpg"  class="rounded-circle" width="200px" height="200px">
+  </div>
+  <div class="col-md-12">
+    <div class="col-md-12">
+      <h3><i class="fas fa-info-circle blue-color"></i>&nbsp;Information D'un Operation</h3>
+    </div>
+    <div class="col-md-12">
+      <div class="alert alert-danger" *ngIf="errorMsg.length > 0">
+        <div *ngFor="let msg of errorMsg">
+          <span >{{msg}}</span>
+        </div>
+      </div>
+      <form>
+        <div class="row">
+          <div class="col mb-3">
+            <input type="text" class="form-control" placeholder="type operation" name="typeOperation" [(ngModel)]="operationDto.typeOperation">
+
+          </div>
+          <div class="col ">
+
+            <input class="form-control" type="date" placeholder="date operation" id="example-date-input" name="dateOperation" [(ngModel)]="operationDto.dateOperation">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col mb-3">
+            <label for="employe">nom employe</label>
+            <select class="form-control" name="employe" [(ngModel)]="employeDTo.nom">
+              <option *ngFor="let employe of listeEmploye" [value]="employe.id_employe">{{employe.nom}}  </option>
+
+            </select>
+          </div>
+          <div class="col">
+            <label for="type">Description Bilan Financier</label>
+            <select class="form-control"  name="type" [(ngModel)]="bilanFinancierDto.idBilan">
+              <option *ngFor="let bilan of listeBilanFinancier" [value]="bilan.idBilan">{{bilan.description}}  </option>
+
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-12 text-right">
+    <button class="btn btn-danger mr-3" (click)="cancel()">
+      <i class="fas fa-ban"></i>&nbsp;
+      Annuler
+    </button>
+    <button class="btn btn-primary" (click)=" enregistrerOperation()" >
+      <i class="fas fa-save"></i>&nbsp;
+      Enregitrer
+    </button>
+  </div>
+</div>
+
+
+
+
+

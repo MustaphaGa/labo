@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {EmployeDTO} from "../../../gs-api/src/models";
+import {Router} from "@angular/router";
+import {EmployeService} from "../../services/employe/employe.service";
 
 @Component({
   selector: 'app-header',
@@ -6,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  @Input()
+  employeDt: EmployeDTO = {};
+  constructor(private router: Router,
+              private employeService:EmployeService) { }
 
   ngOnInit(): void {
   }

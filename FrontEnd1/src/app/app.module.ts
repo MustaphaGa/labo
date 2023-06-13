@@ -84,6 +84,10 @@ import { NouveauArticleComponent } from './composants/nouveau-article/nouveau-ar
 import { DetailCongerComponent } from './composants/detail-conger/detail-conger.component';
 import { NouveauCongerComponent } from './composants/nouveau-conger/nouveau-conger.component';
 import { CongerDetailComponent } from './detaill/conger-detail/conger-detail.component';
+import { DetailBilanFinanceComponent } from './composants/detail-bilan-finance/detail-bilan-finance.component';
+import { NouveauBilanFinanceComponent } from './composants/nouveau-bilan-finance/nouveau-bilan-finance.component';
+import { DetailOperationComponent } from './composants/detail-operation/detail-operation.component';
+import { NouveauOperationComponent } from './composants/nouveau-operation/nouveau-operation.component';
 
 
 
@@ -172,6 +176,10 @@ import { CongerDetailComponent } from './detaill/conger-detail/conger-detail.com
     DetailCongerComponent,
     NouveauCongerComponent,
     CongerDetailComponent,
+    DetailBilanFinanceComponent,
+    NouveauBilanFinanceComponent,
+    DetailOperationComponent,
+    NouveauOperationComponent,
 
 
 

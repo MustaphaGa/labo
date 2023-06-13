@@ -16,6 +16,7 @@
     <app-detail-mouvement
       *ngFor="let mouvement of listeMouvement"
       [mouvementDto]="mouvement"
+      (suppressionMouvement)="$event"
 
     ></app-detail-mouvement>
   </div>

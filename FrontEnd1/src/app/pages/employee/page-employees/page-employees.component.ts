@@ -26,4 +26,12 @@ export class PageEmployeesComponent implements OnInit {
       this.listeemploye = res;
     })
   }
+  handleSuppression(event: any): void{
+    if (event === 'success') {
+      this.findListemploye();
+    } else {
+      this.errorMsgs = event;
+    }
+
+  }
 }

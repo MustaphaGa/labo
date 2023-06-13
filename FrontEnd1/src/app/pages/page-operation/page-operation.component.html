@@ -1,1 +1,30 @@
-<p>page-operation works!</p>
+<div class="col">
+  <div class="row m-3 mr-2 ">
+    <div class="col-md-6 p-0">
+      <h1>liste des operations</h1>
+    </div>
+    <div class="col-md-6 text-right">
+      <div class="row col-md-12 alert alert-danger" *ngIf="errorMsgs">
+        {{ errorMsgs }}
+      </div>
+      <app-boutton-action
+        (clickEvent)="nouvelOperation()"
+        (clickEvent1)="exporteoperation()"
+      ></app-boutton-action>
+    </div>
+  </div>
+  <div class="col m-3">
+    <app-detail-operation
+      *ngFor="let operation of listeOperation"
+      [operationDto]="operation"
+      (suppressionOperation)="handleSuppression($event)"
+    ></app-detail-operation>
+  </div>
+  <div class="row mb-3">
+    <div class="col md-12 text-center">
+      <app-pagination></app-pagination>
+    </div>
+  </div>
+
+</div>
+

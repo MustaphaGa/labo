@@ -6,6 +6,7 @@ import {EmployeService} from '../../services/employe/employe.service';
 import {RecrutementService} from '../../services/recrutement/recrutement.service';
 import {MouvementDTO} from '../../../gs-api/src/models/mouvement-dto';
 import {MouvementService} from '../../services/mouvement/mouvement.service';
+import {PatientDTO} from "../../../gs-api/src/models/patient-dto";
 
 @Component({
   selector: 'app-nouveau-mouvement',
@@ -13,7 +14,7 @@ import {MouvementService} from '../../services/mouvement/mouvement.service';
   styleUrls: ['./nouveau-mouvement.component.css']
 })
 export class NouveauMouvementComponent implements OnInit {
-
+  listMouvement: Array<MouvementDTO> = [];
   mouvementDto: MouvementDTO = {};
   employeDTO: EmployeDTO = {};
   listeEmploye: Array<EmployeDTO> = [];
@@ -38,6 +39,7 @@ export class NouveauMouvementComponent implements OnInit {
           this.employeDTO = this.mouvementDto.employe ? this.mouvementDto.employe : {};
         });
     }
+    this.findAllMouvement();
   }
 
   cancel(): void {
@@ -50,6 +52,12 @@ export class NouveauMouvementComponent implements OnInit {
       this.router.navigate(['mouvement']);
     }, error => {
       this.errorMsg = error.error.errors;
+    });
+  }
+
+  findAllMouvement(): void {
+    this.mouvementService.findAllMouvement().subscribe(mouvement => {
+      this.listMouvement = mouvement;
     });
   }
 }

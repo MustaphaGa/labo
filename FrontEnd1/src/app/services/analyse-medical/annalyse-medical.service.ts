@@ -11,7 +11,7 @@ export class AnnalyseMedicalService {
   constructor( private analyseMedicalService:AnalyseMedicalService ) { }
   enregistrerAnalysMedical(analyseMedicalDtto:AnalyseMedicalDTO):Observable<AnalyseMedicalDTO> {
     return this.analyseMedicalService.save(analyseMedicalDtto);
-    
+
   }
   findAllAnalysMedical(): Observable<AnalyseMedicalDTO[]> {
     return this.analyseMedicalService.findAll();
@@ -22,7 +22,7 @@ export class AnnalyseMedicalService {
     }
     return of();
   }
-  deleteAnalyse(idAnalyse?: number):Observable<any>{
+  deleteAnalyse(idAnalyse?: number): Observable<any>{
     if (idAnalyse) {
       return this.analyseMedicalService.delecte(idAnalyse);
     }
