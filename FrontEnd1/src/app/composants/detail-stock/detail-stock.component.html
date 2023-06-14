@@ -7,14 +7,18 @@
     <div class="col">
           <div class="row">
                <div class="col-md-1"><i class="far fa-info-circle blue-color" ></i></div>
-               <div class="col-md-11">{{stockDto.situation}}</div>
+               <div class="col-md-11" style="color: #006dcc">Qunatite :{{stockDto.quatiteStock}}</div>
            </div>
            
         
              <div class="row">
                <div class="col-md-1"><i class="fas fa-calendar-check blue-color"></i></div>
-                <div class="col-md-10">{{stockDto.dateVerification| date: 'dd/MM/yyyy' }}</div>
-            </div>           
+                <div class="col-md-10" style="color: #006dcc">Date :{{stockDto.dateStock| date: 'dd/MM/yyyy' }}</div>
+            </div>     
+            <div class="row">
+                <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
+                <div class="col-md-10" style="color: #006dcc">Article :{{stockDto.article?.nomArticle}} Dhs </div>
+            </div>      
         
     </div>
  </div>
@@ -25,15 +29,15 @@
         <div class="row">
             <div class="col-6 col-md-4">
                 <button type="button" class="btn btn btn-link" (click)="modifierStock()">
-                    <i class="fas fa-pencil-alt"></i>&nbsp;modifier</button>
+                    <i class="fas fa-pencil-alt fa-lg"></i></button>
             </div>
             <div class="col-md-4">
                 <button type="button" class="btn btn btn-link text-danger" data-toggle="modal" [attr.data-target]="'#modalDeleteStock' + stockDto.idStock">
-                    <i class="fas fa-trash-alt"></i>&nbsp;supprimer</button>
+                    <i class="fas fa-trash-alt fa-lg"></i></button>
             </div>
             <div class="col-md-4">
                 <button type="button" class="btn btn btn-link" (click)="detaillStock()">
-                    <i class="fas fa-list-alt"></i>&nbsp;Details</button>
+                    <i class="fas fa-list-alt fa-lg"></i></button>
             </div>
 
         </div>

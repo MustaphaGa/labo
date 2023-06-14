@@ -14,38 +14,23 @@
             </div>
           </div>
             <form>
-                <div class="row">
-                  </div>
                   <div class="row">
+                  </div>
+                <div class="row">
                   <div class="col mb-3">
-                    <input type="text" class="form-control" placeholder="articleName" name="name" [(ngModel)]="articleDt.articleName">
+                    <input type="text" class="form-control" placeholder="nom Article" name="name" [(ngModel)]="articleDt.nomArticle">
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control" placeholder="quantite" name="quantite" [(ngModel)]="articleDt.quantite">
+                    <input type="text" class="form-control" placeholder="prix Article" name="quantite" [(ngModel)]="articleDt.prixArticle">
                   </div>
-                 <!-- <div class="col">
-                    <input type="text" class="form-control"  placeholder="pieceJustificatifString" name="piece" [(ngModel)]="absenceDt.pieceJustificatifString">
-                  </div>-->
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="codeBarre" name="quantite" [(ngModel)]="articleDt.codeBarre">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="type Article" name="quantite" [(ngModel)]="articleDt.typeArticle">
                   </div>
                 
-                  <div class="row">
-                    <div class="col mb-3">
-                      <label for="boncommandes">BonCommande</label>
-                      <select class="form-control" id="boncommandes" name="bcomnd" [(ngModel)]="bonCommandeDt.idBonCommande">
-                          <option *ngFor="let bcomnd of listeBoncommande" [value]="bcomnd.idBonCommande">{{bcomnd.prix}}  </option>              
-                          
-                        </select>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col mb-3">
-                      <label for="stocks">Stock</label>
-                      <select class="form-control" id="stocks" name="stock" [(ngModel)]="stockDt.idStock">
-                          <option *ngFor="let stock of listeStock" [value]="stock.idStock">{{stock.situation}}  </option>              
-                          
-                        </select>
-                    </div>
-                  </div>
+                </div>
 
                     
               </form>

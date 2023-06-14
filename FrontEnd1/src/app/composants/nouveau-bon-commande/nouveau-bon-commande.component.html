@@ -17,7 +17,7 @@
                   </div>
                   <div class="row">
                   <div class="col mb-3">
-                    <input type="text" class="form-control" placeholder="prix" name="prix" [(ngModel)]="bonCommandeDt.prix">
+                    <input type="text" class="form-control" placeholder="Quantite" name="prix" [(ngModel)]="bonCommandeDt.quantiteCommande">
                   </div>
                 </div>
                   <div class="row">
@@ -28,17 +28,12 @@
                 
                 <div class="row">
                     <div class="col mb-3">
-                      <label for="employes">Employes</label>
-                      <select class="form-control" id="employes" name="empl" [(ngModel)]="employeDto.id_employe">
-                          <option *ngFor="let empl of listemploye" [value]="empl.id_employe">{{empl.nom}} - {{empl.prenom}} </option>              
+                      <label for="articles">Articles</label>
+                      <select class="form-control" id="articles" name="art" [(ngModel)]="articleDto.idArticle">
+                          <option *ngFor="let art of listearticle" [value]="art.idArticle">{{art.nomArticle}}  </option>              
                        </select>
                     </div>
-                    <div class="col mb-3">
-                        <label for="factures">Factures</label>
-                        <select class="form-control" id="factures" name="fact" [(ngModel)]="factureDto.idFacture">
-                            <option *ngFor="let fact of listefacture" [value]="fact.idFacture">{{fact.montant}} // {{fact.dateFacture}} </option>              
-                         </select>
-                      </div>
+                    
                       <div class="col mb-3">
                         <label for="fournisseur">Fournisseurs</label>
                         <select class="form-control" id="fournisseur" name="fourn" [(ngModel)]="fournisseurDto.idFournisseur">

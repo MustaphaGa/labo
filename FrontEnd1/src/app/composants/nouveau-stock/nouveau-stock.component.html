@@ -16,7 +16,7 @@
                
                   <div class="row">
                   <div class="col mb-3">
-                    <input type="text" class="form-control" placeholder="SITUATION" name="situation" [(ngModel)]="stockDt.situation">
+                    <input type="text" class="form-control" placeholder="Quantite" name="situation" [(ngModel)]="stockDt.quatiteStock">
                   </div>
                   </div>
                 
@@ -24,11 +24,18 @@
                      
                  
                     <div class="col mb-3">
-                      <label for="date">Date de verification</label>
-                        <input class="form-control" type="date" placeholder="Date Verification" id="example-date-input"  name="dateVerification" [(ngModel)]="stockDt.dateVerification" >
+                      <label for="date">Date de Stock</label>
+                        <input class="form-control" type="date" placeholder="Date Verification" id="example-date-input"  name="date Stock" [(ngModel)]="stockDt.dateStock" >
                       </div>
                      
-             
+                      <div class="row">
+                        <div class="col mb-3">
+                          <label for="articles">Articles</label>
+                          <select class="form-control" id="articles" name="art" [(ngModel)]="articleDto.idArticle">
+                              <option *ngFor="let art of listearticle" [value]="art.idArticle">{{art.nomArticle}}  </option>              
+                           </select>
+                        </div>
+                      </div>
               </form>
         </div>
     </div>

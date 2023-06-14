@@ -16,11 +16,9 @@ export class NouveauArticleComponent implements OnInit {
 
   [x: string]: any;
   articleDt: ArticleDTO={};
-  stockDt:StockDTO={};
-  bonCommandeDt:BonCommandeDTO={};
+
   listeArticles: Array<ArticleDTO> =[];
-  listeStock: Array<StockDTO> =[];
-  listeBoncommande: Array<BonCommandeDTO> =[]; 
+ 
  
   errorMsg: Array<string> = [];
   patientErrorMsg='';
@@ -29,19 +27,13 @@ export class NouveauArticleComponent implements OnInit {
     private router:Router,
     private activatedRouter:ActivatedRoute,
     private  articleServices:ArticleServices,
-    private  stockservices:StockServices,
-    private  boncommandeserv:BonCommandeServices,
+
 
 
     ) { }
 
   ngOnInit(): void {
-    this.stockservices.findAllStock().subscribe(stock => {
-      this.listeStock=stock;
-    });
-     this.boncommandeserv.findAllBon().subscribe(bonCommande => {
-      this.listeBoncommande=bonCommande;
-    });
+   
      
 
     const  idArticle= this.activatedRouter.snapshot.params.idArticle;
@@ -49,8 +41,6 @@ export class NouveauArticleComponent implements OnInit {
       this.articleServices.findArticleById(idArticle)
       .subscribe(article => {
         this.articleDt = article;
-        this.stockDt = this.articleDt.stock ? this.articleDt.stock: {};
-        this.bonCommandeDt = this.articleDt.bonCommande ? this.articleDt.bonCommande: {};
 
       }); 
     }
@@ -64,8 +54,6 @@ export class NouveauArticleComponent implements OnInit {
     this.router.navigate(['article']);
   }
   enregistrerArticle(): void {
-   this.articleDt.bonCommande=this.bonCommandeDt
-   this.articleDt.stock=this.stockDt
 
     this.articleServices.enregistrerArticle(this.articleDt)
     .subscribe(res => {

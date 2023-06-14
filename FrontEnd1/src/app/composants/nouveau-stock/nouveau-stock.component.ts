@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ArticleServices } from 'src/app/services/article/article.service';
 import { StockServices } from 'src/app/services/stock/stock.service';
+import { ArticleDTO } from 'src/gs-api/src/models';
 import { StockDTO } from 'src/gs-api/src/models/stock-dto';
 
 @Component({
@@ -12,7 +14,10 @@ export class NouveauStockComponent implements OnInit {
 
   [x: string]: any;
   stockDt: StockDTO={};
+  articleDto :ArticleDTO={};
   listestock: Array<StockDTO> =[];
+  listearticle: Array<ArticleDTO> =[];
+
   
  
   errorMsg: Array<string> = [];
@@ -22,9 +27,14 @@ export class NouveauStockComponent implements OnInit {
     private router:Router,
     private activatedRouter:ActivatedRoute,
     private  stockservices:StockServices,
+    private articleServices:ArticleServices,
     ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.articleServices.findAllArticle().subscribe(article => {
+    this.listearticle=article;
+    
+  });
    
 
     const idStock = this.activatedRouter.snapshot.params.idStock;
@@ -32,6 +42,8 @@ export class NouveauStockComponent implements OnInit {
       this.stockservices.findStockById(idStock)
       .subscribe(stock => {
         this.stockDt = stock;
+        this.articleDto = this.stockDt.article ? this.stockDt.article: {};
+
 
       });
     }
@@ -44,6 +56,8 @@ export class NouveauStockComponent implements OnInit {
     this.router.navigate(['stock']);
   }
   enregistrerStock(): void {
+    this.stockDt.article=this.articleDto
+
 
     this.stockservices.enregistrerStock(this.stockDt)
     .subscribe(res => {
