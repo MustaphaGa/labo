@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {EmployeDTO} from "../../../gs-api/src/models";
 import {Router} from "@angular/router";
-import {EmployeService} from "../../services/employe/employe.service";
+import {UserService} from "../../services/user/user.service";
 
 @Component({
   selector: 'app-header',
@@ -9,12 +9,12 @@ import {EmployeService} from "../../services/employe/employe.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Input()
-  employeDt: EmployeDTO = {};
+  connectedUser: EmployeDTO = {};
   constructor(private router: Router,
-              private employeService:EmployeService) { }
+              private  userService: UserService) { }
 
   ngOnInit(): void {
+    this.connectedUser = this.userService.getConnectedUser();
   }
 
 }

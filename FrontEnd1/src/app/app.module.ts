@@ -88,6 +88,7 @@ import { DetailBilanFinanceComponent } from './composants/detail-bilan-finance/d
 import { NouveauBilanFinanceComponent } from './composants/nouveau-bilan-finance/nouveau-bilan-finance.component';
 import { DetailOperationComponent } from './composants/detail-operation/detail-operation.component';
 import { NouveauOperationComponent } from './composants/nouveau-operation/nouveau-operation.component';
+import { LoaderComponent } from './composants/loader/loader/loader.component';
 
 
 
@@ -180,6 +181,7 @@ import { NouveauOperationComponent } from './composants/nouveau-operation/nouvea
     NouveauBilanFinanceComponent,
     DetailOperationComponent,
     NouveauOperationComponent,
+    LoaderComponent,
 
 
 

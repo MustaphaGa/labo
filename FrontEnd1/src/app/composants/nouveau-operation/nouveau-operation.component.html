@@ -25,11 +25,6 @@
         </div>
         <div class="row">
           <div class="col mb-3">
-            <label for="employe">nom employe</label>
-            <select class="form-control" name="employe" [(ngModel)]="employeDTo.nom">
-              <option *ngFor="let employe of listeEmploye" [value]="employe.id_employe">{{employe.nom}}  </option>
-
-            </select>
           </div>
           <div class="col">
             <label for="type">Description Bilan Financier</label>

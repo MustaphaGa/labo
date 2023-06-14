@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
-import {AuthenticationService} from '../../../gs-api/src/services';
+import {AuthenticationService, TestCovidv1employeService} from '../../../gs-api/src/services';
 import { Router } from '@angular/router';
 import {AuthenticationRequest} from '../../../gs-api/src/models/authentication-request';
 import {AuthenticationReponse} from '../../../gs-api/src/models/authentication-reponse';
 import {Observable, of} from "rxjs";
+import {EmployeDTO} from "../../../gs-api/src/models/employe-dto";
+
 
 
 
@@ -13,6 +15,7 @@ import {Observable, of} from "rxjs";
 export class UserService {
   constructor(
     private authenticationService: AuthenticationService,
+    private  testCovidv1employeService: TestCovidv1employeService,
     private  router:Router) {
   }
 
@@ -21,12 +24,32 @@ export class UserService {
 
     return  this.authenticationService.authenticate(authenticationRequest);
   }
-  setConnectedUser(authenticatorResponse: AuthenticationReponse): void{
+  getUserByEmail(email?: string): Observable<EmployeDTO> {
+    if (email !== undefined) {
+      return this.testCovidv1employeService.findByEmail(email);
+    }
+    return of();
+  }
+ /* setConnectedUser(authenticatorResponse: AuthenticationReponse): void{
     localStorage.setItem('connectedUser' ,JSON.stringify(authenticatorResponse));
+  }*/
+  setAccessToken(authenticationResponse: AuthenticationReponse): void {
+    localStorage.setItem('accessToken', JSON.stringify(authenticationResponse));
+  }
+
+
+  setConnectedUser(employe: EmployeDTO): void {
+    localStorage.setItem('connectedUser', JSON.stringify(employe));
+  }
+  getConnectedUser(): EmployeDTO {
+    if (localStorage.getItem('connectedUser')) {
+      return JSON.parse(localStorage.getItem('connectedUser') as string);
+    }
+    return {};
   }
   //TODO
   isUserLoggedAndAcessTokenValid(){
-    if(localStorage.getItem('connectedUser')) {
+    if(localStorage.getItem('accessToken')) {
       //IL FAUT verfier si le access token est valid
       return true;
     }

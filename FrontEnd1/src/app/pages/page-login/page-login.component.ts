@@ -20,15 +20,21 @@ export class PageLoginComponent implements OnInit {
   }
   // tslint:disable-next-line:typedef
   login() {
-    return this.userService.login(this.authenticationRequest)
-      .subscribe(  (data)  => {
-        this.userService.setConnectedUser(data);
-        this.router.navigate(['']);
+    return this.userService.login(this.authenticationRequest).subscribe(  (data)  => {
+      this.userService.setAccessToken(data);
+      this.getUserByEmail();
+      this.router.navigate(['']);
       }, error => {
         console.log(error);
         // this.router.navigate( ['register']);
         this.errorMessage = 'Login et /ou mot de passe incorrecte';
 
+      });
+  }
+  getUserByEmail(): void {
+    this.userService.getUserByEmail(this.authenticationRequest.login)
+      .subscribe(user => {
+        this.userService.setConnectedUser(user);
       });
   }
 
