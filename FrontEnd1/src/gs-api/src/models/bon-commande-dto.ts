@@ -1,12 +1,10 @@
 /* tslint:disable */
 import { FournisseurDTO } from './fournisseur-dto';
-import { FactureDTO } from './facture-dto';
-import { EmployeDTO } from './employe-dto';
+import { ArticleDTO } from './article-dto';
 export interface BonCommandeDTO {
   idBonCommande?: number;
   dateCommande?: string;
-  prix?: number;
   fournisseur?: FournisseurDTO;
-  facture?: FactureDTO;
-  employe?: EmployeDTO;
+  article?: ArticleDTO;
+  quantiteCommande?: number;
 }

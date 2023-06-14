@@ -1,10 +1,11 @@
 /* tslint:disable */
-import { EmployeDTO } from './employe-dto';
-import { BilanFinancierDTO } from './bilan-financier-dto';
+import { CompteDTO } from './compte-dto';
 export interface OperationDTO {
   idOperation?: number;
   dateOperation?: string;
   typeOperation?: string;
-  employe?: EmployeDTO;
-  bilanFinancier?: BilanFinancierDTO;
+  description?: string;
+  compte?: CompteDTO;
+  annee?: number;
+  montant?: number;
 }

@@ -1,7 +1,7 @@
 
 <div class="col">
     <div class="col-md-12 mb-3 mt-3">
-        <img src="assets/menu/assets/img/patients.jfif"  class="rounded-circle" width="200px" height="200px">
+        <img src="assets/imgs/articles.jpg"  class="rounded-circle" width="200px" height="200px">
     </div>
     <div class="col-md-12">
         <div class="col-md-12">
@@ -30,13 +30,23 @@
                 
                   <div class="row">
                     <div class="col mb-3">
-                      <label for="employes">Employes</label>
-                      <select class="form-control" id="employes" name="empl" [(ngModel)]="employeDto.idEmploye">
-                          <option *ngFor="let empl of listemploye" [value]="empl.idEmploye">{{empl.nom}} - {{empl.prenom}} </option>              
+                      <label for="boncommandes">BonCommande</label>
+                      <select class="form-control" id="boncommandes" name="bcomnd" [(ngModel)]="bonCommandeDt.idBonCommande">
+                          <option *ngFor="let bcomnd of listeBoncommande" [value]="bcomnd.idBonCommande">{{bcomnd.prix}}  </option>              
                           
                         </select>
                     </div>
                   </div>
+                  <div class="row">
+                    <div class="col mb-3">
+                      <label for="stocks">Stock</label>
+                      <select class="form-control" id="stocks" name="stock" [(ngModel)]="stockDt.idStock">
+                          <option *ngFor="let stock of listeStock" [value]="stock.idStock">{{stock.situation}}  </option>              
+                          
+                        </select>
+                    </div>
+                  </div>
+
                     
               </form>
         </div>

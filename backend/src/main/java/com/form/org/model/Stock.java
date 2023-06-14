@@ -20,15 +20,19 @@ public class Stock {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="idStock")
 	private Integer idStock;
+
 	private String situation;
 	private Date dateVerification;
-	/*
-	@OneToOne
-    @JoinColumn(name = "id_employe")
-    private Employe employe;
-	 */
+	
 
-	@OneToMany(mappedBy="stock")
-	private List<Article> articles;
+	@Column(name="QuatiteStock")
+	private String QuatiteStock;
+	@Column(name="dateStock")
+	private Date dateStock;
+
+
+	@ManyToOne
+	@JoinColumn(name="idArticle")
+	private Article article;
 
 }

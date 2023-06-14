@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "start:local": "npm run gs-api && ng serve -- --proxyConfig=proxy.conf.json",
     "gs-api": " npm run gs-api:swagger-gen",
-    "gs-api:swagger-gen": " C:/Users/hamid/Desktop/labo/FrontEnd1/node_modules/.bin/ng-swagger-gen -i ./tools/swagger/src/swagger.json -o src/gs-api/src"
+    "gs-api:swagger-gen": " C:/Users/hamid/Desktop/dernierVersion/labo/FrontEnd1/node_modules/.bin/ng-swagger-gen -i ./tools/swagger/src/swagger.json -o src/gs-api/src"
   },
   "private": true,
   "dependencies": {

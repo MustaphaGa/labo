@@ -16,7 +16,6 @@ class FournisseurService extends __BaseService {
   static readonly savePath = '/testCovid/v1/fournisseur/create';
   static readonly deletePath = '/testCovid/v1/fournisseur/delete/{idFournisseur}';
   static readonly findByIdPath = '/testCovid/v1/fournisseur/{idFournisseur}';
-  static readonly findByNomPath = '/testCovid/v1/fournisseur/{nom}';
 
   constructor(
     config: __Configuration,
@@ -137,7 +136,7 @@ class FournisseurService extends __BaseService {
   }
 
   /**
-   * Cette methode permet de rechercher d'une facture par son ID
+   * Cette methode permet de rechercher d'une fournisseur par son ID
    * @param idFournisseur undefined
    * @return la fournisseur a ete trouver dans la BDD
    */
@@ -164,50 +163,12 @@ class FournisseurService extends __BaseService {
     );
   }
   /**
-   * Cette methode permet de rechercher d'une facture par son ID
+   * Cette methode permet de rechercher d'une fournisseur par son ID
    * @param idFournisseur undefined
    * @return la fournisseur a ete trouver dans la BDD
    */
   findById(idFournisseur: number): __Observable<FournisseurDTO> {
     return this.findByIdResponse(idFournisseur).pipe(
-      __map(_r => _r.body as FournisseurDTO)
-    );
-  }
-
-  /**
-   * Cette methode permet de rechercher d'une facture par son ID
-   * @param nom undefined
-   * @return la fournisseur a ete trouver dans la BDD
-   */
-  findByNomResponse(nom: string): __Observable<__StrictHttpResponse<FournisseurDTO>> {
-    let __params = this.newParams();
-    let __headers = new HttpHeaders();
-    let __body: any = null;
-
-    let req = new HttpRequest<any>(
-      'GET',
-      this.rootUrl + `/testCovid/v1/fournisseur/${nom}`,
-      __body,
-      {
-        headers: __headers,
-        params: __params,
-        responseType: 'json'
-      });
-
-    return this.http.request<any>(req).pipe(
-      __filter(_r => _r instanceof HttpResponse),
-      __map((_r) => {
-        return _r as __StrictHttpResponse<FournisseurDTO>;
-      })
-    );
-  }
-  /**
-   * Cette methode permet de rechercher d'une facture par son ID
-   * @param nom undefined
-   * @return la fournisseur a ete trouver dans la BDD
-   */
-  findByNom(nom: string): __Observable<FournisseurDTO> {
-    return this.findByNomResponse(nom).pipe(
       __map(_r => _r.body as FournisseurDTO)
     );
   }

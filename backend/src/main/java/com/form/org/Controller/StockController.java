@@ -30,8 +30,8 @@ public class StockController implements StockApi {
     }
 
     @Override
-    public StockDTO findBydateVerification(Date dateVerification) {
-        return stockService.findBydateVerification(dateVerification);
+    public StockDTO findBydateStock(Date dateStock) {
+        return stockService.findBydateStock(dateStock);
     }
 
     @Override

@@ -10,6 +10,7 @@ import { AuthenticationService } from './services/authentication.service';
 import { TestCovidv1bilanfinanceService } from './services/test-covidv-1bilanfinance.service';
 import { BiologisteService } from './services/biologiste.service';
 import { BoncommandeService } from './services/boncommande.service';
+import { TestCovidv1compteService } from './services/test-covidv-1compte.service';
 import { TestCovidv1congeService } from './services/test-covidv-1conge.service';
 import { DepartementService } from './services/departement.service';
 import { DetailResultatService } from './services/detail-resultat.service';
@@ -47,6 +48,7 @@ import { TypeAnalyseService } from './services/type-analyse.service';
     TestCovidv1bilanfinanceService,
     BiologisteService,
     BoncommandeService,
+    TestCovidv1compteService,
     TestCovidv1congeService,
     DepartementService,
     DetailResultatService,

@@ -36,7 +36,7 @@ public class FournisseurServiceImpl implements FournisseurService {
     @Override
     public FournisseurDTO findById(Integer idFournisseur) {
         if(idFournisseur == null) {
-            log.error("facture id is null");
+            log.error("fournisseur id is null");
             return null;
         }
         Optional<Fournisseur> fournisseur=fournisseurRepository.findById(idFournisseur);
@@ -47,16 +47,8 @@ public class FournisseurServiceImpl implements FournisseurService {
                         ErrorCodes.FOURNISSEUR_NOT_FOUND)
         );    }
 
-    @Override
-    public FournisseurDTO findByNom(String nom) {
-        Optional<Fournisseur> fournisseur=fournisseurRepository.findByNom(nom);
 
-        return Optional.of(FournisseurDTO.fromEntity(fournisseur.get())).orElseThrow(() ->
-                new EntityNotFoundException(
-                        "Aucun fournisseur avec cette date ="+ nom +"n'été trouve dans la BDD",
-                        ErrorCodes.FOURNISSEUR_NOT_FOUND)
-        );
-    }
+
 
     @Override
     public List<FournisseurDTO> findAll() {

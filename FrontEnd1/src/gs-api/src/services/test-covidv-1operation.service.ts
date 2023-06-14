@@ -177,7 +177,7 @@ class TestCovidv1operationService extends __BaseService {
   /**
    * Cette methode permet de rechercher  un operation par son ID
    * @param idOperation undefined
-   * @return la patient a ete trouver dans la BDD
+   * @return la operation a ete trouver dans la BDD
    */
   findByIdResponse(idOperation: number): __Observable<__StrictHttpResponse<OperationDTO>> {
     let __params = this.newParams();
@@ -204,7 +204,7 @@ class TestCovidv1operationService extends __BaseService {
   /**
    * Cette methode permet de rechercher  un operation par son ID
    * @param idOperation undefined
-   * @return la patient a ete trouver dans la BDD
+   * @return la operation a ete trouver dans la BDD
    */
   findById(idOperation: number): __Observable<OperationDTO> {
     return this.findByIdResponse(idOperation).pipe(

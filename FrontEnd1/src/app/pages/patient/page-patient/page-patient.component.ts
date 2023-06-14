@@ -9,38 +9,42 @@ import { PatientDTO } from 'src/gs-api/src/models/patient-dto';
   styleUrls: ['./page-patient.component.css']
 })
 export class PagePatientComponent implements OnInit {
-listepatient :Array<PatientDTO>  = [];
+listepatient: Array<PatientDTO>  = [];
 errorMsgs = '';
-  constructor( 
-    private router:Router,
-    private patientService:PatientService
-  
+
+  constructor(
+    private router: Router,
+    private patientService: PatientService
     ) { }
 
   ngOnInit(): void {
   this.findListpatient();
    }
-    
-    findListpatient(): void {
+
+  findListpatient(): void {
       this.patientService.findAllPatient().subscribe(res => {
-        this.listepatient=res;
+        this.listepatient = res;
     })
   }
-  
+
   nouveauPatient(): void{
     this.router.navigate(['nouveauPatient']);
   }
-  exportePatient():void{
+  exportePatient(): void
+  {
     this.router.navigate(['exportePatient']);
   }
-  
-  handleSuppression(event: any): void{
-    if (event === 'success') {
+
+  handleSuppression(event: any): void
+  {
+    if (event === 'success')
+    {
       this.findListpatient;
-    } else {
+    } else
+      {
       this.errorMsgs = event;
     }
-  
+
   }
 
 }

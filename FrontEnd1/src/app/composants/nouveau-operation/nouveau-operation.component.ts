@@ -30,15 +30,11 @@ export class NouveauOperationComponent implements OnInit {
                private bilanFinancierService: BilanFinanceService) { }
 
   ngOnInit(): void {
-    this.bilanFinancierService.findAllBilanFinance().subscribe(bilanFinancier => {
-      this.listeBilanFinancier = bilanFinancier;
-    });
     const idOperation = this.activatedRouter.snapshot.params.idOperation;
     if (idOperation) {
       this.operationservice.findOperationById(idOperation)
         .subscribe(operation => {
           this.operationDto = operation;
-          this.bilanFinancierDto = this.operationDto.bilanFinancier ? this.operationDto.bilanFinancier : {};
         });
     }
 
@@ -47,7 +43,6 @@ export class NouveauOperationComponent implements OnInit {
     this.router.navigate(['operation']);
   }
   enregistrerOperation(): void {
-    this.operationDto.bilanFinancier = this.bilanFinancierDto;
     this.operationservice.enregistrerOperation(this.operationDto).subscribe(res => {
       this.router.navigate(['operation']);
     }, error => {

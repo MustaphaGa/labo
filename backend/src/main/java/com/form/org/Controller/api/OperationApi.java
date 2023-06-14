@@ -29,8 +29,8 @@ public interface OperationApi {
     @ApiOperation(value = "rechercher un operation par ID",notes = "Cette methode permet"
             + " de rechercher  un operation par son ID ",response = OperationDTO.class)
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "la patient a ete trouver dans la BDD"),
-            @ApiResponse(code = 404, message = "Aucun patient n'existe  dans la BDD avec l'ID fourni")
+            @ApiResponse(code = 200, message = "la operation a ete trouver dans la BDD"),
+            @ApiResponse(code = 404, message = "Aucun operation n'existe  dans la BDD avec l'ID fourni")
     })
     OperationDTO findById(@PathVariable("idOperation") Integer idOperation);
 

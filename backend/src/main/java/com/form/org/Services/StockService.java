@@ -10,7 +10,7 @@ public interface StockService {
 
     StockDTO findById(Integer idStock);
 
-    StockDTO findBydateVerification(Date dateVerification);
+    StockDTO findBydateStock(Date dateStock);
 
     List<StockDTO> findAll();
 

@@ -25,7 +25,7 @@ public class Absence {
 	private String motif;
 	private String pieceJustificatifString;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="idEmploye")
 	private Employe employe;
 

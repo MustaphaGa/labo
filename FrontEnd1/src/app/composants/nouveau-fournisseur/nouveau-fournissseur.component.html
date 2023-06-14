@@ -1,0 +1,60 @@
+
+<div class="col">
+
+    <div class="col-md-12 mb-3 mt-3">
+        <img src="assets/imgs/fournisseur.png"  class="rounded-circle" width="200px" height="200px">
+    </div>
+
+    <div class="col-md-12">
+
+         <div class="col-md-12">
+            <h3><i class="fas fa-info-circle blue-color"></i>&nbsp;Information D'un fournisseur</h3>
+         </div>
+
+        <div class="col-md-12">
+          <div class="alert alert-danger" *ngIf="errorMsg.length > 0">
+             <div *ngFor="let msg of errorMsg">
+              <span >{{msg}}</span>
+             </div>
+          </div>
+            <form>
+
+                <div class="row">
+                  <div class="col mb-3">
+                    <input type="text" class="form-control" placeholder="nom" name="nom" [(ngModel)]="fournisseurDt.nom" >
+                  </div>
+
+                  <div class="col ">
+                    <input type="text" class="form-control" placeholder="telephone" name="telephone" [(ngModel)]="fournisseurDt.telephone">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col mb-3">
+                    <input type="text" class="form-control" placeholder="addresse" name="addresse" [(ngModel)]="fournisseurDt.adresse">
+                  </div>
+                </div>
+                  
+                 
+            </form>
+        
+        </div>
+    </div>
+    <div class="col-md-12 text-right">
+        <button class="btn btn-danger mr-3" (click)="cancel()">
+          <i class="fas fa-ban"></i>&nbsp;
+          Annuler
+        </button>
+        <button class="btn btn-primary" (click)="enregistrerFournisseur()">
+          <i class="fas fa-save"></i>&nbsp;
+          Enregitrer
+        </button>
+     
+    </div>
+</div>
+
+
+
+
+
+

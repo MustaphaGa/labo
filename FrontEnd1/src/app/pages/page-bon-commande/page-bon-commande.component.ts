@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BonCommandeDTO } from 'src/gs-api/src/models/bon-commande-dto';
+import { BonCommandeServices } from 'src/app/services/BonCommande/bon-commande.service';
 
 @Component({
   selector: 'app-page-bon-commande',
@@ -7,9 +10,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageBonCommandeComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  listeBon :Array<BonCommandeDTO>  = [];
+  errorMsgs = '';
+    constructor( 
+      private router:Router,
+      private boncommandeServices:BonCommandeServices
+    
+      ) { }
+  
+    ngOnInit(): void {
+    this.findlisteBon();
+     }
+      
+      findlisteBon(): void {
+        this.boncommandeServices.findAllBon().subscribe(res => {
+          this.listeBon=res;
+      })
+    }
+    
+    nouveauBonCommande(): void{
+      this.router.navigate(['nouveauBonCommande']);
+    }
+    exporteBonCommande():void{
+      this.router.navigate(['exporteBonCommande']);
+    }
+    
+    handleSuppression(event: any): void{
+      if (event === 'success') {
+        this.findlisteBon;
+      } else {
+        this.errorMsgs = event;
+      }
+    
+    }
+  
   }
+  
 
-}
+  

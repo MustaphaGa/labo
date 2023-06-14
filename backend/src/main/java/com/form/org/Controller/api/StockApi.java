@@ -35,15 +35,15 @@ public interface StockApi {
     StockDTO findById(@PathVariable("idStock")Integer idStock);
 
 
-    @GetMapping(value= APP_ROOT + "/stock/filter{dateVerification}", produces = MediaType.APPLICATION_JSON_VALUE )
-    @ApiOperation(value = "rechercher un stock par date de Reservation",notes = "Cette methode"
-            + " permet de rechercher un stock par date de Reservation  ",
+    @GetMapping(value= APP_ROOT + "/stock/filter{dateStock}", produces = MediaType.APPLICATION_JSON_VALUE )
+    @ApiOperation(value = "rechercher un stock par date de Stock",notes = "Cette methode"
+            + " permet de rechercher un stock par date de Stock  ",
             response = StockDTO.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "la stock a ete trouver dans la BDD"),
             @ApiResponse(code = 404, message = "Aucun stock n'existe  dans la BDD avec le CODE fourni")
     })
-    StockDTO findBydateVerification(@PathVariable("dateVerification") Date dateVerification);
+    StockDTO findBydateStock(@PathVariable("dateStock") Date dateStock);
 
 
     @GetMapping(value= APP_ROOT + "/stock/all", produces = MediaType.APPLICATION_JSON_VALUE )

@@ -6,6 +6,7 @@ export { AuthenticationRequest } from './models/authentication-request';
 export { BilanFinancierDTO } from './models/bilan-financier-dto';
 export { BiologisteDTO } from './models/biologiste-dto';
 export { BonCommandeDTO } from './models/bon-commande-dto';
+export { CompteDTO } from './models/compte-dto';
 export { CongeDTO } from './models/conge-dto';
 export { DepartementDTO } from './models/departement-dto';
 export { DetailResultatDTO } from './models/detail-resultat-dto';

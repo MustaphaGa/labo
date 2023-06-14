@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BonCommandeServices } from 'src/app/services/BonCommande/bon-commande.service';
 import { ArticleServices } from 'src/app/services/article/article.service';
+import { StockServices } from 'src/app/services/stock/stock.service';
 import { ArticleDTO } from 'src/gs-api/src/models/article-dto';
 import { BonCommandeDTO } from 'src/gs-api/src/models/bon-commande-dto';
 import { StockDTO } from 'src/gs-api/src/models/stock-dto';
@@ -15,10 +17,10 @@ export class NouveauArticleComponent implements OnInit {
   [x: string]: any;
   articleDt: ArticleDTO={};
   stockDt:StockDTO={};
- /*  bonCommandeDt:BonCommandeDTO={};
+  bonCommandeDt:BonCommandeDTO={};
   listeArticles: Array<ArticleDTO> =[];
   listeStock: Array<StockDTO> =[];
-  listeBoncommande: Array<BonCommandeDTO> =[]; */
+  listeBoncommande: Array<BonCommandeDTO> =[]; 
  
   errorMsg: Array<string> = [];
   patientErrorMsg='';
@@ -27,23 +29,32 @@ export class NouveauArticleComponent implements OnInit {
     private router:Router,
     private activatedRouter:ActivatedRoute,
     private  articleServices:ArticleServices,
+    private  stockservices:StockServices,
+    private  boncommandeserv:BonCommandeServices,
+
 
     ) { }
 
   ngOnInit(): void {
-   /*  this.employeService.findAllEmploye().subscribe(employe => {
-      this.listemploye=employe;
+    this.stockservices.findAllStock().subscribe(stock => {
+      this.listeStock=stock;
     });
+     this.boncommandeserv.findAllBon().subscribe(bonCommande => {
+      this.listeBoncommande=bonCommande;
+    });
+     
 
-    const idAbsence = this.activatedRouter.snapshot.params.idAbsence;
-    if (idAbsence) {
-      this.absenceService.findAbsenceById(idAbsence)
-      .subscribe(absence => {
-        this.absenceDt = absence;
-        this.employeDto = this.absenceDt.employe ? this.absenceDt.employe: {};
+    const  idArticle= this.activatedRouter.snapshot.params.idArticle;
+    if (idArticle) {
+      this.articleServices.findArticleById(idArticle)
+      .subscribe(article => {
+        this.articleDt = article;
+        this.stockDt = this.articleDt.stock ? this.articleDt.stock: {};
+        this.bonCommandeDt = this.articleDt.bonCommande ? this.articleDt.bonCommande: {};
 
-      }); */
+      }); 
     }
+  }
   
   
   
@@ -53,7 +64,8 @@ export class NouveauArticleComponent implements OnInit {
     this.router.navigate(['article']);
   }
   enregistrerArticle(): void {
-   // this.absenceDt.employe=this.employeDto
+   this.articleDt.bonCommande=this.bonCommandeDt
+   this.articleDt.stock=this.stockDt
 
     this.articleServices.enregistrerArticle(this.articleDt)
     .subscribe(res => {

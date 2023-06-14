@@ -27,7 +27,7 @@ public interface FournisseurApi {
 
 
     @GetMapping(value= APP_ROOT + "/fournisseur/{idFournisseur}", produces = MediaType.APPLICATION_JSON_VALUE )
-    @ApiOperation(value = "rechercher d'une facture par ID",notes = "Cette methode permet de rechercher d'une facture par son ID ",
+    @ApiOperation(value = "rechercher d'une fournisseur par ID",notes = "Cette methode permet de rechercher d'une fournisseur par son ID ",
             response = FournisseurDTO.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "la fournisseur a ete trouver dans la BDD"),
@@ -35,19 +35,13 @@ public interface FournisseurApi {
     })
     FournisseurDTO findById(@PathVariable("idFournisseur")Integer idFournisseur);
 
-    @GetMapping(value= APP_ROOT + "/fournisseur/{nom}", produces = MediaType.APPLICATION_JSON_VALUE )
-    @ApiOperation(value = "rechercher d'une facture par nom",notes = "Cette methode permet de rechercher d'une facture par son ID ",
-            response = FournisseurDTO.class)
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "la fournisseur a ete trouver dans la BDD"),
-            @ApiResponse(code = 404, message = "Aucun fournisseur n'existe  dans la BDD avec l'ID fourni")
-    })
-    FournisseurDTO findByNom(@PathVariable("nom")String nom);
+
+
 
 
     @GetMapping(value= APP_ROOT + "/fournisseur/all", produces = MediaType.APPLICATION_JSON_VALUE )
     @ApiOperation(value = "renvoi la liste du facture",notes = "Cette methode permet de rechercher et renvoyer la listes des facture qui existent dans la BDD",
-            responseContainer = "List<FactureDTO>")
+            responseContainer = "List<FournisseurDTO>")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "la liste des factures / une liste vide"),
     })

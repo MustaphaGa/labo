@@ -5,6 +5,7 @@ export { AuthenticationService } from './services/authentication.service';
 export { TestCovidv1bilanfinanceService } from './services/test-covidv-1bilanfinance.service';
 export { BiologisteService } from './services/biologiste.service';
 export { BoncommandeService } from './services/boncommande.service';
+export { TestCovidv1compteService } from './services/test-covidv-1compte.service';
 export { TestCovidv1congeService } from './services/test-covidv-1conge.service';
 export { DepartementService } from './services/departement.service';
 export { DetailResultatService } from './services/detail-resultat.service';

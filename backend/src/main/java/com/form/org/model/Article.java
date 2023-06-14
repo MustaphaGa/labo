@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -19,18 +20,27 @@ public class Article {
     @Column(name="idArticle")
     private Integer idArticle;
 
-    @Column(name = "article")
-    private String articleName;
-    @Column(name = "quantite")
-    private String quantite;
+    @Column(name = "NomArticle")
+    private String NomArticle;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="idBonCommande")
-    private BonCommande bonCommande;
+    @Column(name = "prixArticle")
+    private String prixArticle;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="idStock")
-    private Stock stock;
+    @Column(name = "typeArticle")
+    private String typeArticle;
+
+    @Column(name = "codeBarre")
+    private String codeBarre;
+
+
+    @OneToMany(mappedBy="article")
+    private List<BonCommande> bonCommandes;
+
+    @OneToMany(mappedBy="article")
+    private List<Stock> stocks;
+
+
+
 
 
 }

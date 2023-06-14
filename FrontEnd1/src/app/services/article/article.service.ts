@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { ArticleDTO } from 'src/gs-api/src/models/article-dto';
-import { ArticleService } from 'src/gs-api/src/services';
+import { ArticleService } from 'src/gs-api/src/services/article.service';
 
 @Injectable({
   providedIn: 'root'

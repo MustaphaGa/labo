@@ -1,0 +1,31 @@
+
+<!--detaill-->
+<h3 style="text-align: center;margin-bottom: 25px;">  Details Bon Commande </h3>
+<div style="margin-left: 20px;
+margin-right: auto;
+">
+
+   
+  <div>
+    <label> <b> PRIX: </b></label> {{bonCommandeDt.prix}}
+</div>
+<div>
+    <label> <b> DATE : </b></label>{{bonCommandeDt.dateCommande| date: 'dd/MM/yyyy' }}
+</div>
+  <div>
+      <label> <b> Fournisseur: </b></label> {{bonCommandeDt.fournisseur?.nom}}
+  </div>
+  <div>
+    <label> <b> FACTURE: </b></label> {{bonCommandeDt.facture?.montant}}
+</div>
+  <div>
+      <label> <b> EMPLOYE: </b></label> {{bonCommandeDt.employe?.nom}} {{bonCommandeDt.employe?.prenom}}
+  </div>
+
+ 
+</div>
+    
+
+
+
+

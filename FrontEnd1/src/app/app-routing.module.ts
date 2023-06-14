@@ -39,17 +39,16 @@ import { ExporteResultatComponent } from './composants/exportationDonner/exporte
 import { PdfResultatComponent } from './pdf-resultat/pdf-resultat.component';
 import { PageEmployeesComponent } from './pages/employee/page-employees/page-employees.component';
 import { NouveauEmployeComponent } from './composants/nouveau-employe/nouveau-employe.component';
-import {PageLaboComponent} from "./pages/page-labo/page-labo.component";
-import {NouveauLaboComponent} from "./composants/nouveau-labo/nouveau-labo.component";
-import {PageAccueilPrincipalComponent} from "./pages/page-accueil-principal/page-accueil-principal.component";
-import {PageCongesComponent} from "./pages/page-conges/page-conges.component";
-import {PageRecrutementComponent} from "./pages/page-recrutement/page-recrutement.component";
-import {PageMouvementComponent} from "./pages/page-mouvement/page-mouvement.component";
+import {PageLaboComponent} from './pages/page-labo/page-labo.component';
+import {NouveauLaboComponent} from './composants/nouveau-labo/nouveau-labo.component';
+import {PageAccueilPrincipalComponent} from './pages/page-accueil-principal/page-accueil-principal.component';
+import {PageRecrutementComponent} from './pages/page-recrutement/page-recrutement.component';
+import {PageMouvementComponent} from './pages/page-mouvement/page-mouvement.component';
 import {NouveauRecrutementComponent} from './composants/nouveau-recrutement/nouveau-recrutement.component';
 import {NouveauMouvementComponent} from './composants/nouveau-mouvement/nouveau-mouvement.component';
 import {PageAbsenceComponent} from './pages/page-absence/page-absence.component';
 import { NouveauAbsenceComponent } from './composants/nouveau-absence/nouveau-absence/nouveau-absence.component';
-import {AbsenceDetaillComponent} from "./detaill/absence-detaill/absence-detaill/absence-detaill.component";
+import {AbsenceDetaillComponent} from './detaill/absence-detaill/absence-detaill/absence-detaill.component';
 import {PageArticleComponent} from './pages/page-article/page-article.component';
 import {PageBonCommandeComponent} from './pages/page-bon-commande/page-bon-commande.component';
 import {PageStockComponent} from './pages/page-stock/page-stock.component';
@@ -59,10 +58,18 @@ import {PageBilanFinancierComponent} from './pages/page-bilan-financier/page-bil
 import {PageServiceFinanceComponent} from './pages/page-service-finance/page-service-finance.component';
 import { NouveauArticleComponent } from './composants/nouveau-article/nouveau-article.component';
 import { ArticleDetaillComponent } from './detaill/article-detaill/article-detaill/article-detaill.component';
-import {NouveauCongerComponent} from './composants/nouveau-conger/nouveau-conger.component';
-import {NouveauBilanFinanceComponent} from "./composants/nouveau-bilan-finance/nouveau-bilan-finance.component";
-import {NouveauOperationComponent} from "./composants/nouveau-operation/nouveau-operation.component";
-const routes: Routes= [
+import { NouveauBonCommandeComponent } from './composants/nouveau-bon-commande/nouveau-bon-commande.component';
+import { BonCommandeDetaillComponent } from './detaill/bon-commande-detaill/bon-commande-detaill.component';
+import { NouveauStockComponent } from './composants/nouveau-stock/nouveau-stock.component';
+import { StockDetaillComponent } from './detaill/stock-detaill/stock-detaill.component';
+import { NouveauFournisseurComponent } from './composants/nouveau-fournisseur/nouveau-fournissseur.component';
+import { FournisseurDetaillComponent } from './detaill/fournisseur-detaill/fournisseur-detaill.component';
+import { PageCongesComponent } from './pages/page-conges/page-conges.component';
+import { NouveauCongerComponent } from './composants/nouveau-conger/nouveau-conger.component';
+import { DetailCongerComponent } from './composants/detail-conger/detail-conger.component';
+import {NouveauOperationComponent} from './composants/nouveau-operation/nouveau-operation.component';
+import {NouveauBilanFinanceComponent} from './composants/nouveau-bilan-finance/nouveau-bilan-finance.component';
+const routes: Routes = [
   {
     path: 'pagAccPrincp',
     component: PageAccueilPrincipalComponent
@@ -80,7 +87,7 @@ const routes: Routes= [
     path: '',
     component: PageAccueilComponent,
     canActivate: [ApplicationGuardService],
-    children :[
+    children : [
       {
         path: 'statistiques',
         component: PageStatistiquesComponent,
@@ -325,6 +332,7 @@ const routes: Routes= [
         canActivate: [ApplicationGuardService]
 
       },
+
       {
         path: 'conges',
         component: PageCongesComponent,
@@ -337,13 +345,19 @@ const routes: Routes= [
         canActivate: [ApplicationGuardService]
 
       },
+      {
+        path: 'nouveauconger/:idConge',
+        component: NouveauCongerComponent,
+        canActivate: [ApplicationGuardService]
+      },
 
       {
         path: 'detailconger/:idConge',
-        component: PreleveurDetaillComponent,
+        component: DetailCongerComponent,
         canActivate: [ApplicationGuardService]
-
       },
+
+
       {
         path: 'recrutement',
         component: PageRecrutementComponent,
@@ -447,8 +461,44 @@ const routes: Routes= [
 
       },
       {
+        path: 'nouveauBonCommande',
+        component: NouveauBonCommandeComponent,
+         canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveauBonCommande/:idBonCommande',
+        component: NouveauBonCommandeComponent,
+         canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'detailBonCommande/:idBonCommande',
+        component: BonCommandeDetaillComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
         path: 'stock',
         component: PageStockComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveauStock',
+        component: NouveauStockComponent,
+         canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveauStock/:idStock',
+        component: NouveauStockComponent,
+         canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'detailStock/:idStock',
+        component: StockDetaillComponent,
         canActivate: [ApplicationGuardService]
 
       },
@@ -479,6 +529,24 @@ const routes: Routes= [
       {
         path: 'fournisseur',
         component: PageFournisseurComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveauFournisseur',
+        component: NouveauFournisseurComponent,
+         canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveauFournisseur/:idFournisseur',
+        component: NouveauFournisseurComponent,
+         canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'detailFournisseur/:idFournisseur',
+        component: FournisseurDetaillComponent,
         canActivate: [ApplicationGuardService]
 
       },

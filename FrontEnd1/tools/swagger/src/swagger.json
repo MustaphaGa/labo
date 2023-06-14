@@ -40,6 +40,8 @@
   }, {
     "name" : "testCovidv1bilanfinance"
   }, {
+    "name" : "testCovidv1compte"
+  }, {
     "name" : "testCovidv1conge"
   }, {
     "name" : "testCovidv1employe"
@@ -766,6 +768,102 @@
         }
       }
     },
+    "/testCovid/v1/compte/all" : {
+      "get" : {
+        "tags" : [ "testCovidv1compte" ],
+        "summary" : "renvoi la liste des compte",
+        "description" : "Cette methode permet de rechercher et renvoyer la listes des compte qui existent dans la BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "la liste des compte / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/CompteDTO"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/compte/create" : {
+      "post" : {
+        "tags" : [ "testCovidv1compte" ],
+        "summary" : "Enregistrer Compte",
+        "description" : "Cette methode permet d'enregistrer ou modifier un compte ",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/CompteDTO"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "l'objet compte crée / modifie",
+            "schema" : {
+              "$ref" : "#/definitions/CompteDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/compte/delete/{idCompte}" : {
+      "delete" : {
+        "tags" : [ "testCovidv1compte" ],
+        "summary" : "supprimer  un compte ",
+        "description" : "Cette methode permet de supprimer un compte par ID ",
+        "operationId" : "delete",
+        "parameters" : [ {
+          "name" : "idCompte",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "compte a été supprimer",
+            "schema" : {
+              "$ref" : "#/definitions/CompteDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/compte/{idCompte}" : {
+      "get" : {
+        "tags" : [ "testCovidv1compte" ],
+        "summary" : "rechercher un compte par ID",
+        "description" : "Cette methode permet de rechercher  un compte par son ID ",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idCompte",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "compte a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/CompteDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun compte n'existe  dans la BDD avec l'ID fourni"
+          }
+        }
+      }
+    },
     "/testCovid/v1/conge/all" : {
       "get" : {
         "tags" : [ "testCovidv1conge" ],
@@ -1379,8 +1477,8 @@
     "/testCovid/v1/fournisseur/{idFournisseur}" : {
       "get" : {
         "tags" : [ "fournisseur" ],
-        "summary" : "rechercher d'une facture par ID",
-        "description" : "Cette methode permet de rechercher d'une facture par son ID ",
+        "summary" : "rechercher d'une fournisseur par ID",
+        "description" : "Cette methode permet de rechercher d'une fournisseur par son ID ",
         "operationId" : "findById",
         "produces" : [ "application/json" ],
         "parameters" : [ {
@@ -1389,32 +1487,6 @@
           "required" : true,
           "type" : "integer",
           "format" : "int32"
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "la fournisseur a ete trouver dans la BDD",
-            "schema" : {
-              "$ref" : "#/definitions/FournisseurDTO"
-            }
-          },
-          "404" : {
-            "description" : "Aucun fournisseur n'existe  dans la BDD avec l'ID fourni"
-          }
-        }
-      }
-    },
-    "/testCovid/v1/fournisseur/{nom}" : {
-      "get" : {
-        "tags" : [ "fournisseur" ],
-        "summary" : "rechercher d'une facture par nom",
-        "description" : "Cette methode permet de rechercher d'une facture par son ID ",
-        "operationId" : "findByNom",
-        "produces" : [ "application/json" ],
-        "parameters" : [ {
-          "name" : "nom",
-          "in" : "path",
-          "required" : true,
-          "type" : "string"
         } ],
         "responses" : {
           "200" : {
@@ -1728,13 +1800,13 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "la patient a ete trouver dans la BDD",
+            "description" : "la operation a ete trouver dans la BDD",
             "schema" : {
               "$ref" : "#/definitions/OperationDTO"
             }
           },
           "404" : {
-            "description" : "Aucun patient n'existe  dans la BDD avec l'ID fourni"
+            "description" : "Aucun operation n'existe  dans la BDD avec l'ID fourni"
           }
         }
       }
@@ -2429,15 +2501,15 @@
         }
       }
     },
-    "/testCovid/v1/stock/filter{dateVerification}" : {
+    "/testCovid/v1/stock/filter{dateStock}" : {
       "get" : {
         "tags" : [ "stock" ],
-        "summary" : "rechercher un stock par date de Reservation",
-        "description" : "Cette methode permet de rechercher un stock par date de Reservation  ",
-        "operationId" : "findBydateVerification",
+        "summary" : "rechercher un stock par date de Stock",
+        "description" : "Cette methode permet de rechercher un stock par date de Stock  ",
+        "operationId" : "findBydateStock",
         "produces" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "dateVerification",
+          "name" : "dateStock",
           "in" : "path",
           "required" : true,
           "type" : "string",
@@ -2671,17 +2743,17 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "articleName" : {
+        "prixArticle" : {
           "type" : "string"
         },
-        "quantite" : {
+        "typeArticle" : {
           "type" : "string"
         },
-        "bonCommande" : {
-          "$ref" : "#/definitions/BonCommandeDTO"
+        "codeBarre" : {
+          "type" : "string"
         },
-        "stock" : {
-          "$ref" : "#/definitions/StockDTO"
+        "nomArticle" : {
+          "type" : "string"
         }
       }
     },
@@ -2760,18 +2832,30 @@
           "type" : "string",
           "format" : "date-time"
         },
-        "prix" : {
-          "type" : "number",
-          "format" : "double"
-        },
         "fournisseur" : {
           "$ref" : "#/definitions/FournisseurDTO"
         },
-        "facture" : {
-          "$ref" : "#/definitions/FactureDTO"
+        "article" : {
+          "$ref" : "#/definitions/ArticleDTO"
         },
-        "employe" : {
-          "$ref" : "#/definitions/EmployeDTO"
+        "quantiteCommande" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      }
+    },
+    "CompteDTO" : {
+      "type" : "object",
+      "properties" : {
+        "idCompte" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "libCompte" : {
+          "type" : "string"
+        },
+        "numeroCompte" : {
+          "type" : "string"
         }
       }
     },
@@ -2901,6 +2985,9 @@
         "nom" : {
           "type" : "string"
         },
+        "prenom" : {
+          "type" : "string"
+        },
         "telephone" : {
           "type" : "string"
         },
@@ -2969,11 +3056,19 @@
         "typeOperation" : {
           "type" : "string"
         },
-        "employe" : {
-          "$ref" : "#/definitions/EmployeDTO"
+        "description" : {
+          "type" : "string"
         },
-        "bilanFinancier" : {
-          "$ref" : "#/definitions/BilanFinancierDTO"
+        "compte" : {
+          "$ref" : "#/definitions/CompteDTO"
+        },
+        "annee" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "montant" : {
+          "type" : "number",
+          "format" : "float"
         }
       }
     },
@@ -3101,12 +3196,15 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "situation" : {
-          "type" : "string"
-        },
-        "dateVerification" : {
+        "dateStock" : {
           "type" : "string",
           "format" : "date-time"
+        },
+        "article" : {
+          "$ref" : "#/definitions/ArticleDTO"
+        },
+        "quatiteStock" : {
+          "type" : "string"
         }
       }
     },

@@ -15,7 +15,7 @@ class StockService extends __BaseService {
   static readonly findAllPath = '/testCovid/v1/stock/all';
   static readonly savePath = '/testCovid/v1/stock/create';
   static readonly deletePath = '/testCovid/v1/stock/delete/{idStock}';
-  static readonly findBydateVerificationPath = '/testCovid/v1/stock/filter{dateVerification}';
+  static readonly findBydateStockPath = '/testCovid/v1/stock/filter{dateStock}';
   static readonly findByIdPath = '/testCovid/v1/stock/{idStock}';
 
   constructor(
@@ -137,18 +137,18 @@ class StockService extends __BaseService {
   }
 
   /**
-   * Cette methode permet de rechercher un stock par date de Reservation
-   * @param dateVerification undefined
+   * Cette methode permet de rechercher un stock par date de Stock
+   * @param dateStock undefined
    * @return la stock a ete trouver dans la BDD
    */
-  findBydateVerificationResponse(dateVerification: string): __Observable<__StrictHttpResponse<StockDTO>> {
+  findBydateStockResponse(dateStock: string): __Observable<__StrictHttpResponse<StockDTO>> {
     let __params = this.newParams();
     let __headers = new HttpHeaders();
     let __body: any = null;
 
     let req = new HttpRequest<any>(
       'GET',
-      this.rootUrl + `/testCovid/v1/stock/filter${dateVerification}`,
+      this.rootUrl + `/testCovid/v1/stock/filter${dateStock}`,
       __body,
       {
         headers: __headers,
@@ -164,12 +164,12 @@ class StockService extends __BaseService {
     );
   }
   /**
-   * Cette methode permet de rechercher un stock par date de Reservation
-   * @param dateVerification undefined
+   * Cette methode permet de rechercher un stock par date de Stock
+   * @param dateStock undefined
    * @return la stock a ete trouver dans la BDD
    */
-  findBydateVerification(dateVerification: string): __Observable<StockDTO> {
-    return this.findBydateVerificationResponse(dateVerification).pipe(
+  findBydateStock(dateStock: string): __Observable<StockDTO> {
+    return this.findBydateStockResponse(dateStock).pipe(
       __map(_r => _r.body as StockDTO)
     );
   }

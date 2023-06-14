@@ -14,17 +14,13 @@ import java.util.Date;
     public class BonCommandeDTO {
         private Integer idBonCommande;
         private Date dateCommande;
-        private double prix;
-
-
-
-
+        private Integer QuantiteCommande;
 
         private FournisseurDTO fournisseur;
+        private ArticleDTO article;
 
 
-        private FactureDTO facture;
-        private EmployeDTO employe;
+
 
 
 
@@ -32,13 +28,15 @@ import java.util.Date;
             if(bonCommande == null) {
                 return null;
             }
-            return   com.form.org.dto.BonCommandeDTO.builder()
+            return   BonCommandeDTO.builder()
                     .idBonCommande(bonCommande.getIdBonCommande())
                     .dateCommande(bonCommande.getDateCommande())
-                    .prix(bonCommande.getPrix())
+                    .QuantiteCommande(bonCommande.getQuantiteCommande())
+
                     .fournisseur(FournisseurDTO.fromEntity(bonCommande.getFournisseur()))
-                    .facture(FactureDTO.fromEntity(bonCommande.getFacture()))
-                    //.employe(EmployeDTO.fromEntity(bonCommande.getEmploye()))
+                    .article(ArticleDTO.fromEntity(bonCommande.getArticle()))
+
+
                     .build();
         }
 
@@ -50,13 +48,13 @@ import java.util.Date;
 
             }
             BonCommande bonCommande= new BonCommande();
-
             bonCommande.setIdBonCommande(bonCommandeDTO.getIdBonCommande());
             bonCommande.setDateCommande(bonCommandeDTO.getDateCommande());
-            bonCommande.setPrix(bonCommandeDTO.getPrix());
-            bonCommande.setFacture(FactureDTO.toEntity(bonCommandeDTO.getFacture()));
+            bonCommande.setQuantiteCommande(bonCommandeDTO.getQuantiteCommande());
+
+            bonCommande.setArticle(ArticleDTO.toEntity(bonCommandeDTO.getArticle()));
             bonCommande.setFournisseur(FournisseurDTO.toEntity(bonCommandeDTO.getFournisseur()));
-          //  bonCommande.setEmploye(EmployeDTO.toEntity(bonCommandeDTO.getEmploye()));
+
 
             return bonCommande;
         }

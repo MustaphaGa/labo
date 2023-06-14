@@ -73,17 +73,11 @@ public class Employe {
 
 	@OneToMany(mappedBy="employe")
 	private List<Mouvement> mouvements;
-/*
-	@OneToMany(mappedBy="employe")
-	private List<BonCommande> bonCommandes;
 
-	@OneToOne(mappedBy = "employe")
-	private Stock stock;
 
-	@OneToMany(mappedBy="employe")
-	private List<Operation> operations;
 
- */
+
+
 }
 
 

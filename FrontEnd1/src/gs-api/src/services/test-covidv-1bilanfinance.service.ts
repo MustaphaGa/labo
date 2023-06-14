@@ -16,6 +16,7 @@ class TestCovidv1bilanfinanceService extends __BaseService {
   static readonly savePath = '/testCovid/v1/bilanfinance/create';
   static readonly delectePath = '/testCovid/v1/bilanfinance/delete/{idBilan}';
   static readonly findByIdPath = '/testCovid/v1/bilanfinance/{bilanfinance}';
+  private bilanfinance: any;
 
   constructor(
     config: __Configuration,
@@ -147,7 +148,7 @@ class TestCovidv1bilanfinanceService extends __BaseService {
 
     let req = new HttpRequest<any>(
       'GET',
-      this.rootUrl + `/testCovid/v1/bilanfinance/${bilanfinance}`,
+      this.rootUrl + `/testCovid/v1/bilanfinance/${(this.bilanfinance)}`,
       __body,
       {
         headers: __headers,

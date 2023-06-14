@@ -1,6 +1,8 @@
 /* tslint:disable */
+import { ArticleDTO } from './article-dto';
 export interface StockDTO {
   idStock?: number;
-  situation?: string;
-  dateVerification?: string;
+  dateStock?: string;
+  article?: ArticleDTO;
+  quatiteStock?: string;
 }
