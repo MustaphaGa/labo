@@ -1,14 +1,7 @@
 package com.form.org.model;
 
-import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,11 +18,19 @@ public class BilanFinancier {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="idBilan")
 	private Integer idBilan;
-	private String description;
+	@Column(name="Annee_BF")
+	private String Annee_BF;
+	@Column(name="Montant_BF")
+	private Double Montant_BF;
 
-	/*
-	@OneToMany(mappedBy="bilanFinancier")
-	private List<Operation> operations;
-	*/
+
+	@ManyToOne
+	@JoinColumn(name="idCompte")
+	private Compte compte;
+
+
+
+
+
 
 }

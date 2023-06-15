@@ -24,9 +24,6 @@ import lombok.NoArgsConstructor;
     @Table(name = "roles")
     public class Roles extends AbstractEntity {
 
-        /**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 		@Id

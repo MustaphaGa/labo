@@ -58,7 +58,6 @@ public class Employe {
 	@JoinColumn(name = "id_labo")
 	private Labo labo;
 
-
 	@OneToMany(mappedBy = "employe",fetch = FetchType.EAGER)
 	private List<Roles> roles;
 
