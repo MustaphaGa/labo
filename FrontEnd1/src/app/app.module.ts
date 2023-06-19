@@ -100,6 +100,9 @@ import { NouveauBilanFinanceComponent } from './composants/nouveau-bilan-finance
 import { DetailOperationComponent } from './composants/detail-operation/detail-operation.component';
 import { NouveauOperationComponent } from './composants/nouveau-operation/nouveau-operation.component';
 import { LoaderComponent } from './composants/loader/loader/loader.component';
+import { PdfFactureComponent } from './pdf-facture/pdf-facture.component';
+import { PdfBilanComponent } from './pdf-bilan/pdf-bilan.component';
+import { PdfEmployeComponent } from './pdf-employe/pdf-employe.component';
 
 
 
@@ -204,6 +207,11 @@ import { LoaderComponent } from './composants/loader/loader/loader.component';
     DetailOperationComponent,
     NouveauOperationComponent,
     LoaderComponent,
+    PdfFactureComponent,
+    
+    PdfBilanComponent,
+    
+    PdfEmployeComponent,
 
 
 

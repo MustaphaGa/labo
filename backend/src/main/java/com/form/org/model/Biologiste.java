@@ -22,7 +22,8 @@ import lombok.NoArgsConstructor;
 @Table(name ="Biologiste")
 
 public class Biologiste extends Employe{
-	
+
+
 	private Integer idBiologiste;
 	
 	@Column(name="nom")

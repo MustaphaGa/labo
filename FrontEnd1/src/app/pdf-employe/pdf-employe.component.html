@@ -1,0 +1,43 @@
+<!--detaill-->
+<h3 style="text-align: center;margin-bottom: 25px;">  Details Employe </h3>
+<div style="margin-left: 20px;
+margin-right: auto;
+">
+
+  
+  <div>
+      <label> <b> NOM: </b></label> {{employeDto.nom}}
+  </div>
+  <div>
+      <label> <b> PRENOM: </b></label> {{employeDto.prenom}}
+  </div>
+  
+  <div>
+      <label> <b> EMAIL: </b></label> {{employeDto.email}}
+  </div>
+  <div>
+      <label> <b> CIN: </b></label> {{employeDto.cin}}
+  </div>
+  <div>
+    <label> <b> ADRESSE: </b></label> {{employeDto.adresse}}
+</div>
+<div>
+    <label> <b> TELEPHONE: </b></label> {{employeDto.telephone}}
+</div>
+  <div>
+    <label> <b> SALAIRE: </b></label> {{employeDto.salaire}}
+</div>
+   <div>
+    <label> <b> DATE EMBAUCHE: </b></label> {{employeDto.date_embauchDate | date: 'dd/MM/yyyy'}}
+</div>
+  
+  
+ 
+
+    
+
+
+<div>
+<button (click)="generatePdf()" class = "btn btn-info" style="margin-left: 10px"> export pdf </button>
+</div>
+</div>

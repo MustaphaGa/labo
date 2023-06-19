@@ -24,7 +24,9 @@ export class DetailFactureComponent implements OnInit {
     this.router.navigate(['nouvelfacture',this.factureDTo.idFacture])
   }
   detailfacture():void{
-    this.router.navigate(['detailfacture',this.factureDTo.idFacture])
+   // this.router.navigate(['detailfacture',this.factureDTo.idFacture])
+    this.router.navigate(['exportpdfact',this.factureDTo.idFacture]);
+ //   this.router.navigate(['exportpdfact',this.patientdto.idPatient]);
   }
   confirmerEtSupprimerFacture(): void{
     if(this.factureDTo.idFacture){

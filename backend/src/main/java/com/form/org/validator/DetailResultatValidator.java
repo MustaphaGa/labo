@@ -24,11 +24,7 @@ public class DetailResultatValidator {
 		if(!StringUtils.hasLength(detailResultatDTO.getDescription())) {
 			errors.add("veuillez renseigner la description!!");
 		}
-		
-		if(detailResultatDTO.getValeur()==null) {
-			errors.add("veuillez renseigner la valeur!!");
-				
-		}
+
 		
 		if(detailResultatDTO.getBiologiste()==null) {
 			errors.add("veuillez renseigner le biologiste!!");

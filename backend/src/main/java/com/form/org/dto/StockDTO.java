@@ -43,6 +43,7 @@ public class StockDTO {
         stock.setIdStock(stockDTO.getIdStock());
         stock.setQuatiteStock(stockDTO.getQuatiteStock());
         stock.setDateStock(stockDTO.getDateStock());
+        stock.setArticle(ArticleDTO.toEntity(stockDTO.getArticle()));
 
         return stock;
     }

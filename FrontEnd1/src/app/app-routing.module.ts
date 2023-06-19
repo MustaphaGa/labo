@@ -69,6 +69,9 @@ import { NouveauCongerComponent } from './composants/nouveau-conger/nouveau-cong
 import { DetailCongerComponent } from './composants/detail-conger/detail-conger.component';
 import {NouveauOperationComponent} from './composants/nouveau-operation/nouveau-operation.component';
 import {NouveauBilanFinanceComponent} from './composants/nouveau-bilan-finance/nouveau-bilan-finance.component';
+import { PdfFactureComponent } from './pdf-facture/pdf-facture.component';
+import { PdfBilanComponent } from './pdf-bilan/pdf-bilan.component';
+import { PdfEmployeComponent } from './pdf-employe/pdf-employe.component';
 const routes: Routes = [
   {
     path: 'pagAccPrincp',
@@ -142,8 +145,8 @@ const routes: Routes = [
 
       },
       {
-        path: 'detailfacture/:idFacture',
-        component: FactureDetaillComponent,
+        path: 'exportpdfact/:idFacture',
+        component: PdfFactureComponent,
         canActivate: [ApplicationGuardService]
 
       },
@@ -215,7 +218,7 @@ const routes: Routes = [
       },
       {
         path: 'detailPatient/:idPatient',
-        component: AbsenceDetaillComponent,
+        component: PatientDetaillComponent,
         canActivate: [ApplicationGuardService]
 
       },
@@ -332,6 +335,24 @@ const routes: Routes = [
         canActivate: [ApplicationGuardService]
 
       },
+      {
+        path: 'nouvelEmployee',
+        component: NouveauEmployeComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouvelEmployee/:idEmploye',
+        component: NouveauEmployeComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'detailemploye/:idEmploye',
+        component: PdfEmployeComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
 
       {
         path: 'conges',
@@ -406,18 +427,7 @@ const routes: Routes = [
         canActivate: [ApplicationGuardService]
 
       },
-      {
-        path: 'nouvelEmployee',
-        component: NouveauEmployeComponent,
-        canActivate: [ApplicationGuardService]
-
-      },
-      {
-        path: 'nouvelEmployee/:idEmploye',
-        component: NouveauEmployeComponent,
-        canActivate: [ApplicationGuardService]
-
-      },
+      
       {
         path: 'labo',
         component: PageLaboComponent,
@@ -583,6 +593,12 @@ const routes: Routes = [
       {
         path: 'nouveauBilanFinance/:idBilan',
         component: NouveauBilanFinanceComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'exportpdfBilan/:idBilan',
+        component: PdfBilanComponent,
         canActivate: [ApplicationGuardService]
 
       },
