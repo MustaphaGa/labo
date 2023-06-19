@@ -15,21 +15,35 @@
       <form>
         <div class="row">
           <div class="col mb-3">
-            <input type="text" class="form-control" placeholder="type operation" name="typeOperation" [(ngModel)]="operationDto.typeOperation">
+            <input type="text" class="form-control" placeholder="Discription operation" name="typeOperation" [(ngModel)]="operationDto.description">
 
           </div>
           <div class="col ">
 
-            <input class="form-control" type="date" placeholder="date operation" id="example-date-input" name="dateOperation" [(ngModel)]="operationDto.dateOperation">
+            <input class="form-control" type="date" placeholder="Date operation" id="example-date-input" name="dateOperation" [(ngModel)]="operationDto.dateOperation">
+          </div>
+          <div class="col ">
+
+            <input class="form-control" type="text" placeholder="Montant" id="Montant" name="Montant" [(ngModel)]="operationDto.montant">
+          </div>
+          <div class="col ">
+
+            <input class="form-control" type="text" placeholder="Annee" id="Annee" name="Annee" [(ngModel)]="operationDto.annee">
           </div>
         </div>
+
         <div class="row">
           <div class="col mb-3">
+            <select class="form-control"  name="type" [(ngModel)]="natueOperationDto.idNatureOperation">
+              <option disabled selected value="">Nature Operation</option>
+              <option *ngFor="let natureOP of listeNatureOperation" [value]="natureOP.idNatureOperation">{{natureOP.libNatureOperation}}  </option>
+
+            </select>
           </div>
           <div class="col">
-            <label for="type">Description Bilan Financier</label>
-            <select class="form-control"  name="type" [(ngModel)]="bilanFinancierDto.idBilan">
-              <option *ngFor="let bilan of listeBilanFinancier" [value]="bilan.idBilan">{{bilan.description}}  </option>
+            <select class="form-control"  name="type" [(ngModel)]="compteDto.idCompte">
+              <option disabled selected value="">Numero COMPTE</option>
+              <option *ngFor="let compte of listeCompte" [value]="compte.idCompte">{{compte.numeroCompte}}  </option>
 
             </select>
           </div>
@@ -48,8 +62,4 @@
     </button>
   </div>
 </div>
-
-
-
-
 

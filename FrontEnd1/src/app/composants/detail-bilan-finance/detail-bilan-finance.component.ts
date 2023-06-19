@@ -26,11 +26,14 @@ export class DetailBilanFinanceComponent implements OnInit {
   modifierBilanFinance(): void{
     this.router.navigate(['nouveauBilanFinance', this.bilanFinanceDto.idBilan]);
   }
+  detailBilanFinance():void{
+    this.router.navigate(['detailBilanFinance',this.bilanFinanceDto.idBilan]);
+  }
 
 
   // tslint:disable-next-line:typedef
   confirmerEtSupprimerBilanFinance() {
-    if(this.bilanFinanceDto.idBilan){
+    if (this.bilanFinanceDto.idBilan){
       this.bilanFinanceService.deleteBilanFinance(this.bilanFinanceDto.idBilan)
         .subscribe(res => {
           this.suppressionBilanFinance.emit('success');

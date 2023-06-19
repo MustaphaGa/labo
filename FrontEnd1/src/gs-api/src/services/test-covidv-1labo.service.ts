@@ -106,10 +106,9 @@ class TestCovidv1laboService extends __BaseService {
     let __params = this.newParams();
     let __headers = new HttpHeaders();
     let __body: any = null;
-    let idLabo;
     let req = new HttpRequest<any>(
       'DELETE',
-      this.rootUrl + `/testCovid/v1/labo/delete/${idLabo}`,
+      this.rootUrl + `/testCovid/v1/labo/delete/${(this.idLabo)}`,
       __body,
       {
         headers: __headers,
@@ -142,9 +141,10 @@ class TestCovidv1laboService extends __BaseService {
     let __params = this.newParams();
     let __headers = new HttpHeaders();
     let __body: any = null;
+    let idLabo;
     let req = new HttpRequest<any>(
       'GET',
-      this.rootUrl + `/testCovid/v1/labo/${(this.idLabo)}`,
+      this.rootUrl + `/testCovid/v1/labo/${idLabo}`,
       __body,
       {
         headers: __headers,

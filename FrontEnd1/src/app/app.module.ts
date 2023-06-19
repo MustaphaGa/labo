@@ -74,7 +74,6 @@ import { PageStockComponent } from './pages/page-stock/page-stock.component';
 import { PageFournisseurComponent } from './pages/page-fournisseur/page-fournisseur.component';
 import { PageOperationComponent } from './pages/page-operation/page-operation.component';
 import { PageBilanFinancierComponent } from './pages/page-bilan-financier/page-bilan-financier.component';
-import { PageServiceFinanceComponent } from './pages/page-service-finance/page-service-finance.component';
 import { AbsenceDetaillComponent } from './detaill/absence-detaill/absence-detaill/absence-detaill.component';
 import { DetailAbsenceComponent } from './composants/detail-absence/detail-absence/detail-absence.component';
 import { NouveauAbsenceComponent } from './composants/nouveau-absence/nouveau-absence/nouveau-absence.component';
@@ -100,6 +99,13 @@ import { NouveauBilanFinanceComponent } from './composants/nouveau-bilan-finance
 import { DetailOperationComponent } from './composants/detail-operation/detail-operation.component';
 import { NouveauOperationComponent } from './composants/nouveau-operation/nouveau-operation.component';
 import { LoaderComponent } from './composants/loader/loader/loader.component';
+import {ChartsModule} from "ng2-charts";
+import { PageCompteComponent } from './pages/page-compte/page-compte.component';
+import { NouveauCompteComponent } from './composants/nouveau-compte/nouveau-compte.component';
+import { DetailCompteComponent } from './composants/detail-compte/detail-compte.component';
+import { CompteDetailComponent } from './detaill/compte-detail/compte-detail.component';
+import { BilanFinanceDetaillComponent } from './detaill/bilan-finance-detaill/bilan-finance-detaill.component';
+import { OperationDetaillComponent } from './detaill/operation-detaill/operation-detaill.component';
 
 
 
@@ -179,7 +185,6 @@ import { LoaderComponent } from './composants/loader/loader/loader.component';
     PageFournisseurComponent,
     PageOperationComponent,
     PageBilanFinancierComponent,
-    PageServiceFinanceComponent,
     AbsenceDetaillComponent,
     DetailAbsenceComponent,
     NouveauAbsenceComponent,
@@ -195,7 +200,7 @@ import { LoaderComponent } from './composants/loader/loader/loader.component';
     DetailStockComponent,
     StockDetaillComponent,
     NouveauStockComponent,
-    
+
     DetailCongerComponent,
     NouveauCongerComponent,
     CongerDetailComponent,
@@ -204,21 +209,27 @@ import { LoaderComponent } from './composants/loader/loader/loader.component';
     DetailOperationComponent,
     NouveauOperationComponent,
     LoaderComponent,
+    PageCompteComponent,
+    NouveauCompteComponent,
+    DetailCompteComponent,
+    CompteDetailComponent,
+    BilanFinanceDetaillComponent,
+    OperationDetaillComponent,
 
 
 
 
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ChartsModule
 
 
-
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -25,7 +25,7 @@ export class DetailOperationComponent implements OnInit {
     this.router.navigate(['nouveloperation', this.operationDto.idOperation])
   }
   detailOperation():void{
-    this.router.navigate(['detailoperation', this.operationDto.idOperation])
+    this.router.navigate(['detailOperation', this.operationDto.idOperation])
   }
   confirmerEtSupprimerOperation(): void{
     if (this.operationDto.idOperation){

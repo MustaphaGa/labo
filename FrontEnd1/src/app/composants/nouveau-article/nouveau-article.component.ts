@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BonCommandeServices } from 'src/app/services/BonCommande/bon-commande.service';
 import { ArticleServices } from 'src/app/services/article/article.service';
-import { StockServices } from 'src/app/services/stock/stock.service';
 import { ArticleDTO } from 'src/gs-api/src/models/article-dto';
-import { BonCommandeDTO } from 'src/gs-api/src/models/bon-commande-dto';
-import { StockDTO } from 'src/gs-api/src/models/stock-dto';
+
 
 @Component({
   selector: 'app-nouveau-article',
@@ -18,12 +15,12 @@ export class NouveauArticleComponent implements OnInit {
   articleDt: ArticleDTO={};
 
   listeArticles: Array<ArticleDTO> =[];
- 
- 
+
+
   errorMsg: Array<string> = [];
   patientErrorMsg='';
 
-  constructor( 
+  constructor(
     private router:Router,
     private activatedRouter:ActivatedRoute,
     private  articleServices:ArticleServices,
@@ -33,8 +30,8 @@ export class NouveauArticleComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-   
-     
+
+
 
     const  idArticle= this.activatedRouter.snapshot.params.idArticle;
     if (idArticle) {
@@ -42,13 +39,13 @@ export class NouveauArticleComponent implements OnInit {
       .subscribe(article => {
         this.articleDt = article;
 
-      }); 
+      });
     }
   }
-  
-  
-  
-  
+
+
+
+
 
   cancel(): void {
     this.router.navigate(['article']);
@@ -63,8 +60,8 @@ export class NouveauArticleComponent implements OnInit {
       this.errorMsg = error.error.errors;
     });
   }
- 
- 
+
+
 
 }
 

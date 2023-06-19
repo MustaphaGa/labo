@@ -14,7 +14,10 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "allowedCommonJsDependencies": [
-              "xlsx"
+              "xlsx",
+                "lodash",
+              "chart.js"
+
             ],
             "outputPath": "dist/gestionTestCovid",
             "index": "src/index.html",

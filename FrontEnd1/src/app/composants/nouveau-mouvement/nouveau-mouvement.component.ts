@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {RecrutementDTO} from '../../../gs-api/src/models/recrutement-dto';
 import {EmployeDTO} from '../../../gs-api/src/models/employe-dto';
 import {ActivatedRoute, Router} from '@angular/router';
 import {EmployeService} from '../../services/employe/employe.service';
-import {RecrutementService} from '../../services/recrutement/recrutement.service';
 import {MouvementDTO} from '../../../gs-api/src/models/mouvement-dto';
 import {MouvementService} from '../../services/mouvement/mouvement.service';
-import {PatientDTO} from "../../../gs-api/src/models/patient-dto";
+
 
 @Component({
   selector: 'app-nouveau-mouvement',

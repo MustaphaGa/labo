@@ -15,6 +15,7 @@ export { FactureDTO } from './models/facture-dto';
 export { FournisseurDTO } from './models/fournisseur-dto';
 export { LaboDTO } from './models/labo-dto';
 export { MouvementDTO } from './models/mouvement-dto';
+export { NatureOperationDTO } from './models/nature-operation-dto';
 export { OperationDTO } from './models/operation-dto';
 export { PatientDTO } from './models/patient-dto';
 export { PreleveurDTO } from './models/preleveur-dto';

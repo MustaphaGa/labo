@@ -10,7 +10,6 @@ import { ArticleDTO } from 'src/gs-api/src/models/article-dto';
 })
 export class ArticleDetaillComponent implements OnInit {
 
- 
   articleDt: ArticleDTO = {};
   constructor(private router:Router,
     private articleServices:ArticleServices,
@@ -25,8 +24,8 @@ export class ArticleDetaillComponent implements OnInit {
       });
     }
     console.log(idArticle);
-    
-   
+
+
     }
 
 }

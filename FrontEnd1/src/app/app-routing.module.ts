@@ -55,7 +55,6 @@ import {PageStockComponent} from './pages/page-stock/page-stock.component';
 import {PageFournisseurComponent} from './pages/page-fournisseur/page-fournisseur.component';
 import {PageOperationComponent} from './pages/page-operation/page-operation.component';
 import {PageBilanFinancierComponent} from './pages/page-bilan-financier/page-bilan-financier.component';
-import {PageServiceFinanceComponent} from './pages/page-service-finance/page-service-finance.component';
 import { NouveauArticleComponent } from './composants/nouveau-article/nouveau-article.component';
 import { ArticleDetaillComponent } from './detaill/article-detaill/article-detaill/article-detaill.component';
 import { NouveauBonCommandeComponent } from './composants/nouveau-bon-commande/nouveau-bon-commande.component';
@@ -69,6 +68,11 @@ import { NouveauCongerComponent } from './composants/nouveau-conger/nouveau-cong
 import { DetailCongerComponent } from './composants/detail-conger/detail-conger.component';
 import {NouveauOperationComponent} from './composants/nouveau-operation/nouveau-operation.component';
 import {NouveauBilanFinanceComponent} from './composants/nouveau-bilan-finance/nouveau-bilan-finance.component';
+import {PageCompteComponent} from './pages/page-compte/page-compte.component';
+import {NouveauCompteComponent} from "./composants/nouveau-compte/nouveau-compte.component";
+import {CompteDetailComponent} from "./detaill/compte-detail/compte-detail.component";
+import {BilanFinanceDetaillComponent} from "./detaill/bilan-finance-detaill/bilan-finance-detaill.component";
+import {OperationDetaillComponent} from "./detaill/operation-detaill/operation-detaill.component";
 const routes: Routes = [
   {
     path: 'pagAccPrincp',
@@ -569,6 +573,12 @@ const routes: Routes = [
 
       },
       {
+        path: 'detailOperation/:idOperation',
+        component: OperationDetaillComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
         path: 'bilanFinance',
         component: PageBilanFinancierComponent,
         canActivate: [ApplicationGuardService]
@@ -587,8 +597,32 @@ const routes: Routes = [
 
       },
       {
-        path: 'serviceFinance',
-        component: PageServiceFinanceComponent,
+        path: 'detailBilanFinance/:idBilan',
+        component:  BilanFinanceDetaillComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'compte',
+        component: PageCompteComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveauCompte',
+        component: NouveauCompteComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'nouveauCompte/:idCompte',
+        component: NouveauCompteComponent,
+        canActivate: [ApplicationGuardService]
+
+      },
+      {
+        path: 'detailCompte/:idCompte',
+        component:  CompteDetailComponent,
         canActivate: [ApplicationGuardService]
 
       },

@@ -13,14 +13,26 @@
         </div>
       </div>
       <form>
-
+        <div class="row">
+          <div class="col  mb-3 ">
+            <input class="form-control" type="text" placeholder="Annee bilan" id="example-date-input"  name="datDate" [(ngModel)]="bilanFinanDto.annee_BF">
+          </div>
+        </div>
         <div class="row">
           <div class="col mb-3">
-            <input type="text" class="form-control" placeholder="Description Bilan" name="Description" [(ngModel)]="bilanFinanDto.description" >
+            <input type="text" class="form-control" placeholder="mantant"  name="prixF" [(ngModel)]="bilanFinanDto.montant_BF">
+
           </div>
-
         </div>
+        <div class="row">
+          <div class="col mb-3">
+            <label for="example">Numero Compte</label>
+            <select   class="form-control"  name="compte" [(ngModel)]="compteDTo.idCompte">
+              <option *ngFor="let compte of listeCompte" [value]="compte.idCompte">{{compte.numeroCompte}} </option>
 
+            </select>
+          </div>
+        </div>
       </form>
     </div>
   </div>

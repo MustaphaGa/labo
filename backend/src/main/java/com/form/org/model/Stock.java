@@ -21,10 +21,6 @@ public class Stock {
 	@Column(name="idStock")
 	private Integer idStock;
 
-	private String situation;
-	private Date dateVerification;
-	
-
 	@Column(name="QuatiteStock")
 	private String QuatiteStock;
 	@Column(name="dateStock")

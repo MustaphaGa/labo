@@ -4,29 +4,40 @@
   </div>
 
   <div class="col-md-5 custom-border-right mb-1 mt-1 ">
+    <div class="row">
+      <div class="col-md-2"><i class="fas fa-calendar-check blue-color"></i></div>
+      <div class="col-md-1O">Date Operation{{operationDto.dateOperation | date:'dd/MM/yyyy'}}</div>
+    </div>
     <div class="col">
       <div class="row">
         <div class="col-md-1"><i class="fas fa-calendar-check blue-color"></i></div>
-        <div class="col-md-11">{{operationDto.dateOperation | date: 'dd/MM/yyyy'}}</div>
+        <div class="col-md-11">Annee Operation:{{operationDto.annee }}</div>
       </div>
+    </div>
+      <div class="col">
+        <div class="row">
+          <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
+          <div class="col-md-11">Montant:{{operationDto.montant }}DH</div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
+          <div class="col-md-10">Numero Compte:{{operationDto.compte?.numeroCompte}}</div>
+        </div>
+      </div>
+        <div class="col">
+          <div class="row">
+            <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
+            <div class="col-md-10">Nature Operation:{{operationDto.natureOperation?.libNatureOperation}}</div>
+          </div>
       <div class="row">
         <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-        <div class="col-md-11">{{operationDto.typeOperation}}</div>
+        <div class="col-md-11">Description:{{operationDto.description}}</div>
       </div>
 
     </div>
   </div>
-  <!--detail bilan and employe
- <div class="col-md-3 custom-border-right mb-1 mt-1 ">
-    <div class="row">
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-          <div class="col-md-12"> {{operationDto.bilanFinancier?.description}}</div>
-        </div>
-      </div>
-    </div>
-  </div>-->
 
   <!--bouton action-->
   <div class="col-md-3 mb-1 mt-1">

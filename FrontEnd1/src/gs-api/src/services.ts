@@ -14,6 +14,7 @@ export { FactureService } from './services/facture.service';
 export { FournisseurService } from './services/fournisseur.service';
 export { TestCovidv1laboService } from './services/test-covidv-1labo.service';
 export { TestCovidv1mouvementService } from './services/test-covidv-1mouvement.service';
+export { NatureOperationService } from './services/nature-operation.service';
 export { TestCovidv1operationService } from './services/test-covidv-1operation.service';
 export { TestCovidv1patientService } from './services/test-covidv-1patient.service';
 export { PreleveurService } from './services/preleveur.service';
