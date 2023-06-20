@@ -16,6 +16,9 @@ public class CompteDTO {
     @JsonIgnore
     private List<OperationDTO> Operations;
 
+    @JsonIgnore
+    private List<BilanFinancierDTO> BilanFinanciers;
+
     public static CompteDTO fromEntity(Compte compte) {
         if(compte == null) {
             return null;

@@ -2,10 +2,10 @@
     <div class="col-md-1 custom-border-right p-1 text-center ">
         <img src="assets/imgs/articles.jpg" width="75px" height="75px">
     </div>
-<!--detail reservation-->
+<!--detail compte-->
 <div class="col-md-4 custom-border-right mb-1 mt-1 ">
     <div class="col">
-      
+
         <div class="row">
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
             <div class="col-md-10" style="color: #006dcc"> Nom-Article :{{articleDt.nomArticle}}</div>
@@ -22,17 +22,17 @@
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
             <div class="col-md-10" style="color: #006dcc">Type-Article :{{articleDt.typeArticle}}</div>
         </div>
-           
-        
-       
-        
-        
+
+
+
+
+
      </div>
 </div>
 
 
 
-   
+
     <div class="col-md-3 mb-1 mt-1 ">
         <div class="row ">
 
@@ -40,7 +40,7 @@
                 <button type="button" class="btn btn btn-link" (click)="modifierArticle()">
                     <i class="fas fa-pencil-alt fa-lg"></i></button>
             </div>
-       
+
             <div class="col-6 col-md-4">
                 <button type="button" class="btn btn btn-link text-danger"  data-toggle="modal" [attr.data-target]="'#modalDeleteArticle' + articleDt.idArticle">
                     <i class="fas fa-trash-alt fa-lg"></i></button>
@@ -52,8 +52,8 @@
 
         </div>
     </div>
-    
-    
+
+
 </div>
 <!-- Modal -->
 <div class="modal fade" id="modalDeleteArticle{{articleDt.idArticle}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

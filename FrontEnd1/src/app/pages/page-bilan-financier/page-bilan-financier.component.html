@@ -16,7 +16,7 @@
 
       *ngFor="let bilan of listeBilan"
       [bilanFinanceDto]="bilan"
-
+      (suppressionBilanFinance)="handleSuppression($event)"
     ></app-detail-bilan-finance>
   </div>
 </div>

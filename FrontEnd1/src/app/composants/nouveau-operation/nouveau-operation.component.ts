@@ -1,52 +1,70 @@
 import { Component, OnInit } from '@angular/core';
-import {ReservationDTO} from '../../../gs-api/src/models/reservation-dto';
-import {AnalyseMedicalDTO} from '../../../gs-api/src/models/analyse-medical-dto';
-import {TypeAnalyseDTO} from '../../../gs-api/src/models/type-analyse-dto';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AnnalyseMedicalService} from '../../services/analyse-medical/annalyse-medical.service';
-import {ReservationnService} from '../../services/reservation/reservationn.service';
-import {TypAnalyseService} from '../../typeAnalyse/typ-analyse.service';
-import {EmployeDTO} from '../../../gs-api/src/models/employe-dto';
 import {OperationDTO} from '../../../gs-api/src/models/operation-dto';
-import {BilanFinancierDTO} from '../../../gs-api/src/models/bilan-financier-dto';
 import {OperationService} from '../../services/operation/operation.service';
-import {EmployeService} from '../../services/employe/employe.service';
-import {BilanFinanceService} from '../../services/bilanFinance/bilan-finance.service';
+import {CompteDTO} from '../../../gs-api/src/models/compte-dto';
+import {CompteService} from '../../services/compte/compte.service';
+import {NatureOperationDTO} from '../../../gs-api/src/models/nature-operation-dto';
+import {NaturOperationService} from '../../services/NaturOperation/natur-operation.service';
 
 @Component({
   selector: 'app-nouveau-operation',
   templateUrl: './nouveau-operation.component.html',
-  styleUrls: ['./nouveau-operation.component.css']
+  styleUrls: ['./nouveau-operation.component.css'],
+
 })
 export class NouveauOperationComponent implements OnInit {
 
-  listeBilanFinancier: Array<BilanFinancierDTO>  = [];
-  bilanFinancierDto: BilanFinancierDTO = {};
+  listeCompte: Array<CompteDTO>  = [];
+  compteDto: CompteDTO = {};
+  listeNatureOperation: Array<NatureOperationDTO>  = [];
+  natueOperationDto: NatureOperationDTO = {};
+  listeOperation: Array<OperationDTO>
   operationDto: OperationDTO = {};
   errorMsg: Array<string> = [];
   constructor( private router: Router,
                private activatedRouter: ActivatedRoute,
-               private operationservice: OperationService,
-               private bilanFinancierService: BilanFinanceService) { }
+               private compteService: CompteService,
+               private naOperationService: NaturOperationService,
+               private operationService: OperationService ,
+              ) { }
 
   ngOnInit(): void {
+    this.naOperationService.findAllNatureOperation().subscribe(naOperation => {
+     this.listeNatureOperation = naOperation;
+    });
+    this.compteService.findAllCompte().subscribe(compte => {
+      this.listeCompte = compte;
+    });
     const idOperation = this.activatedRouter.snapshot.params.idOperation;
     if (idOperation) {
-      this.operationservice.findOperationById(idOperation)
+      this.operationService.findOperationById(idOperation)
         .subscribe(operation => {
           this.operationDto = operation;
+          this.compteDto = this.operationDto.compte ? this.operationDto.compte : {};
+          this.natueOperationDto = this.operationDto.natureOperation ? this.operationDto.natureOperation : {};
         });
     }
+    this.findAllOperation();
 
   }
+
   cancel(): void {
     this.router.navigate(['operation']);
   }
+
   enregistrerOperation(): void {
-    this.operationservice.enregistrerOperation(this.operationDto).subscribe(res => {
+    this.operationDto.natureOperation = this.natueOperationDto
+    this.operationDto.compte = this.compteDto
+    this.operationService.enregistrerOperation(this.operationDto).subscribe(res => {
       this.router.navigate(['operation']);
     }, error => {
       this.errorMsg = error.error.errors;
+    });
+  }
+  findAllOperation(): void {
+    this.operationService.findAllOperation().subscribe(operation => {
+      this.listeOperation = operation;
     });
   }
 }

@@ -27,4 +27,7 @@ public class Compte {
 
     @OneToMany(mappedBy="compte")
     private List<Operation> operations;
+
+    @OneToMany(mappedBy="compte")
+    private List<BilanFinancier> bilanFinanciers;
 }

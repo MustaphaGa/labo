@@ -22,7 +22,7 @@ export class PageOperationComponent implements OnInit {
     this.operationService.findAllOperation().subscribe(res => {
       this.listeOperation = res;
 
-    })
+    });
   }
   nouvelOperation():void{
     this.router.navigate(['nouveloperation']);

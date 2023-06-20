@@ -38,17 +38,14 @@ import lombok.NoArgsConstructor;
 	@JoinColumn(name="idAnalyseMedical")
 	private AnalyseMedical analyseMedical;
 
-	
+	/*
 	@OneToOne
-
     private BonCommande bonCommande;
-	
-
-
-
 
 	@ManyToOne
 	@JoinColumn(name="idOperation")
 	private Operation operation;
+
+	 */
 
 }

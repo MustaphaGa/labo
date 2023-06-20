@@ -30,6 +30,8 @@
   }, {
     "name" : "fournisseur"
   }, {
+    "name" : "natureOperation"
+  }, {
     "name" : "preleveur"
   }, {
     "name" : "reservation"
@@ -1685,6 +1687,102 @@
         }
       }
     },
+    "/testCovid/v1/natureOperation/all" : {
+      "get" : {
+        "tags" : [ "natureOperation" ],
+        "summary" : "renvoi la liste de nature d'operation",
+        "description" : "Cette methode permet de rechercher et renvoyer la listes des natures d'operation qui existent dans la BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "la liste des natures d'operation / une liste vide",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/NatureOperationDTO"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/natureOperation/create" : {
+      "post" : {
+        "tags" : [ "natureOperation" ],
+        "summary" : "Enregistrer un nature d'operation",
+        "description" : "Cette methode permet d'enregistrer ou modifier un nature d'operation ",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/NatureOperationDTO"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "l'objet natureOperation cree/modifie",
+            "schema" : {
+              "$ref" : "#/definitions/NatureOperationDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/natureOperation/delete/{idNatureOperation}" : {
+      "delete" : {
+        "tags" : [ "natureOperation" ],
+        "summary" : "supprimer un nature d'operation",
+        "description" : "Cette methode permet de supprimer un nature d'operation par ID ",
+        "operationId" : "delecte",
+        "parameters" : [ {
+          "name" : "idNatureOperation",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Nature d'operation a été supprimer",
+            "schema" : {
+              "$ref" : "#/definitions/NatureOperationDTO"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/natureOperation/{idNatureOperation}" : {
+      "get" : {
+        "tags" : [ "natureOperation" ],
+        "summary" : "rechercher un nature d'operation par ID",
+        "description" : "Cette methode permet de rechercher  un nature d'operation par son ID ",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idNatureOperation",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "la nature d'operation a ete trouver dans la BDD",
+            "schema" : {
+              "$ref" : "#/definitions/NatureOperationDTO"
+            }
+          },
+          "404" : {
+            "description" : "Aucun nature d'operation n'existe  dans la BDD avec l'ID fourni"
+          }
+        }
+      }
+    },
     "/testCovid/v1/operation/all" : {
       "get" : {
         "tags" : [ "testCovidv1operation" ],
@@ -2783,8 +2881,15 @@
           "type" : "integer",
           "format" : "int32"
         },
-        "description" : {
+        "compte" : {
+          "$ref" : "#/definitions/CompteDTO"
+        },
+        "annee_BF" : {
           "type" : "string"
+        },
+        "montant_BF" : {
+          "type" : "number",
+          "format" : "double"
         }
       }
     },
@@ -3042,6 +3147,18 @@
         }
       }
     },
+    "NatureOperationDTO" : {
+      "type" : "object",
+      "properties" : {
+        "idNatureOperation" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "libNatureOperation" : {
+          "type" : "string"
+        }
+      }
+    },
     "OperationDTO" : {
       "type" : "object",
       "properties" : {
@@ -3053,22 +3170,22 @@
           "type" : "string",
           "format" : "date-time"
         },
-        "typeOperation" : {
-          "type" : "string"
-        },
         "description" : {
           "type" : "string"
         },
         "compte" : {
           "$ref" : "#/definitions/CompteDTO"
         },
-        "annee" : {
-          "type" : "integer",
-          "format" : "int32"
+        "natureOperation" : {
+          "$ref" : "#/definitions/NatureOperationDTO"
         },
         "montant" : {
           "type" : "number",
           "format" : "float"
+        },
+        "annee" : {
+          "type" : "integer",
+          "format" : "int32"
         }
       }
     },

@@ -19,6 +19,7 @@ import { FactureService } from './services/facture.service';
 import { FournisseurService } from './services/fournisseur.service';
 import { TestCovidv1laboService } from './services/test-covidv-1labo.service';
 import { TestCovidv1mouvementService } from './services/test-covidv-1mouvement.service';
+import { NatureOperationService } from './services/nature-operation.service';
 import { TestCovidv1operationService } from './services/test-covidv-1operation.service';
 import { TestCovidv1patientService } from './services/test-covidv-1patient.service';
 import { PreleveurService } from './services/preleveur.service';
@@ -57,6 +58,7 @@ import { TypeAnalyseService } from './services/type-analyse.service';
     FournisseurService,
     TestCovidv1laboService,
     TestCovidv1mouvementService,
+    NatureOperationService,
     TestCovidv1operationService,
     TestCovidv1patientService,
     PreleveurService,

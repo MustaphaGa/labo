@@ -21,9 +21,6 @@ public class Stock {
 	@Column(name="idStock")
 	private Integer idStock;
 
-
-	
-
 	@Column(name="QuatiteStock")
 	private String QuatiteStock;
 	@Column(name="dateStock")

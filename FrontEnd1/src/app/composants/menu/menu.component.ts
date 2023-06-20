@@ -199,9 +199,9 @@ sousMenu :[
       },
       {
         id:'53',
-        titre:'service finance',
+        titre:'compte',
         icon:'',
-        url: 'serviceFinance'
+        url: 'compte'
       },
     ]
   },
