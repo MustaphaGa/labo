@@ -498,7 +498,7 @@
         }
       }
     },
-    "/testCovid/v1/bilanfinance/{bilanfinance}" : {
+    "/testCovid/v1/bilanfinance/{idBilan}" : {
       "get" : {
         "tags" : [ "testCovidv1bilanfinance" ],
         "summary" : "rechercher un bilanfinance par ID",
@@ -3006,7 +3006,34 @@
         "description" : {
           "type" : "string"
         },
-        "valeur" : {
+        "valeur1" : {
+          "type" : "number"
+        },
+        "valeur2" : {
+          "type" : "number"
+        },
+        "valeur3" : {
+          "type" : "number"
+        },
+        "valeur4" : {
+          "type" : "number"
+        },
+        "valeur5" : {
+          "type" : "number"
+        },
+        "valeur6" : {
+          "type" : "number"
+        },
+        "valeur7" : {
+          "type" : "number"
+        },
+        "valeur8" : {
+          "type" : "number"
+        },
+        "valeur9" : {
+          "type" : "number"
+        },
+        "valeur10" : {
           "type" : "number"
         },
         "biologiste" : {

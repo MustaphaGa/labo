@@ -17,6 +17,9 @@
                   <div class="col mb-3">
                     <div class="row">
                       <div class="col mb-3">
+                        <input type="text" class="form-control" placeholder="description" name="description" [(ngModel)]="detailResultatDTO.description">
+                      </div>
+                      <div class="col mb-3">
                         <input type="text" class="form-control" placeholder="valeur1" name="valeurAnalys" [(ngModel)]="detailResultatDTO.valeur1">
                       </div>
                       <div class="col mb-3">
@@ -58,23 +61,23 @@
                   <div class="col mb-3">
                     <select class="form-control" name="reslt" [(ngModel)]="analyseMedicalDto.idAnalyse">
                         <option *ngFor="let reslt of listeAnalyse" [value]="reslt.idAnalyse">{{reslt.dateAnalyse |  date: 'dd/MM/yyyy'}} </option>
-                                      
-                        
+
+
                       </select>
                   </div>
                   <div >
                     <label for="exmple">Biologiste</label>
                   </div>
                   <div class="col">
-                   
-                    <select class="form-control "   name="bgt" [(ngModel)]="biologisteDTo.idBiologiste"> 
+
+                    <select class="form-control "   name="bgt" [(ngModel)]="biologisteDTo.idBiologiste">
                       <option></option>
-                     <option *ngFor="let bgt of listeBiologist" [value]="bgt.idBiologiste">{{bgt.nom}} -{{bgt.prenom}}  </option>                
+                     <option *ngFor="let bgt of listeBiologist" [value]="bgt.idBiologiste">{{bgt.nom}} -{{bgt.prenom}}  </option>
                     </select>
                 </div>
                 </div>
               </form>
-            
+
         </div>
     </div>
     <div class="col-md-12 text-right">

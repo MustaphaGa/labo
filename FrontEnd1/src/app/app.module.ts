@@ -99,7 +99,7 @@ import { NouveauBilanFinanceComponent } from './composants/nouveau-bilan-finance
 import { DetailOperationComponent } from './composants/detail-operation/detail-operation.component';
 import { NouveauOperationComponent } from './composants/nouveau-operation/nouveau-operation.component';
 import { LoaderComponent } from './composants/loader/loader/loader.component';
-import {ChartsModule} from "ng2-charts";
+import {ChartsModule} from 'ng2-charts';
 import { PageCompteComponent } from './pages/page-compte/page-compte.component';
 import { NouveauCompteComponent } from './composants/nouveau-compte/nouveau-compte.component';
 import { DetailCompteComponent } from './composants/detail-compte/detail-compte.component';

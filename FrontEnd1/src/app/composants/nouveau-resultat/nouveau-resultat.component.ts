@@ -13,43 +13,43 @@ import { DetailResultatDTO } from 'src/gs-api/src/models/detail-resultat-dto';
   styleUrls: ['./nouveau-resultat.component.css']
 })
 export class NouveauResultatComponent implements OnInit {
-  detailResultatDTO: DetailResultatDTO ={};
-  biologisteDTo: BiologisteDTO ={};
-  analyseMedicalDto: AnalyseMedicalDTO={};
-  listeBiologist :Array<BiologisteDTO> = [];
-  listeAnalyse :Array<AnalyseMedicalDTO>  = [];
+  detailResultatDTO: DetailResultatDTO = {};
+  biologisteDTo: BiologisteDTO = {};
+  analyseMedicalDto: AnalyseMedicalDTO = {};
+  listeBiologist: Array<BiologisteDTO> = [];
+  listeAnalyse: Array<AnalyseMedicalDTO>  = [];
   errorMsg: Array<string> = [];
-  constructor( private router:Router,
-    private activatedRouter:ActivatedRoute,
-    private annalyseMedicalService :AnnalyseMedicalService,
-    private biologisteeService :BiologisteeService,
-    private detailresultatService :DetailresultatService)
-     { };
+  constructor( private router: Router,
+               private activatedRouter: ActivatedRoute,
+               private annalyseMedicalService: AnnalyseMedicalService,
+               private biologisteeService: BiologisteeService,
+               private detailresultatService: DetailresultatService)
+     { }
 
   ngOnInit(): void {
     this.annalyseMedicalService.findAllAnalysMedical().subscribe(analys => {
-      this.listeAnalyse=analys;
+      this.listeAnalyse = analys;
     });
-      this.biologisteeService.findAllBiologiste().subscribe(biologist => {
-        this.listeBiologist=biologist;
+    this.biologisteeService.findAllBiologiste().subscribe(biologist => {
+        this.listeBiologist = biologist;
     });
     const idresult = this.activatedRouter.snapshot.params.idResultat;
     if (idresult) {
       this.detailresultatService.findDetailResulatById(idresult)
       .subscribe(result => {
         this.detailResultatDTO = result;
-        this.analyseMedicalDto = this.detailResultatDTO.analyseMedical ? this.detailResultatDTO.analyseMedical: {};
-        this.biologisteDTo = this.detailResultatDTO.biologiste ? this.detailResultatDTO.biologiste: {};
+        this.analyseMedicalDto = this.detailResultatDTO.analyseMedical ? this.detailResultatDTO.analyseMedical : {};
+        this.biologisteDTo = this.detailResultatDTO.biologiste ? this.detailResultatDTO.biologiste : {};
       });
     }
-  
+
 }
   cancel(): void {
     this.router.navigate(['detailresultat']);
   }
   enregistrerAnalyse(): void {
-    this.detailResultatDTO.analyseMedical=this.analyseMedicalDto
-    this.detailResultatDTO.biologiste=this.biologisteDTo
+    this.detailResultatDTO.analyseMedical = this.analyseMedicalDto;
+    this.detailResultatDTO.biologiste = this.biologisteDTo;
     this.detailresultatService.enregistrerDetaillResultat(this.detailResultatDTO).subscribe(res => {
       this.router.navigate(['detailresultat']);
     }, error => {
