@@ -29,7 +29,8 @@ export class PageStatistiquesComponent implements OnInit {
   };
   // @ts-ignore
   public doughnutChartLabels: Label[] = [ 'analyses' , 'patients', 'employes' ];
-  public doughnutChartData: SingleDataSet = [30, 10, 5];
+ // public doughnutChartData: SingleDataSet = [30, 10, 5];
+  public  doughnutChartData: SingleDataSet = [];
   public doughnutChartType: ChartType = 'bar';
   public doughnutChartColor: Color[] = [
     {backgroundColor: ['#4e3dc8', '#ffbf3a', '#f68059']},
@@ -42,19 +43,23 @@ export class PageStatistiquesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.doughnutChartData = [];
     this.annalyseMedicalService.findCountAnalysMedical().subscribe(res1 => {
-      const index = this.doughnutChartData.indexOf(30);
-      this.doughnutChartData[index] = res1;
+     // const index = this.doughnutChartData.indexOf(30);
+      //this.doughnutChartData[index] = res1;
+      this.doughnutChartData.push(res1);
 
     });
     this.patientService.findCountPatients().subscribe(res3 => {
-      const index = this.doughnutChartData.indexOf(10);
-      this.doughnutChartData[index] = res3;
+     // const index = this.doughnutChartData.indexOf(10);
+      //this.doughnutChartData[index] = res3;
+      this.doughnutChartData.push(res3);
 
     });
     this.employeService.findCountEmployees().subscribe(res2 => {
-      const index = this.doughnutChartData.indexOf(5);
-      this.doughnutChartData[index] = res2;
+     // const index = this.doughnutChartData.indexOf(5);
+      //this.doughnutChartData[index] = res2;
+      this.doughnutChartData.push(res2);
 
     });
   }
