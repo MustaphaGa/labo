@@ -46,19 +46,15 @@ export class PageStatistiquesComponent implements OnInit {
     this.doughnutChartData = [];
     this.annalyseMedicalService.findCountAnalysMedical().subscribe(res1 => {
      // const index = this.doughnutChartData.indexOf(30);
-      //this.doughnutChartData[index] = res1;
+      //       //this.doughnutChartData[index] = res1;
       this.doughnutChartData.push(res1);
 
     });
     this.patientService.findCountPatients().subscribe(res3 => {
-     // const index = this.doughnutChartData.indexOf(10);
-      //this.doughnutChartData[index] = res3;
       this.doughnutChartData.push(res3);
 
     });
     this.employeService.findCountEmployees().subscribe(res2 => {
-     // const index = this.doughnutChartData.indexOf(5);
-      //this.doughnutChartData[index] = res2;
       this.doughnutChartData.push(res2);
 
     });
