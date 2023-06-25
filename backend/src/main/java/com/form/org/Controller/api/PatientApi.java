@@ -54,6 +54,14 @@ public interface PatientApi{
 	@GetMapping(value= APP_ROOT + "/patient/all", produces = MediaType.APPLICATION_JSON_VALUE )
 	
 	List<PatientDTO>findAll();
+
+	@GetMapping(value= APP_ROOT + "/analyseMedical/CountPatient", produces = MediaType.APPLICATION_JSON_VALUE )
+	@ApiOperation(value = "renvoi nombre patient",notes = "Cette methode permet de rechercher et renvoyer nombre patients qui existent dans la BDD",
+			responseContainer = "List<PatientDTO>")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "nombre patient / un nombre vide"),
+	})
+	Integer findCountPatient();
 	
 	 @DeleteMapping(value =APP_ROOT + "/patient/delete/{idPatient}" )
 	 @ApiOperation(value = "supprimer  un patient ",notes = "Cette methode permet de supprimer"

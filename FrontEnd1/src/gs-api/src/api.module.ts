@@ -5,6 +5,7 @@ import { ApiConfiguration, ApiConfigurationInterface } from './api-configuration
 
 import { TestCovidv1absenceService } from './services/test-covidv-1absence.service';
 import { AnalyseMedicalService } from './services/analyse-medical.service';
+import { TestCovidv1patientService } from './services/test-covidv-1patient.service';
 import { ArticleService } from './services/article.service';
 import { AuthenticationService } from './services/authentication.service';
 import { TestCovidv1bilanfinanceService } from './services/test-covidv-1bilanfinance.service';
@@ -21,7 +22,6 @@ import { TestCovidv1laboService } from './services/test-covidv-1labo.service';
 import { TestCovidv1mouvementService } from './services/test-covidv-1mouvement.service';
 import { NatureOperationService } from './services/nature-operation.service';
 import { TestCovidv1operationService } from './services/test-covidv-1operation.service';
-import { TestCovidv1patientService } from './services/test-covidv-1patient.service';
 import { PreleveurService } from './services/preleveur.service';
 import { TestCovidv1recrutementService } from './services/test-covidv-1recrutement.service';
 import { ReservationService } from './services/reservation.service';
@@ -44,6 +44,7 @@ import { TypeAnalyseService } from './services/type-analyse.service';
     ApiConfiguration,
     TestCovidv1absenceService,
     AnalyseMedicalService,
+    TestCovidv1patientService,
     ArticleService,
     AuthenticationService,
     TestCovidv1bilanfinanceService,
@@ -60,7 +61,6 @@ import { TypeAnalyseService } from './services/type-analyse.service';
     TestCovidv1mouvementService,
     NatureOperationService,
     TestCovidv1operationService,
-    TestCovidv1patientService,
     PreleveurService,
     TestCovidv1recrutementService,
     ReservationService,

@@ -41,6 +41,11 @@ public class PatientController implements PatientApi {
 	}
 
 	@Override
+	public Integer findCountPatient() {
+		return patientService.countPatient();
+	}
+
+	@Override
 	public void delete(Integer idPatient) {
 	patientService.delete(idPatient);
 	}

@@ -24,6 +24,9 @@ export class EmployeService {
     }
     return of();
   }
+  findCountEmployees(): Observable<number>{
+    return this.testCovidv1employeService.findCountEmploye();
+  }
   deleteemploye(idEmploye?: number): Observable<any>{
     if (idEmploye) {
       return this.testCovidv1employeService.delete(idEmploye);

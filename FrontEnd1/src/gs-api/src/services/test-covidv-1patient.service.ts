@@ -12,6 +12,7 @@ import { PatientDTO } from '../models/patient-dto';
   providedIn: 'root',
 })
 class TestCovidv1patientService extends __BaseService {
+  static readonly findCountPatientPath = '/testCovid/v1/analyseMedical/CountPatient';
   static readonly findAllPath = '/testCovid/v1/patient/all';
   static readonly savePath = '/testCovid/v1/patient/create';
   static readonly deletePath = '/testCovid/v1/patient/delete/{idPatient}';
@@ -23,6 +24,41 @@ class TestCovidv1patientService extends __BaseService {
     http: HttpClient
   ) {
     super(config, http);
+  }
+
+  /**
+   * Cette methode permet de rechercher et renvoyer nombre patients qui existent dans la BDD
+   * @return nombre patient / un nombre vide
+   */
+  findCountPatientResponse(): __Observable<__StrictHttpResponse<number>> {
+    let __params = this.newParams();
+    let __headers = new HttpHeaders();
+    let __body: any = null;
+    let req = new HttpRequest<any>(
+      'GET',
+      this.rootUrl + `/testCovid/v1/analyseMedical/CountPatient`,
+      __body,
+      {
+        headers: __headers,
+        params: __params,
+        responseType: 'text'
+      });
+
+    return this.http.request<any>(req).pipe(
+      __filter(_r => _r instanceof HttpResponse),
+      __map((_r) => {
+        return (_r as HttpResponse<any>).clone({ body: parseFloat((_r as HttpResponse<any>).body as string) }) as __StrictHttpResponse<number>
+      })
+    );
+  }
+  /**
+   * Cette methode permet de rechercher et renvoyer nombre patients qui existent dans la BDD
+   * @return nombre patient / un nombre vide
+   */
+  findCountPatient(): __Observable<number> {
+    return this.findCountPatientResponse().pipe(
+      __map(_r => _r.body as number)
+    );
   }
 
   /**

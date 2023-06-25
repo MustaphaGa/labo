@@ -12,6 +12,7 @@ import { EmployeDTO } from '../models/employe-dto';
   providedIn: 'root',
 })
 class TestCovidv1employeService extends __BaseService {
+  static readonly findCountEmployePath = '/testCovid/v1/employe/CountEmploye';
   static readonly findAllPath = '/testCovid/v1/employe/all';
   static readonly savePath = '/testCovid/v1/employe/create';
   static readonly deletePath = '/testCovid/v1/employe/delete/{idEmploye}';
@@ -23,6 +24,41 @@ class TestCovidv1employeService extends __BaseService {
     http: HttpClient
   ) {
     super(config, http);
+  }
+
+  /**
+   * Cette methode permet de rechercher et renvoyer nombre employees qui existent dans la BDD
+   * @return nombre employe / un nombre vide
+   */
+  findCountEmployeResponse(): __Observable<__StrictHttpResponse<number>> {
+    let __params = this.newParams();
+    let __headers = new HttpHeaders();
+    let __body: any = null;
+    let req = new HttpRequest<any>(
+      'GET',
+      this.rootUrl + `/testCovid/v1/employe/CountEmploye`,
+      __body,
+      {
+        headers: __headers,
+        params: __params,
+        responseType: 'text'
+      });
+
+    return this.http.request<any>(req).pipe(
+      __filter(_r => _r instanceof HttpResponse),
+      __map((_r) => {
+        return (_r as HttpResponse<any>).clone({ body: parseFloat((_r as HttpResponse<any>).body as string) }) as __StrictHttpResponse<number>
+      })
+    );
+  }
+  /**
+   * Cette methode permet de rechercher et renvoyer nombre employees qui existent dans la BDD
+   * @return nombre employe / un nombre vide
+   */
+  findCountEmploye(): __Observable<number> {
+    return this.findCountEmployeResponse().pipe(
+      __map(_r => _r.body as number)
+    );
   }
 
   /**

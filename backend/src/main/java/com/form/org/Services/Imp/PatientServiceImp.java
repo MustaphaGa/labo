@@ -76,6 +76,11 @@ public class PatientServiceImp implements PatientSecvice {
 	}
 
 	@Override
+	public Integer countPatient() {
+			return patientRepository.countPatient();
+	}
+
+	@Override
 	public List<PatientDTO> findAll() {
 		return patientRepository.findAll().stream()
 				.map(PatientDTO :: fromEntity)

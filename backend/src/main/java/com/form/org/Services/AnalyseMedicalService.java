@@ -12,7 +12,9 @@ public interface AnalyseMedicalService {
     AnalyseMedicalDTO findById(Integer idAnalyseMedical);
 	
     AnalyseMedicalDTO findByDateAnalyse(Date dateAnalyse);
-	
+
+	Integer countAnalyseMedical();
+
 	List<AnalyseMedicalDTO>findAll(); 
 	
 	void delete(Integer idAnalyseMedical);

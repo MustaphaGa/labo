@@ -13,5 +13,6 @@ public interface EmployeRepository extends JpaRepository<Employe, Integer> {
 	@Query(value = "select E from Employe E where E.email = :email")
 	Optional<Employe> findEmployesByEmail(@Param("email") String email);
 
-
+	@Query("SELECT COUNT(e) FROM Employe  e")
+	Integer countEmploye();
 }

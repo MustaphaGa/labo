@@ -81,6 +81,10 @@ public class EmployeServiceImp implements EmployeService {
 				.map(EmployeDTO::fromEntity)
 				.collect(Collectors.toList());
 	}
+	@Override
+	public Integer countEmployees() {
+		return employeRepository.countEmploye();
+	}
 
 	@Override
 	public void delete(Integer idEmploye) {

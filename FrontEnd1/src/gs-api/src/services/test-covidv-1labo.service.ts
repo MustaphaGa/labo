@@ -16,6 +16,7 @@ class TestCovidv1laboService extends __BaseService {
   static readonly savePath = '/testCovid/v1/labo/create';
   static readonly deletePath = '/testCovid/v1/labo/delete/{idLabo}';
   static readonly findByIdPath = '/testCovid/v1/labo/{idLabo}';
+  private idLabo: any;
 
   constructor(
     config: __Configuration,
@@ -107,7 +108,7 @@ class TestCovidv1laboService extends __BaseService {
     let __body: any = null;
     let req = new HttpRequest<any>(
       'DELETE',
-      this.rootUrl + `/testCovid/v1/labo/delete/${idLabo}`,
+      this.rootUrl + `/testCovid/v1/labo/delete/${(this.idLabo)}`,
       __body,
       {
         headers: __headers,
@@ -140,6 +141,7 @@ class TestCovidv1laboService extends __BaseService {
     let __params = this.newParams();
     let __headers = new HttpHeaders();
     let __body: any = null;
+    let idLabo;
     let req = new HttpRequest<any>(
       'GET',
       this.rootUrl + `/testCovid/v1/labo/${idLabo}`,

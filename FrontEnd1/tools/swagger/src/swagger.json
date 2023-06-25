@@ -185,6 +185,42 @@
         }
       }
     },
+    "/testCovid/v1/analyseMedical/CountAnalyse" : {
+      "get" : {
+        "tags" : [ "analyseMedical" ],
+        "summary" : "renvoi nombre d'analyse Medical",
+        "description" : "Cette methode permet de rechercher et renvoyer nombre d'analyse qui existent dans la BDD",
+        "operationId" : "findCountType",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "nombre d'analyse medical / un nombre vide",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int32"
+            }
+          }
+        }
+      }
+    },
+    "/testCovid/v1/analyseMedical/CountPatient" : {
+      "get" : {
+        "tags" : [ "testCovidv1patient" ],
+        "summary" : "renvoi nombre patient",
+        "description" : "Cette methode permet de rechercher et renvoyer nombre patients qui existent dans la BDD",
+        "operationId" : "findCountPatient",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "nombre patient / un nombre vide",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int32"
+            }
+          }
+        }
+      }
+    },
     "/testCovid/v1/analyseMedical/all" : {
       "get" : {
         "tags" : [ "analyseMedical" ],
@@ -1182,6 +1218,24 @@
           },
           "404" : {
             "description" : "Aucun detail Resultat n'existe  dans la BDD avec l'ID fourni"
+          }
+        }
+      }
+    },
+    "/testCovid/v1/employe/CountEmploye" : {
+      "get" : {
+        "tags" : [ "testCovidv1employe" ],
+        "summary" : "renvoi nombre employe",
+        "description" : "Cette methode permet de rechercher et renvoyer nombre employees qui existent dans la BDD",
+        "operationId" : "findCountEmploye",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "nombre employe / un nombre vide",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int32"
+            }
           }
         }
       }
@@ -2825,6 +2879,10 @@
         },
         "resultat" : {
           "type" : "boolean"
+        },
+        "count" : {
+          "type" : "integer",
+          "format" : "int64"
         },
         "typeAnalyse" : {
           "$ref" : "#/definitions/TypeAnalyseDTO"
