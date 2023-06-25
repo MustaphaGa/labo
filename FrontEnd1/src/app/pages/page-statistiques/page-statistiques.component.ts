@@ -20,16 +20,19 @@ export class PageStatistiquesComponent implements OnInit {
   public doughnutChartOptions: ChartOptions = {
     responsive: true,
     legend: {
-      display: false,
+      display: false},
+    title: {
+      display: true,
+      text: 'statistique 2023'
     },
-    cutoutPercentage: 100,
+    cutoutPercentage: 80,
   };
   // @ts-ignore
   public doughnutChartLabels: Label[] = [ 'analyses' , 'patients', 'employes' ];
-  public doughnutChartData: SingleDataSet = [30, 20, 10];
+  public doughnutChartData: SingleDataSet = [30, 10, 5];
   public doughnutChartType: ChartType = 'bar';
   public doughnutChartColor: Color[] = [
-    {backgroundColor: ['#4e3dc8', '#ffbf3a', , '#f68059']},
+    {backgroundColor: ['#4e3dc8', '#ffbf3a', '#f68059']},
   ];
 
   constructor(private router: Router,
@@ -45,12 +48,12 @@ export class PageStatistiquesComponent implements OnInit {
 
     });
     this.patientService.findCountPatients().subscribe(res3 => {
-      const index = this.doughnutChartData.indexOf(20);
+      const index = this.doughnutChartData.indexOf(10);
       this.doughnutChartData[index] = res3;
 
     });
     this.employeService.findCountEmployees().subscribe(res2 => {
-      const index = this.doughnutChartData.indexOf(10);
+      const index = this.doughnutChartData.indexOf(5);
       this.doughnutChartData[index] = res2;
 
     });
