@@ -13,23 +13,24 @@
     <div class="col">
            <div class="row">
             <div class="col-md-1"><i class="fas fa-calendar-check blue-color"></i></div>
-            <div class="col-md-11">{{analyseMedicalDtto.dateAnalyse | date: 'dd/MM/yyyy'}}</div>
+            <div class="col-md-11"><b style="color: #006dcc">Date Analyse: </b> {{analyseMedicalDtto.dateAnalyse | date: 'dd/MM/yyyy'}}</div>
         </div>
         <div class="row">
             <div class="col-md-1"><i class="fas fa-dollar-sign blue-color"></i></div>
-            <div class="col-md-11">{{analyseMedicalDtto.prixAnalyse}} DH</div>
+            <div class="col-md-11"> <b style="color: #006dcc">Prix:</b> {{analyseMedicalDtto.prixAnalyse}} Dhs</div>
         </div>
         <div class="row">
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-            <div class="col-md-11">{{analyseMedicalDtto.descriprtion}}</div>
+            <div class="col-md-11"><b style="color: #006dcc">Description:</b>{{analyseMedicalDtto.descriprtion}}</div>
         </div>
         <div class="row">
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-            <div class="col-md-11">{{analyseMedicalDtto.resultat}}</div>
+            <div class="col-md-11"><b style="color: #006dcc">Resultat:</b>{{analyseMedicalDtto.resultat}}</div>
         </div>
-        
+
         </div>
     </div>
+
 <!--detail type-analyse-->
 <div class="col-md-3 custom-border-right mb-1 mt-1 ">
     <div class="row">
@@ -38,7 +39,7 @@
     </div>
     <div class="col-md-10">
         <div class="row">
-            <div class="col-md-12"> {{analyseMedicalDtto.typeAnalyse?.typeAnalyse}}</div>
+            <div class="col-md-12"> <b style="color:#006dcc">Type d'analyse:</b>{{analyseMedicalDtto.typeAnalyse?.typeAnalyse}}</div>
 
         </div>
     </div>
@@ -47,34 +48,34 @@
         </div>
         <div class="col-md-10">
         <div class="row">
-        
-            <div class="col-md-12">{{analyseMedicalDtto.reservation?.dateReservation| date: 'dd/MM/yyyy'}}</div>
-        
-        
+
+            <div class="col-md-12"><b style="color: #c69500"> {{analyseMedicalDtto.reservation?.patient.nom}} {{analyseMedicalDtto.reservation?.patient.prenom}} </b>{{analyseMedicalDtto.reservation?.dateReservation| date: 'dd/MM/yyyy'}}</div>
+
+
         </div>
     </div>
 </div>
     </div>
 
     <!--bouton action-->
-    <div class="col-md-3 mb-1 mt-1">
+    <div class="col-md-2 mb-1 mt-1">
         <div class="row">
             <div class="col-md-4">
                 <button type="button" class="btn btn btn-link" (click)=" modifierAnalyse()">
-                    <i class="fas fa-pencil-alt"></i>&nbsp;modifier</button>
+                    <i class="fas fa-pencil-alt"></i>&nbsp;</button>
             </div>
             <div class="col-md-4">
                 <button type="button" class="btn btn btn-link text-danger" data-toggle="modal" [attr.data-target]="'#modalDeleteAnalyse' + analyseMedicalDtto.idAnalyse">
-                    <i class="fas fa-trash-alt"></i>&nbsp;supprimer</button>
+                    <i class="fas fa-trash-alt"></i>&nbsp;</button>
             </div>
             <div class="col-md-4">
                 <button type="button" class="btn btn btn-link" (click)=" detailAnalyse()">
-                    <i class="fas fa-list-alt"></i>&nbsp;Details</button>
+                    <i class="fas fa-list-alt"></i>&nbsp;</button>
             </div>
 
         </div>
     </div>
-    
+
 </div>
 <!-- Modal -->
 <div class="modal fade" id="modalDeleteAnalyse{{analyseMedicalDtto.idAnalyse}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

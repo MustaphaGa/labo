@@ -7,25 +7,25 @@
     <div class="col">
            <div class="row">
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-            <div class="col-md-11">{{preleveurDto.nom}}</div>
+            <div class="col-md-11"> <b style="color: #b21f2d"> Nom : </b>{{preleveurDto.nom}}    </div>
         </div>
         <div class="row">
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-            <div class="col-md-11">{{preleveurDto.prenom}}</div>
+            <div class="col-md-11"> <b style="color: #b21f2d"> Prenom : </b>{{preleveurDto.prenom}}</div>
         </div>
         <div class="row">
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-            <div class="col-md-11">{{preleveurDto.email}}</div>
+            <div class="col-md-11">  <b style="color: #b21f2d"> Email : </b> {{preleveurDto.email}}</div>
         </div>
         <div class="row">
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-            <div class="col-md-11">{{preleveurDto.sexe}}</div>
+            <div class="col-md-11"> <b style="color: #b21f2d"> Sexe : </b>{{preleveurDto.sexe}}</div>
         </div>
         <div class="row">
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-            <div class="col-md-11">{{preleveurDto.specialite}}</div>
+            <div class="col-md-11"> <b style="color: #b21f2d"> Specialité : </b>{{preleveurDto.specialite}}</div>
         </div>
-        
+
         </div>
     </div>
 <!--detail preleveur-->
@@ -34,10 +34,10 @@
     <div class="col-md-10">
         <div class="row">
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-            <div class="col-md-10">{{preleveurDto.analyseMedical?.descriprtion}}</div>
+            <div class="col-md-10">{{preleveurDto.analyseMedical?.reservation.patient.nom}}</div>
 
             <div class="col-md-1"><i class="fas fa-phone-alt blue-color"></i></div>
-            <div class="col-md-10">{{preleveurDto.telephone}}</div>
+            <div class="col-md-10"><b style="color: #b21f2d"> Tele :</b>{{preleveurDto.telephone}}</div>
 
         </div>
 
@@ -46,24 +46,24 @@
     </div>
 
     <!--bouton action-->
-    <div class="col-md-3 mb-1 mt-1">
+    <div class="col-md-2 mb-1 mt-1">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <button type="button" class="btn btn btn-link" (click)="modifierPreleveur()">
-                    <i class="fas fa-pencil-alt"></i>&nbsp;modifier</button>
+                    <i class="fas fa-pencil-alt"></i>&nbsp;</button>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <button type="button" class="btn btn btn-link text-danger" data-toggle="modal" [attr.data-target]="'#modalDeletePreleveur' + preleveurDto.idPreleveur">
-                    <i class="fas fa-trash-alt"></i>&nbsp;supprimer</button>
+                    <i class="fas fa-trash-alt"></i>&nbsp;</button>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <button type="button" class="btn btn btn-link" (click)="detailPreleveur()">
-                    <i class="fas fa-list-alt"></i>&nbsp;Details</button>
+                    <i class="fas fa-list-alt"></i>&nbsp;</button>
             </div>
 
         </div>
     </div>
-    
+
 </div>
 <!-- Modal -->
 <div class="modal fade" id="modalDeletePreleveur{{preleveurDto.idPreleveur}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

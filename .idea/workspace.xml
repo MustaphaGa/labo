@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e596020e-b0e0-4867-b715-b66d5eac7d86" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/Services/NatureOperationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEnd1/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd1/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEnd1/src/gs-api/src/api-configuration.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEnd1/src/gs-api/src/api-configuration.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/dto/OperationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/dto/OperationDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/exception/ErrorCodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/exception/ErrorCodes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/BonCommande.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/BonCommande.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/Facture.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/Facture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/form/org/model/Operation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +42,8 @@
       <workItem from="1686576065451" duration="16000" />
       <workItem from="1686815466093" duration="57000" />
       <workItem from="1686844196309" duration="96000" />
+      <workItem from="1687732856605" duration="427000" />
+      <workItem from="1687782582837" duration="20000" />
     </task>
     <servers />
   </component>

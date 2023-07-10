@@ -14,17 +14,17 @@ export class DetailFactureComponent implements OnInit {
   @Output()
   suppressionFacture = new EventEmitter();
   constructor(
-    private router:Router,
-    private  facturesService:FacturesService,
+    private router: Router,
+    private  facturesService: FacturesService,
   ) { }
 
   ngOnInit(): void {
   }
-  modifierfacture():void{
-    this.router.navigate(['nouvelfacture',this.factureDTo.idFacture])
+  modifierfacture(): void{
+    this.router.navigate(['nouvelfacture', this.factureDTo.idFacture])
   }
-  detailfacture():void{
-    this.router.navigate(['detailfacture',this.factureDTo.idFacture])
+  detailfacture(): void{
+    this.router.navigate(['detailfacture', this.factureDTo.idFacture])
   }
   confirmerEtSupprimerFacture(): void{
     if(this.factureDTo.idFacture){

@@ -69,10 +69,10 @@ import { DetailCongerComponent } from './composants/detail-conger/detail-conger.
 import {NouveauOperationComponent} from './composants/nouveau-operation/nouveau-operation.component';
 import {NouveauBilanFinanceComponent} from './composants/nouveau-bilan-finance/nouveau-bilan-finance.component';
 import {PageCompteComponent} from './pages/page-compte/page-compte.component';
-import {NouveauCompteComponent} from "./composants/nouveau-compte/nouveau-compte.component";
-import {CompteDetailComponent} from "./detaill/compte-detail/compte-detail.component";
-import {BilanFinanceDetaillComponent} from "./detaill/bilan-finance-detaill/bilan-finance-detaill.component";
-import {OperationDetaillComponent} from "./detaill/operation-detaill/operation-detaill.component";
+import {NouveauCompteComponent} from './composants/nouveau-compte/nouveau-compte.component';
+import {CompteDetailComponent} from './detaill/compte-detail/compte-detail.component';
+import {BilanFinanceDetaillComponent} from './detaill/bilan-finance-detaill/bilan-finance-detaill.component';
+import {OperationDetaillComponent} from './detaill/operation-detaill/operation-detaill.component';
 const routes: Routes = [
   {
     path: 'pagAccPrincp',
