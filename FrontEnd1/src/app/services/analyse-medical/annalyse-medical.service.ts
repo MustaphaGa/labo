@@ -22,6 +22,9 @@ export class AnnalyseMedicalService {
     }
     return of();
   }
+  findCountAnalysMedical(): Observable<number>{
+    return this.analyseMedicalService.findCountType();
+  }
   deleteAnalyse(idAnalyse?: number): Observable<any>{
     if (idAnalyse) {
       return this.analyseMedicalService.delecte(idAnalyse);

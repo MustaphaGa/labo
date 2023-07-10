@@ -23,7 +23,7 @@ public interface BilanFinanceApi {
     })
     BilanFinancierDTO save(@RequestBody BilanFinancierDTO dto);
 
-    @GetMapping(value= APP_ROOT + "/bilanfinance/{bilanfinance}", produces = MediaType.APPLICATION_JSON_VALUE )
+    @GetMapping(value= APP_ROOT + "/bilanfinance/{idBilan}", produces = MediaType.APPLICATION_JSON_VALUE )
     @ApiOperation(value = "rechercher un bilanfinance par ID",notes = "Cette methode permet"
             + " de rechercher  un bilanfinance par son ID ",response = BilanFinancierDTO.class)
     @ApiResponses(value = {

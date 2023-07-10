@@ -50,6 +50,15 @@ public interface EmployeApi {
     @GetMapping(value= APP_ROOT + "/employe/all", produces = MediaType.APPLICATION_JSON_VALUE )
     List<EmployeDTO> findAll();
 
+
+    @GetMapping(value= APP_ROOT + "/employe/CountEmploye", produces = MediaType.APPLICATION_JSON_VALUE )
+    @ApiOperation(value = "renvoi nombre employe",notes = "Cette methode permet de rechercher et renvoyer nombre employees qui existent dans la BDD",
+            responseContainer = "List<EmployeDTO>")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "nombre employe / un nombre vide"),
+    })
+    Integer findCountEmploye();
+
     @DeleteMapping(value =APP_ROOT + "/employe/delete/{idEmploye}" )
     @ApiOperation(value = "supprimer  un employe ",notes = "Cette methode permet de supprimer"
             + " un employe par ID ",

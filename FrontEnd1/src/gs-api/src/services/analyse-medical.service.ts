@@ -12,6 +12,7 @@ import { AnalyseMedicalDTO } from '../models/analyse-medical-dto';
   providedIn: 'root',
 })
 class AnalyseMedicalService extends __BaseService {
+  static readonly findCountTypePath = '/testCovid/v1/analyseMedical/CountAnalyse';
   static readonly findAllPath = '/testCovid/v1/analyseMedical/all';
   static readonly savePath = '/testCovid/v1/analyseMedical/create';
   static readonly delectePath = '/testCovid/v1/analyseMedical/delete/{idAnalyseMedical}';
@@ -23,6 +24,41 @@ class AnalyseMedicalService extends __BaseService {
     http: HttpClient
   ) {
     super(config, http);
+  }
+
+  /**
+   * Cette methode permet de rechercher et renvoyer nombre d'analyse qui existent dans la BDD
+   * @return nombre d'analyse medical / un nombre vide
+   */
+  findCountTypeResponse(): __Observable<__StrictHttpResponse<number>> {
+    let __params = this.newParams();
+    let __headers = new HttpHeaders();
+    let __body: any = null;
+    let req = new HttpRequest<any>(
+      'GET',
+      this.rootUrl + `/testCovid/v1/analyseMedical/CountAnalyse`,
+      __body,
+      {
+        headers: __headers,
+        params: __params,
+        responseType: 'text'
+      });
+
+    return this.http.request<any>(req).pipe(
+      __filter(_r => _r instanceof HttpResponse),
+      __map((_r) => {
+        return (_r as HttpResponse<any>).clone({ body: parseFloat((_r as HttpResponse<any>).body as string) }) as __StrictHttpResponse<number>
+      })
+    );
+  }
+  /**
+   * Cette methode permet de rechercher et renvoyer nombre d'analyse qui existent dans la BDD
+   * @return nombre d'analyse medical / un nombre vide
+   */
+  findCountType(): __Observable<number> {
+    return this.findCountTypeResponse().pipe(
+      __map(_r => _r.body as number)
+    );
   }
 
   /**

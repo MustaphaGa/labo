@@ -2,51 +2,48 @@
   <div class="col-md-1 custom-border-right p-1 text-center ">
     <img src="assets/menu/assets/img/mouvement.jpg" width="75px" height="75px">
   </div>
-  <!--detail mouvement-->
-  <div class="col-md-4 custom-border-right mb-1 mt-1 ">
-    <div class="col">
-      <div class="row">
-        <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-        <div class="col-md-10">{{mouvementDto.employe?.nom}} {{mouvementDto.employe?.prenom}}</div>
-      </div>
-      <div class="row">
-        <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-        <div class="col-md-10">{{mouvementDto.typeMouvement}} </div>
-      </div>
-    </div>
-  </div>
-  <!--detail mouvement--->
-  <div class="col-md-4 custom-border-right mb-1 mt-1 ">
-    <div class="row">
-      <div class="col-md-2"><i class="fas fa-info-circle blue-color"></i></div>
-      <div class="col-md-1O">{{mouvementDto.detailMouvement }}</div>
-    </div>
-    <div class="row">
-      <div class="col-md-2"><i class="fas fa-info-circle blue-color"></i></div>
-      <div class="col-md-1O">{{mouvementDto.frais }}dh</div>
-    </div>
-  </div>
 
-  <div class="col-md-3 mb-1 mt-1">
-    <div class="row">
-      <div class="col-md-4">
-        <button type="button" class="btn btn btn-link" (click)=" modifierMouvement()">
-          <i class="fas fa-pencil-alt"></i>&nbsp;modifier</button>
-      </div>
-      <div class="col-md-4">
-        <button type="button" class="btn btn btn-link text-danger" data-toggle="modal" [attr.data-target]="'#modalDeleteMouvement' + mouvementDto.idMouvement">
-          <i class="fas fa-trash-alt"></i>&nbsp;supprimer</button>
-      </div>
-      <div class="col-md-4">
-        <button type="button" class="btn btn btn-link" (click)=" detailRecrutement()">
-          <i class="fas fa-list-alt"></i>&nbsp;Details</button>
-      </div>
 
-    </div>
-  </div>
 
-</div>
-<!-- Modal -->
+
+
+  <table style="padding: 0px;margin-right: 10px;height: 5px"
+         class="table table-striped table-hover table-bordered ">
+    <thead>
+    <tr style="background-color: #abdde5">
+      <th scope="col">Employe</th>
+      <th scope="col">detail Mouvement</th>
+      <th scope="col">Type Mouvement</th>
+      <th scope="col">Frais </th>
+
+      <th scope="col ">Actions</th>
+    </tr>
+    </thead>
+    <tbody >
+    <tr   >
+      <td>{{mouvementDto.employe?.nom}} {{mouvementDto.employe?.prenom}}</td>
+      <td>{{mouvementDto.detailMouvement}} </td>
+      <td>{{mouvementDto.typeMouvement}} </td>
+      <td>{{mouvementDto.frais }}dh</td>
+
+
+      <td >
+        <div>
+          <button type="button" class="btn btn btn-link" (click)=" modifierMouvement()">
+            <i class="fas fa-pencil-alt"></i>&nbsp;modifier</button>
+
+          <button type="button" class="btn btn btn-link text-danger" data-toggle="modal" [attr.data-target]="'#modalDeleteMouvement' + mouvementDto.idMouvement">
+            <i class="fas fa-trash-alt"></i>&nbsp;supprimer</button>
+
+          <button type="button" class="btn btn btn-link" (click)=" detailRecrutement()">
+            <i class="fas fa-list-alt"></i>&nbsp;Details</button>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
 <div class="modal fade" id="modalDeleteMouvement{{mouvementDto.idMouvement}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

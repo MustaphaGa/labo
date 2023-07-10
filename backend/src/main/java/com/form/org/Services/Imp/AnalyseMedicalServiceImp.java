@@ -77,6 +77,12 @@ public class AnalyseMedicalServiceImp implements AnalyseMedicalService {
 	}
 
 	@Override
+	public Integer countAnalyseMedical() {
+		return analyseMedicalRepository.countAnalyseMedical();
+	}
+
+
+	@Override
 	public List<AnalyseMedicalDTO> findAll() {
 		
 		return analyseMedicalRepository.findAll().stream()

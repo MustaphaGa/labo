@@ -22,7 +22,7 @@ export class LaboService {
     }
     return of();
   }
-  deletelabo(idlabo?: number): Observable<any>{
+  deletelabo(idlabo?: number): Observable<LaboDTO>{
     if (idlabo) {
       return this.testCovidv1laboService.delete(idlabo);
     }

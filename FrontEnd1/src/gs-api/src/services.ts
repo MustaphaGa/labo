@@ -1,5 +1,6 @@
 export { TestCovidv1absenceService } from './services/test-covidv-1absence.service';
 export { AnalyseMedicalService } from './services/analyse-medical.service';
+export { TestCovidv1patientService } from './services/test-covidv-1patient.service';
 export { ArticleService } from './services/article.service';
 export { AuthenticationService } from './services/authentication.service';
 export { TestCovidv1bilanfinanceService } from './services/test-covidv-1bilanfinance.service';
@@ -16,7 +17,6 @@ export { TestCovidv1laboService } from './services/test-covidv-1labo.service';
 export { TestCovidv1mouvementService } from './services/test-covidv-1mouvement.service';
 export { NatureOperationService } from './services/nature-operation.service';
 export { TestCovidv1operationService } from './services/test-covidv-1operation.service';
-export { TestCovidv1patientService } from './services/test-covidv-1patient.service';
 export { PreleveurService } from './services/preleveur.service';
 export { TestCovidv1recrutementService } from './services/test-covidv-1recrutement.service';
 export { ReservationService } from './services/reservation.service';

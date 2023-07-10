@@ -17,7 +17,7 @@ export class DetailEmployeComponent implements OnInit {
   suppressionEmploye = new EventEmitter();
   constructor(
     private router: Router,
-    private employeService:EmployeService
+    private employeService: EmployeService
   ) { }
 
   ngOnInit(): void {
@@ -25,11 +25,9 @@ export class DetailEmployeComponent implements OnInit {
   modifierEmploye(): void{
     this.router.navigate(['nouvelEmployee', this.employeDt.id_employe]);
   }
-  detailEmploye(): void{
-    this.router.navigate(['detailemployes', this.employeDt.id_employe]);
-  }
+  // tslint:disable-next-line:typedef
   confirmerEtSupprimerEmploye() {
-    if(this.employeDt.id_employe){
+    if (this.employeDt.id_employe){
       this.employeService.deleteemploye(this.employeDt.id_employe)
         .subscribe(res => {
           this.suppressionEmploye.emit('success');

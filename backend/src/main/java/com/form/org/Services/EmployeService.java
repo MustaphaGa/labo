@@ -16,6 +16,8 @@ EmployeDTO findById(Integer idEmploye);
 	 void delete(Integer idEmploye);
 	 
 	 EmployeDTO findByEmail(String email);
+
+	 Integer countEmployees();
 	 
 	 EmployeDTO changerMotDePasse(ChangerMotDePasseUtilisateurDTO dto);
 

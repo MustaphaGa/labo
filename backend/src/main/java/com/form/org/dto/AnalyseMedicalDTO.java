@@ -19,6 +19,7 @@ public class AnalyseMedicalDTO {
 	private String descriprtion;
 	private BigDecimal prixAnalyse;
 	private Boolean resultat;
+	private  Long count ;
 	
 	private TypeAnalyseDTO typeAnalyse;
 	private ReservationDTO reservation;

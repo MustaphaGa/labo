@@ -40,6 +40,13 @@ import com.form.org.dto.AnalyseMedicalDTO;
 	return analyseMedicalService.findAll();
 	}
 
+	  @Override
+	  public Integer findCountType() {
+		  return analyseMedicalService.countAnalyseMedical();
+	  }
+
+
+
 	@Override
 	public void delecte(Integer idAnalyseMedical) {
 	 analyseMedicalService.delete(idAnalyseMedical);

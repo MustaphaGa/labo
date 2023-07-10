@@ -23,9 +23,9 @@ suppressionResult= new EventEmitter();
 
   ngOnInit(): void {
 
-    
-   
-    
+
+
+
   }
   modifierResultat():void{
     this.router.navigate(['nouvelResultat',this.detailResultatDTo.idResultat])
@@ -33,9 +33,9 @@ suppressionResult= new EventEmitter();
   detailResultat():void{
     this.router.navigate(['exportpdf1',this.detailResultatDTo.idResultat]);
     this.router.navigate(['exportpdf',this.patientdto.idPatient]);
-    
+
   }
-  
+
   confirmerEtSupprimerResultat(): void{
     if(this.detailResultatDTo.idResultat){
      this.detailresultatServicee.deleteResult(this.detailResultatDTo.idResultat)

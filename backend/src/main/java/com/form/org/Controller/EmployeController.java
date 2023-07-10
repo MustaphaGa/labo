@@ -34,11 +34,16 @@ public class EmployeController implements EmployeApi {
     public EmployeDTO findByEmail(String email) {
         return employeService.findByEmail(email);
     }
+    @Override
+    public Integer findCountEmploye() {
+        return employeService.countEmployees();
+    }
 
     @Override
     public List<EmployeDTO> findAll() {
         return employeService.findAll();
     }
+
 
     @Override
     public void delete(Integer idEmploye) {

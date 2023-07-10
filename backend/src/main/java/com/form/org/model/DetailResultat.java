@@ -28,9 +28,36 @@ public class DetailResultat {
 	@Column(name="description")
 	private String description;
 	
-	@Column(name="valeur")
-	private BigDecimal valeur;
-	
+	@Column(name="valeur1")
+	private BigDecimal valeur1;
+
+	@Column(name="valeur2")
+	private BigDecimal valeur2;
+
+	@Column(name="valeur3")
+	private BigDecimal valeur3;
+
+	@Column(name="valeur4")
+	private BigDecimal valeur4;
+
+	@Column(name="valeur5")
+	private BigDecimal valeur5;
+
+	@Column(name="valeur6")
+	private BigDecimal valeur6;
+
+	@Column(name="valeur7")
+	private BigDecimal valeur7;
+
+	@Column(name="valeur8")
+	private BigDecimal valeur8;
+
+	@Column(name="valeur9")
+	private BigDecimal valeur9;
+
+	@Column(name="valeur10")
+	private BigDecimal valeur10;
+
 	@ManyToOne
 	@JoinColumn(name="idBiologiste")
 	private Biologiste biologiste;

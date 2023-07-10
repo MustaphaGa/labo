@@ -7,23 +7,23 @@
     <div class="col">
            <div class="row">
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-            <div class="col-md-10">{{factureDTo.analyseMedical?.descriprtion}}</div>
+            <div class="col-md-10"> <b style="font-family:courier;">Description d'analyse: </b>{{factureDTo.analyseMedical?.descriprtion}}</div>
         </div>
         <div class="row">
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-            <div class="col-md-10">{{factureDTo.montant}} DH</div>
+            <div class="col-md-10"><b style="font-family:courier;">Montant : </b>{{factureDTo.montant}} Dhs</div>
         </div>
-        
-       
-        
-        
+
+
+
+
         </div>
     </div>
 <!--detail type--->
 <div class="col-md-4 custom-border-right mb-1 mt-1 ">
-    <div class="row">     
+    <div class="row">
                 <div class="col-md-2"><i class="fas fa-calendar-check blue-color"></i></div>
-                <div class="col-md-1O">{{factureDTo.dateFacture | date:'dd/MM/yyyy'}}</div>
+                <div class="col-md-1O"> <b style="font-family:courier;">Date Facture : </b>{{factureDTo.dateFacture | date:'dd/MM/yyyy'}}</div>
 </div>
     </div>
 
@@ -31,24 +31,24 @@
         dateFacture?: string;
   montant
      -->
-    <div class="col-md-3 mb-1 mt-1">
+    <div class="col-md-2 mb-1 mt-1">
         <div class="row">
             <div class="col-md-4">
                 <button type="button" class="btn btn btn-link" (click)=" modifierfacture()">
-                    <i class="fas fa-pencil-alt"></i></button>
+                    <i class="fas fa-pencil-alt"></i>&nbsp;</button>
             </div>
             <div class="col-md-4">
                 <button type="button" class="btn btn btn-link text-danger" data-toggle="modal" [attr.data-target]="'#modalDeleteFacture' + factureDTo.idFacture">
-                    <i class="fas fa-trash-alt"></i></button>
+                    <i class="fas fa-trash-alt"></i>&nbsp;</button>
             </div>
             <div class="col-md-4">
                 <button type="button" class="btn btn btn-link" (click)=" detailfacture()">
-                    <i class="fas fa-list-alt"></i></button>
+                    <i class="fas fa-list-alt"></i>&nbsp;</button>
             </div>
 
         </div>
     </div>
-    
+
 </div>
 <!-- Modal -->
 <div class="modal fade" id="modalDeleteFacture{{factureDTo.idFacture}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

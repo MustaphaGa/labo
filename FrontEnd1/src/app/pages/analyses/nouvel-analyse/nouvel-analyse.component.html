@@ -16,10 +16,10 @@
                 <div class="row">
                   <div class="col mb-3">
                     <input type="text" class="form-control" placeholder="resultat analyse" name="restAnalyse" [(ngModel)]="analyseMedicalDto.resultat">
-                  
+
                   </div>
                   <div class="col ">
-                   
+
                    <input class="form-control" type="date" placeholder="date analyse" id="example-date-input" name="dateAnalys" [(ngModel)]="analyseMedicalDto.dateAnalyse">
                   </div>
                   </div>
@@ -35,15 +35,15 @@
                   <div class="col mb-3">
                     <label for="date">Date reservation</label>
                     <select class="form-control" name="reserver" [(ngModel)]="reservationDTo.idReservation">
-                      <option *ngFor="let reserver of listereservation" [value]="reserver.idReservation">{{reserver.dateReservation}}  </option> 
-  
+                      <option *ngFor="let reserver of listereservation" [value]="reserver.idReservation"> {{reserver.patient.nom}}--{{reserver.patient.prenom}} :{{reserver.dateReservation}}   </option>
+
                     </select>
                   </div>
                   <div class="col">
                     <label for="date">Type Analyse</label>
                     <select class="form-control"  name="type" [(ngModel)]="typeAnalysedTo.idTypeAnalyse">
-                        <option *ngFor="let type of listetypeAnalyse" [value]="type.idTypeAnalyse">{{type.typeAnalyse}}  </option>              
-                        
+                        <option *ngFor="let type of listetypeAnalyse" [value]="type.idTypeAnalyse">{{type.typeAnalyse}}  </option>
+
                       </select>
                   </div>
                 </div>

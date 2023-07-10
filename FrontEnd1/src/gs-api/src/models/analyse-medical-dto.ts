@@ -7,6 +7,7 @@ export interface AnalyseMedicalDTO {
   descriprtion?: string;
   prixAnalyse?: number;
   resultat?: boolean;
+  count?: number;
   typeAnalyse?: TypeAnalyseDTO;
   reservation?: ReservationDTO;
 }

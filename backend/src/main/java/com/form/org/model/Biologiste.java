@@ -25,6 +25,9 @@ public class Biologiste {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+
+	@Column(name="idBiologiste")
+
 	private Integer idBiologiste;
 	
 	@Column(name="nom")

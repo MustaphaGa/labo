@@ -27,6 +27,9 @@ export class PatientService {
     }
     return of();
   }
+  findCountPatients(): Observable<number>{
+    return this.testcovidv1patientService.findCountPatient();
+  }
   deletePatient(idPatient?: number): Observable<any>{
     if (idPatient) {
       return this.testcovidv1patientService.delete(idPatient);

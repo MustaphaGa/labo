@@ -20,6 +20,8 @@ public class Preleveur   {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+
+	@Column(name="idPreleveur")
 	private Integer idPreleveur;
 	
 	@Column(name="nom")

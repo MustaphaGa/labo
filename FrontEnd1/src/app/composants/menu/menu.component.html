@@ -2,7 +2,7 @@
   <div class="card" *ngFor="let menu of menuProperties">
     <div class="card-header" id="{{menu.id}}">
       <h2 class="mb-0">
-        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" 
+        <button style="background-color: #abdde5" class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
         [attr.data-target]="'#collapse'+ menu.id" aria-expanded="true" aria-controls="collapseOne">
         <i class="{{menu.icon}}"></i>&nbsp;
           {{menu.titre}}
@@ -18,10 +18,10 @@
               <i class="{{sousMenu.icon}}"></i>&nbsp;
               {{sousMenu.titre}}
             </a>
-          </li> 
+          </li>
         </ul>
       </div>
       </div>
     </div>
   </div>
-  
+

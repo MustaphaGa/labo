@@ -58,8 +58,16 @@ public interface AnalyseMedicalApi {
 			@ApiResponse(code = 200, message = "la liste d'analyse medical / une liste vide"),		
 			})
 	
-	List<AnalyseMedicalDTO>findAll(); 
-	
+	List<AnalyseMedicalDTO>findAll();
+
+	@GetMapping(value= APP_ROOT + "/analyseMedical/CountAnalyse", produces = MediaType.APPLICATION_JSON_VALUE )
+	@ApiOperation(value = "renvoi nombre d'analyse Medical",notes = "Cette methode permet de rechercher et renvoyer nombre d'analyse qui existent dans la BDD",
+			responseContainer = "List<AnalyseMedicalDTO>")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "nombre d'analyse medical / un nombre vide"),
+	})
+	Integer findCountType();
+
 	@DeleteMapping(value =APP_ROOT + "/analyseMedical/delete/{idAnalyseMedical}" )
 	@ApiOperation(value = "supprimer  l'analyse Medical ",notes = "Cette methode permet de supprimer l'analyse Medical par ID ",
 	 response = AnalyseMedicalDTO.class)
@@ -68,4 +76,3 @@ public interface AnalyseMedicalApi {
 	    })
 	   void delecte(@PathVariable("idAnalyseMedical")Integer idAnalyseMedical);
 }
- 

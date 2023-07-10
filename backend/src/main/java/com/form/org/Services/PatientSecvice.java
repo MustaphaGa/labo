@@ -11,6 +11,8 @@ public interface PatientSecvice {
 	PatientDTO findById(Integer idPatient);
 	
 	PatientDTO findByCodePatient(String codePatient);
+
+	Integer countPatient();
 	
 	List<PatientDTO>findAll(); 
 	
