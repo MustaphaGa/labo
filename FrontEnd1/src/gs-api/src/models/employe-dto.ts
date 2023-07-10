@@ -10,7 +10,7 @@ export interface EmployeDTO {
   telephone?: string;
   salaire?: number;
   password?: string;
-  date_embauchDate?: string;
+  date_embauchDate?: Date;
   photo?: string;
   labo?: LaboDTO;
 }

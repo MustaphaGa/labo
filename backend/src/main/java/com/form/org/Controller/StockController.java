@@ -6,6 +6,7 @@ import com.form.org.dto.StockDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -38,6 +39,12 @@ public class StockController implements StockApi {
     public List<StockDTO> findAll() {
         return stockService.findAll();
     }
+
+    @Override
+    public BigDecimal calculateStock(Integer idArticle) {
+        return stockService.calculateStock(idArticle);
+    }
+
 
     @Override
     public void delete(Integer idStock) {

@@ -16,9 +16,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name="Preleveur")
-public class Preleveur extends Employe  {
+public class Preleveur   {
 
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer idPreleveur;
 	
 	@Column(name="nom")

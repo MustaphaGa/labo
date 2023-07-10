@@ -15,9 +15,9 @@ export class PreleveurDetaillComponent implements OnInit {
       private preleveurService:PreleveursService) { }
 
   ngOnInit(): void {
-    const idpreleveur = this.activatedRouter.snapshot.params.idPreleveur;
-    if (idpreleveur) {
-      this.preleveurService.findPreleveurById(idpreleveur)
+    const idPreleveur = this.activatedRouter.snapshot.params.idPreleveur;
+    if (idPreleveur) {
+      this.preleveurService.findPreleveurById(idPreleveur)
       .subscribe(preleveur => {
         this.preleveurDt = preleveur;
       });

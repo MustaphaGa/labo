@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { FacturesService } from 'src/app/services/facture/factures.service';
+import { PatientDTO } from 'src/gs-api/src/models';
 import { FactureDTO } from 'src/gs-api/src/models/facture-dto';
 
 @Component({
@@ -11,6 +12,7 @@ import { FactureDTO } from 'src/gs-api/src/models/facture-dto';
 export class DetailFactureComponent implements OnInit {
   @Input()
   factureDTo: FactureDTO ={};
+ 
   @Output()
   suppressionFacture = new EventEmitter();
   constructor(
@@ -26,7 +28,7 @@ export class DetailFactureComponent implements OnInit {
   detailfacture():void{
    // this.router.navigate(['detailfacture',this.factureDTo.idFacture])
     this.router.navigate(['exportpdfact',this.factureDTo.idFacture]);
- //   this.router.navigate(['exportpdfact',this.patientdto.idPatient]);
+ // this.router.navigate(['exportpdfact',this.patientdto.idPatient]);
   }
   confirmerEtSupprimerFacture(): void{
     if(this.factureDTo.idFacture){

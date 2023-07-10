@@ -13,19 +13,19 @@
     <div class="col">
            <div class="row">
             <div class="col-md-1"><i class="fas fa-calendar-check blue-color"></i></div>
-            <div class="col-md-11">{{analyseMedicalDtto.dateAnalyse | date: 'dd/MM/yyyy'}}</div>
+            <div class="col-md-10">{{analyseMedicalDtto.dateAnalyse | date: 'dd/MM/yyyy'}}</div>
         </div>
         <div class="row">
             <div class="col-md-1"><i class="fas fa-dollar-sign blue-color"></i></div>
-            <div class="col-md-11">{{analyseMedicalDtto.prixAnalyse}} DH</div>
+            <div class="col-md-10">{{analyseMedicalDtto.prixAnalyse}} DH</div>
         </div>
         <div class="row">
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-            <div class="col-md-11">{{analyseMedicalDtto.descriprtion}}</div>
+            <div class="col-md-10">{{analyseMedicalDtto.descriprtion}}</div>
         </div>
         <div class="row">
             <div class="col-md-1"><i class="far fa-info-circle blue-color"></i></div>
-            <div class="col-md-11">{{analyseMedicalDtto.resultat}}</div>
+            <div class="col-md-10">{{analyseMedicalDtto.resultat}}</div>
         </div>
         
         </div>
@@ -61,15 +61,15 @@
         <div class="row">
             <div class="col-md-4">
                 <button type="button" class="btn btn btn-link" (click)=" modifierAnalyse()">
-                    <i class="fas fa-pencil-alt"></i>&nbsp;modifier</button>
+                    <i class="fas fa-pencil-alt"></i></button>
             </div>
             <div class="col-md-4">
                 <button type="button" class="btn btn btn-link text-danger" data-toggle="modal" [attr.data-target]="'#modalDeleteAnalyse' + analyseMedicalDtto.idAnalyse">
-                    <i class="fas fa-trash-alt"></i>&nbsp;supprimer</button>
+                    <i class="fas fa-trash-alt"></i></button>
             </div>
             <div class="col-md-4">
                 <button type="button" class="btn btn btn-link" (click)=" detailAnalyse()">
-                    <i class="fas fa-list-alt"></i>&nbsp;Details</button>
+                    <i class="fas fa-list-alt"></i></button>
             </div>
 
         </div>

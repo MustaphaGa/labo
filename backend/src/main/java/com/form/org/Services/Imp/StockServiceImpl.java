@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -49,6 +50,11 @@ public class StockServiceImpl implements StockService {
     }
 
     @Override
+    public BigDecimal calculateStock(Integer idArticle) {
+        return stockRepository.calculateStock(idArticle);
+    }
+
+    @Override
     public StockDTO findBydateStock(Date dateStock) {
 
         if(dateStock == null){
@@ -71,6 +77,8 @@ public class StockServiceImpl implements StockService {
                 .map(StockDTO :: fromEntity)
                 .collect(Collectors.toList());
     }
+
+
 
     @Override
     public void delete(Integer idStock) {

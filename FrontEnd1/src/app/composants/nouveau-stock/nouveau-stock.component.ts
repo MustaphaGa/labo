@@ -12,7 +12,7 @@ import { StockDTO } from 'src/gs-api/src/models/stock-dto';
 })
 export class NouveauStockComponent implements OnInit {
 
-  
+  [x: string]: any;
   stockDt: StockDTO={};
   articleDto :ArticleDTO={};
   listestock: Array<StockDTO> =[];
@@ -56,6 +56,8 @@ export class NouveauStockComponent implements OnInit {
     this.router.navigate(['stock']);
   }
   enregistrerStock(): void {
+    this.stockDt.article=this.articleDto
+
     this.stockservices.enregistrerStock(this.stockDt)
     .subscribe(res => {
     this.router.navigate(['stock']);

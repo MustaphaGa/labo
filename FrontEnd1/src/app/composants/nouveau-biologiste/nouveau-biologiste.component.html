@@ -36,6 +36,7 @@
                     <input type="text" class="form-control" placeholder="Telephone"  name="teleBio" [(ngModel)]="biologisteDto.telephone">
                   </div>
                   <div class="col">
+                    <label >Departement</label>
                       <select class="form-control" name="det" [(ngModel)]="departementDT.idDepartement">
                         <option *ngFor="let det of listeDepartement" [value]="det.idDepartement">{{det.nomDepartement}}  </option>              
                         

@@ -75,6 +75,7 @@ import {BilanFinanceDetaillComponent} from "./detaill/bilan-finance-detaill/bila
 import {OperationDetaillComponent} from "./detaill/operation-detaill/operation-detaill.component";
 import { PdfEmployeComponent } from './pdf-employe/pdf-employe.component';
 import { PdfFactureComponent } from './pdf-facture/pdf-facture.component';
+import { PdfBilanComponent } from './pdf-bilan/pdf-bilan.component';
 const routes: Routes = [
   {
     path: 'pagAccPrincp',
@@ -345,13 +346,13 @@ const routes: Routes = [
 
       },
       {
-        path: 'nouvelEmployee/:idEmploye',
+        path: 'nouvelEmployee/:id_employe',
         component: NouveauEmployeComponent,
         canActivate: [ApplicationGuardService]
 
       },
       {
-        path: 'detailemploye/:idEmploye',
+        path: 'detailemployes/:id_employe',
         component: PdfEmployeComponent,
         canActivate: [ApplicationGuardService]
 
@@ -607,7 +608,7 @@ const routes: Routes = [
       },
       {
         path: 'detailBilanFinance/:idBilan',
-        component:  BilanFinanceDetaillComponent,
+        component:  PdfBilanComponent,
         canActivate: [ApplicationGuardService]
 
       },

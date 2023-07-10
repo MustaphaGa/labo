@@ -26,7 +26,7 @@ export class DetailEmployeComponent implements OnInit {
     this.router.navigate(['nouvelEmployee', this.employeDt.id_employe]);
   }
   detailEmploye(): void{
-    this.router.navigate(['detailemploye', this.employeDt.id_employe]);
+    this.router.navigate(['detailemployes', this.employeDt.id_employe]);
   }
   confirmerEtSupprimerEmploye() {
     if(this.employeDt.id_employe){

@@ -1,6 +1,5 @@
 package com.form.org.Controller.api;
 
-import com.form.org.dto.ReservationDTO;
 import com.form.org.dto.StockDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -9,6 +8,7 @@ import io.swagger.annotations.ApiResponses;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -55,6 +55,18 @@ public interface StockApi {
             @ApiResponse(code = 200, message = "la liste des stock / une liste vide"),
     })
     List<StockDTO> findAll();
+
+
+    @GetMapping(value= APP_ROOT + "/stock/difference", produces = MediaType.APPLICATION_JSON_VALUE )
+
+   @ApiOperation(value = "rechercher un stock par date de Stock",notes = "Cette methode"
+            + " permet de rechercher un stock par date de Stock  ",
+            response = StockDTO.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "la stock a ete trouver dans la BDD"),
+            @ApiResponse(code = 404, message = "Aucun stock n'existe  dans la BDD avec le CODE fourni")
+    })
+    BigDecimal calculateStock(@PathVariable("idArticle") Integer idArticle);
 
     @DeleteMapping(value =APP_ROOT + "/stock/delete/{idStock}" )
     @ApiOperation(value = "supprimer  un stock ",notes = "Cette methode permet de supprimer"

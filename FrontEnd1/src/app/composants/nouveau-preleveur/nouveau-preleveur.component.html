@@ -38,6 +38,7 @@
                   </div>
                 
                   <div class="col">
+                    <label for="date">Analyse medicale</label>
                     <select class="form-control" name="analys" [(ngModel)]="analyseMedicalDt.idAnalyse">
                       <option *ngFor="let analys of listeAnalyse" [value]="analys.idAnalyse">{{analys.descriprtion}} </option>              
                       

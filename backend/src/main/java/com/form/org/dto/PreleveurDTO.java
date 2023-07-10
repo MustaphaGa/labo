@@ -20,6 +20,7 @@ public class PreleveurDTO {
 	private String specialite;
 	
 	private AnalyseMedicalDTO analyseMedical;
+
 	
 
 	
@@ -37,6 +38,7 @@ public class PreleveurDTO {
 	            .telephone(preleveur.getTelephone())
 	            .specialite(preleveur.getSpecialite())
 	            .analyseMedical(AnalyseMedicalDTO.fromEntity(preleveur.getAnalyseMedical()))
+
 				.build();
 	}
 

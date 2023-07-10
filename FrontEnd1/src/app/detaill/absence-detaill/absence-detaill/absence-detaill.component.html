@@ -1,28 +1,60 @@
 <!--detaill-->
-<h3 style="text-align: center;margin-bottom: 25px;">  Details Resultat </h3>
+<h3 style="text-align: center;margin-bottom: 25px;">  Details Absences </h3>
 <div style="margin-left: 20px;
 margin-right: auto;
 ">
 
-   
-  <div>
-    <label> <b> DATE DEBUT: </b></label> {{absenceDt.dateDebut | date: 'dd/MM/yyyy'}}
-</div>
-<div>
-    <label> <b> DATE FIN: </b></label> {{absenceDt.dateFin | date: 'dd/MM/yyyy'}}
-</div>
-  <div>
-      <label> <b> JUSTIFIE: </b></label> {{absenceDt.justifie}}
-  </div>
-  <div>
-    <label> <b> MOTIF: </b></label> {{absenceDt.motif}}
-</div>
-  <div>
-      <label> <b> PIECES FOURNIS: </b></label> {{absenceDt.pieceJustificatifString}}
-  </div>
-  <div>
-    <label> <b> EMPLOYE : </b></label> {{absenceDt.employe?.nom}} {{absenceDt.employe?.prenom}}
-</div>
+<style>
+table {
+  border-collapse: collapse;
+  width: 80%;
+}
+
+th {
+  border: 2px solid black;
+  padding: 6px;
+  text-align: left;
+  
+}
+td {
+  border: 2px solid black;
+  padding: 6px;
+  text-align: left;
+ 
+}
+
+th {
+  background-color: #f2f2f2;
+}
+</style>
+
+<table>
+  <tr>
+    <th><b>DATE DEBUT:</b></th>
+    <td>{{absenceDt.dateDebut | date: 'dd/MM/yyyy'}}</td>
+  </tr>
+  <tr>
+    <th><b>DATE FIN:</b></th>
+    <td>{{absenceDt.dateFin | date: 'dd/MM/yyyy'}}</td>
+  </tr>
+  <tr>
+    <th><b>JUSTIFIE:</b></th>
+    <td>{{absenceDt.justifie}}</td>
+  </tr>
+  <tr>
+    <th><b>MOTIF:</b></th>
+    <td>{{absenceDt.motif}}</td>
+  </tr>
+  <tr>
+    <th><b>PIECES FOURNIS:</b></th>
+    <td>{{absenceDt.pieceJustificatifString}}</td>
+  </tr>
+  <tr>
+    <th><b>EMPLOYE:</b></th>
+    <td>{{absenceDt.employe?.nom}} {{absenceDt.employe?.prenom}}</td>
+  </tr>
+</table>
+
  
 </div>
     
